@@ -1,0 +1,64 @@
+{
+  "name": "new-buzzin-web-page",
+  "version": "1.0.0",
+  "description": "Buzzin Home Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "seed:sanity": "node scripts/seed-sanity.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarhegazy77344/Buzzin.git"
+  },
+  "keywords": [],
+  "author": "Omar Hegazy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omarhegazy77344/Buzzin/issues"
+  },
+  "homepage": "https://github.com/omarhegazy77344/Buzzin#readme",
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@sanity/client": "^7.20.0",
+    "@sanity/document-internationalization": "^6.0.6",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/language-filter": "^5.0.1",
+    "@sanity/vision": "^5.19.0",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.38.0",
+    "gsap": "^3.14.2",
+    "lucide-react": "^1.7.0",
+    "mongodb": "^7.1.1",
+    "next": "^16.2.2",
+    "next-intl": "^4.9.0",
+    "next-sanity": "^12.2.1",
+    "next-themes": "^0.4.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-fast-marquee": "^1.6.5",
+    "react-hook-form": "^7.72.1",
+    "sanity": "^5.19.0",
+    "sanity-plugin-internationalized-array": "^5.1.0",
+    "tailwind-merge": "^3.5.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^25.5.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.2",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3"
+  },
+  "private": true
+}

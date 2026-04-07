@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+/* ═══════════════════════════════════════
+   LIGHT MODE (default)
+   ═══════════════════════════════════════ */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-page: #ffffff;
+  --bg-canvas: #EBF5FB;
+  --bg-surface: #ffffff;
+  --bg-surface-raised: #ffffff;
+  --bg-surface-sunken: #fafafa;
+  --bg-overlay: rgba(30, 37, 71, 0.6);
+
+  --bg-hero: linear-gradient(180deg, #EBF5FB 0%, #ffffff 100%);
+  --bg-trust: #fafafa;
+  --bg-proof: #1E2547;
+  --bg-footer: #161B35;
+
+  --text-primary: #1E2547;
+  --text-secondary: #52525B;
+  --text-tertiary: #71717A;
+  --text-muted: #A1A1AA;
+  --text-inverse: #ffffff;
+  --text-brand: #E0941D;
+
+  --border-default: #E4E4E7;
+  --border-subtle: #F4F4F5;
+  --border-strong: #D4D4D8;
+  --border-brand: #F5A623;
+
+  --shadow-brand: 0 4px 14px 0 rgba(245, 166, 35, 0.25);
+  --shadow-focus: 0 0 0 3px rgba(245, 166, 35, 0.40);
+}
+
+/* ═══════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════ */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-page: #0D1023;
+  --bg-canvas: #161B35;
+  --bg-surface: #1E2547;
+  --bg-surface-raised: #282F44;
+  --bg-surface-sunken: #0D1023;
+  --bg-overlay: rgba(13, 16, 35, 0.8);
+
+  --bg-hero: linear-gradient(180deg, #161B35 0%, #0D1023 100%);
+  --bg-trust: #1E2547;
+  --bg-proof: #0D1023;
+  --bg-footer: #09090B;
+
+  --text-primary: #FAFAFA;
+  --text-secondary: #D4D4D8;
+  --text-tertiary: #A1A1AA;
+  --text-muted: #71717A;
+  --text-inverse: #161B35;
+  --text-brand: #F7C04D;
+
+  --border-default: #343C56;
+  --border-subtle: #282F44;
+  --border-strong: #414A69;
+  --border-brand: #F5A623;
+
+  --shadow-brand: 0 4px 14px 0 rgba(245, 166, 35, 0.20);
+  --shadow-focus: 0 0 0 3px rgba(245, 166, 35, 0.50);
+}
+
+/* ═══════════════════════════════════════
+   MOTION TOKENS
+   ═══════════════════════════════════════ */
+:root {
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+  --stagger-sm: 75ms;
+  --stagger-md: 100ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ═══════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════ */
+body {
+  min-height: 100vh;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-tajawal), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(245, 166, 35, 0.2);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════
+   HONEYCOMB GRID
+   Single sizing token: --hex-s (circumradius).
+   All hex geometry (width, height, positions)
+   derives from this one value via calc().
+   ═══════════════════════════════════════ */
+.hex-grid {
+  --hex-s: 42px;
+}
+@media (min-width: 480px) {
+  .hex-grid { --hex-s: 50px; }
+}
+@media (min-width: 640px) {
+  .hex-grid { --hex-s: 56px; }
+}
+@media (min-width: 768px) {
+  .hex-grid { --hex-s: 62px; }
+}
+@media (min-width: 1024px) {
+  .hex-grid { --hex-s: 72px; }
+}
+@media (min-width: 1280px) {
+  .hex-grid { --hex-s: 82px; }
+}
+
+.hex-cell-wrapper {
+  z-index: 1;
+}
+.hex-cell-has-logo {
+  filter: drop-shadow(0 0 0px rgba(239, 159, 39, 0));
+  transition: filter 300ms ease;
+}
+.hex-cell-has-logo:hover {
+  z-index: 20;
+  filter: drop-shadow(0 0 8px rgba(239, 159, 39, 0.16));
+}
+
+/* Platform hive — larger tiles for text content (main module cells) */
+.hex-grid-platform {
+  --hex-s: 64px;
+}
+@media (min-width: 480px) {
+  .hex-grid-platform { --hex-s: 72px; }
+}
+@media (min-width: 640px) {
+  .hex-grid-platform { --hex-s: 82px; }
+}
+@media (min-width: 768px) {
+  .hex-grid-platform { --hex-s: 92px; }
+}
+@media (min-width: 1024px) {
+  .hex-grid-platform { --hex-s: 102px; }
+}
+@media (min-width: 1280px) {
+  .hex-grid-platform { --hex-s: 112px; }
+}
+
+.hex-cell-module {
+  filter: drop-shadow(0 0 0px rgba(239, 159, 39, 0));
+  transition: filter 300ms ease;
+}
+.hex-cell-module:hover {
+  z-index: 20;
+  filter: drop-shadow(0 0 8px rgba(239, 159, 39, 0.16));
+}
+
+/* ═══════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface-sunken);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
