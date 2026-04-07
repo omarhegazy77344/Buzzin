@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import Link from "next/link"
 import { Star } from "lucide-react"
 import { cn } from "@/lib/cn"
@@ -15,8 +15,6 @@ const S3 = 1.7320508
 const S3H = 0.8660254
 const HEX_CLIP = "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"
 const RADIUS = 2
-const GRID_W = 3 * RADIUS + 2
-const GRID_H = +(S3 * (2 * RADIUS + 1)).toFixed(4)
 
 type HexCell = { q: number; r: number; ring: number; mod: PlatformModule | null }
 
@@ -142,7 +140,7 @@ function ModuleHexTile({ cell }: { cell: HexCell }) {
   const nameEl = mod && (
     <span
       className={cn(
-        "text-center font-heading text-[0.65rem] font-semibold leading-tight sm:text-[0.72rem] md:text-[0.8rem] lg:text-[0.88rem]",
+        "text-center font-heading text-[0.72rem] font-semibold leading-tight sm:text-[0.82rem] md:text-[0.92rem] lg:text-base",
         isLive && "text-[var(--text-primary)] group-hover:text-[var(--text-brand)]",
         isComingSoon && "text-[var(--text-muted)]",
       )}
@@ -154,7 +152,7 @@ function ModuleHexTile({ cell }: { cell: HexCell }) {
   const descEl = mod && (
     <span
       className={cn(
-        "mt-0.5 text-center text-[0.5rem] leading-tight sm:text-[0.55rem] md:text-[0.6rem]",
+        "mt-1 text-center text-[0.55rem] leading-tight sm:text-[0.62rem] md:text-[0.7rem] lg:text-xs",
         isLive && "text-[var(--text-tertiary)]",
         isComingSoon && "text-[var(--text-muted)]",
       )}
@@ -245,14 +243,35 @@ type PlatformOverviewProps = {
 
 export function PlatformOverview({ modules }: PlatformOverviewProps) {
   const data = modules && modules.length > 0 ? modules : defaultModules
-  const grid = placeModules(data)
+
+  const { moduleCells, gridW, gridH, centerX, centerY } = useMemo(() => {
+    const allCells = placeModules(data)
+    const filled = allCells.filter((c) => c.mod !== null)
+
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
+    for (const cell of filled) {
+      const px = 1.5 * cell.q
+      const py = S3 * cell.r + S3H * cell.q
+      minX = Math.min(minX, px - 1)
+      maxX = Math.max(maxX, px + 1)
+      minY = Math.min(minY, py - S3 / 2)
+      maxY = Math.max(maxY, py + S3 / 2)
+    }
+
+    return {
+      moduleCells: filled,
+      gridW: maxX - minX,
+      gridH: maxY - minY,
+      centerX: (minX + maxX) / 2,
+      centerY: (minY + maxY) / 2,
+    }
+  }, [data])
 
   return (
     <section
       className="relative overflow-hidden py-16 pb-24 md:py-24 md:pb-36 bg-[#faf5ec] dark:bg-[#0e1126]"
       id="overview"
     >
-      {/* Shared container — header and hive both center within the same padded box */}
       <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -275,14 +294,14 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
         <div
           className="hex-grid hex-grid-platform relative mx-auto"
           style={{
-            width: `calc(var(--hex-s) * ${GRID_W})`,
-            height: `calc(var(--hex-s) * ${GRID_H})`,
-            transform: "translate(-36px, -24px)",
+            width: `calc(var(--hex-s) * ${gridW.toFixed(4)})`,
+            height: `calc(var(--hex-s) * ${gridH.toFixed(4)})`,
+            transform: "translateX(var(--platform-offset-x))",
           }}
         >
-          {grid.map((cell) => {
-            const cx = (1.5 * cell.q).toFixed(4)
-            const cy = (S3 * cell.r + S3H * cell.q).toFixed(4)
+          {moduleCells.map((cell) => {
+            const cx = (1.5 * cell.q - centerX).toFixed(4)
+            const cy = (S3 * cell.r + S3H * cell.q - centerY).toFixed(4)
             return (
               <motion.div
                 key={`${cell.q},${cell.r}`}

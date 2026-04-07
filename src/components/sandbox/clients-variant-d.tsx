@@ -73,8 +73,6 @@ const S3 = 1.7320508
 const S3H = 0.8660254
 const HEX_CLIP = "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"
 const RADIUS = 2
-const GRID_W = 3 * RADIUS + 2
-const GRID_H = +(S3 * (2 * RADIUS + 1)).toFixed(4)
 
 type HexCell = { q: number; r: number; ring: number; client: Client | null }
 
@@ -219,10 +217,29 @@ function HexTile({ cell }: { cell: HexCell }) {
 export function ClientsVariantD({ className }: { className?: string }) {
   const [activeKey, setActiveKey] = useState(sectors[0].key)
   const active = sectors.find((s) => s.key === activeKey)!
-  const grid = useMemo(
-    () => placeLogos(CLUSTER, active.clients),
-    [active.clients],
-  )
+
+  const { logoCells, gridW, gridH, centerX, centerY } = useMemo(() => {
+    const allCells = placeLogos(CLUSTER, active.clients)
+    const filled = allCells.filter((c) => c.client !== null)
+
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
+    for (const cell of filled) {
+      const px = 1.5 * cell.q
+      const py = S3 * cell.r + S3H * cell.q
+      minX = Math.min(minX, px - 1)
+      maxX = Math.max(maxX, px + 1)
+      minY = Math.min(minY, py - S3 / 2)
+      maxY = Math.max(maxY, py + S3 / 2)
+    }
+
+    return {
+      logoCells: filled,
+      gridW: maxX - minX,
+      gridH: maxY - minY,
+      centerX: (minX + maxX) / 2,
+      centerY: (minY + maxY) / 2,
+    }
+  }, [active.clients])
 
   return (
     <section
@@ -239,7 +256,7 @@ export function ClientsVariantD({ className }: { className?: string }) {
             <motion.p
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-2 font-heading text-overline font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]"
+              className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)] md:text-base"
             >
               Some members of our Buzzin Hive
             </motion.p>
@@ -247,7 +264,7 @@ export function ClientsVariantD({ className }: { className?: string }) {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 }}
-              className="mb-8 text-body-sm text-[var(--text-tertiary)]"
+              className="mb-8 text-base text-[var(--text-tertiary)] md:text-lg"
             >
               Trusted across hospitality, real estate, education, and
               other sectors
@@ -262,7 +279,7 @@ export function ClientsVariantD({ className }: { className?: string }) {
                     key={s.key}
                     onClick={() => setActiveKey(s.key)}
                     className={cn(
-                      "relative py-2.5 pl-4 text-left text-sm font-medium transition-colors duration-300",
+                      "relative py-3 pl-5 text-left text-base font-medium transition-colors duration-300 lg:text-lg",
                       on
                         ? "text-[var(--text-primary)]"
                         : "text-[var(--text-muted)] hover:text-[var(--text-secondary)]",
@@ -280,9 +297,6 @@ export function ClientsVariantD({ className }: { className?: string }) {
                       />
                     )}
                     {s.label}
-                    <span className="ml-2 text-xs text-[var(--text-muted)]">
-                      {s.clients.length}
-                    </span>
                   </button>
                 )
               })}
@@ -297,7 +311,7 @@ export function ClientsVariantD({ className }: { className?: string }) {
                     key={s.key}
                     onClick={() => setActiveKey(s.key)}
                     className={cn(
-                      "relative rounded-full px-4 py-1.5 text-body-xs font-semibold transition-all duration-300",
+                      "relative rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300",
                       on
                         ? "text-white"
                         : "border border-[var(--border-subtle)] text-[var(--text-muted)] hover:border-amber-500/25 hover:text-[var(--text-secondary)]",
@@ -327,9 +341,8 @@ export function ClientsVariantD({ className }: { className?: string }) {
             <div
               className="hex-grid relative"
               style={{
-                width: `calc(var(--hex-s) * ${GRID_W})`,
-                height: `calc(var(--hex-s) * ${GRID_H})`,
-                transform: "translateX(-8px)",
+                width: `calc(var(--hex-s) * ${gridW.toFixed(4)})`,
+                height: `calc(var(--hex-s) * ${gridH.toFixed(4)})`,
               }}
             >
               <AnimatePresence mode="wait">
@@ -341,16 +354,13 @@ export function ClientsVariantD({ className }: { className?: string }) {
                   exit="exit"
                   className="absolute inset-0"
                 >
-                  {grid.map((cell) => {
-                    const cx = (1.5 * cell.q).toFixed(4)
-                    const cy = (S3 * cell.r + S3H * cell.q).toFixed(4)
+                  {logoCells.map((cell) => {
+                    const cx = (1.5 * cell.q - centerX).toFixed(4)
+                    const cy = (S3 * cell.r + S3H * cell.q - centerY).toFixed(4)
                     return (
                       <div
                         key={`${cell.q},${cell.r}`}
-                        className={cn(
-                          "hex-cell-wrapper absolute",
-                          cell.client && "hex-cell-has-logo",
-                        )}
+                        className="hex-cell-wrapper hex-cell-has-logo absolute"
                         style={{
                           left: `calc(50% + var(--hex-s) * ${cx})`,
                           top: `calc(50% + var(--hex-s) * ${cy})`,

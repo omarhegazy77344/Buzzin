@@ -130,22 +130,22 @@ body {
    derives from this one value via calc().
    ═══════════════════════════════════════ */
 .hex-grid {
-  --hex-s: 42px;
+  --hex-s: 58px;
 }
 @media (min-width: 480px) {
-  .hex-grid { --hex-s: 50px; }
+  .hex-grid { --hex-s: 70px; }
 }
 @media (min-width: 640px) {
-  .hex-grid { --hex-s: 56px; }
+  .hex-grid { --hex-s: 80px; }
 }
 @media (min-width: 768px) {
-  .hex-grid { --hex-s: 62px; }
+  .hex-grid { --hex-s: 90px; }
 }
 @media (min-width: 1024px) {
-  .hex-grid { --hex-s: 72px; }
+  .hex-grid { --hex-s: 105px; }
 }
 @media (min-width: 1280px) {
-  .hex-grid { --hex-s: 82px; }
+  .hex-grid { --hex-s: 120px; }
 }
 
 .hex-cell-wrapper {
@@ -162,22 +162,23 @@ body {
 
 /* Platform hive — larger tiles for text content (main module cells) */
 .hex-grid-platform {
-  --hex-s: 64px;
+  --hex-s: 72px;
+  --platform-offset-x: 0px;
 }
 @media (min-width: 480px) {
-  .hex-grid-platform { --hex-s: 72px; }
+  .hex-grid-platform { --hex-s: 86px; --platform-offset-x: -24px; }
 }
 @media (min-width: 640px) {
-  .hex-grid-platform { --hex-s: 82px; }
+  .hex-grid-platform { --hex-s: 100px; --platform-offset-x: -42px; }
 }
 @media (min-width: 768px) {
-  .hex-grid-platform { --hex-s: 92px; }
+  .hex-grid-platform { --hex-s: 112px; --platform-offset-x: -60px; }
 }
 @media (min-width: 1024px) {
-  .hex-grid-platform { --hex-s: 102px; }
+  .hex-grid-platform { --hex-s: 128px; --platform-offset-x: -78px; }
 }
 @media (min-width: 1280px) {
-  .hex-grid-platform { --hex-s: 112px; }
+  .hex-grid-platform { --hex-s: 142px; --platform-offset-x: -90px; }
 }
 
 .hex-cell-module {
