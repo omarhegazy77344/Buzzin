@@ -18,10 +18,10 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroVariantD images={defaultHeroCarouselImages} />
-        <ClientsVariantD />
         <StatsBar />
         <PlatformOverview />
         <IndustryTransformationSection />
+        <ClientsVariantD />
         <Exclusivity />
         <SecurityBar />
         <HowItWorks />

@@ -53,18 +53,140 @@ export type PlatformModule = {
   slug: string
   desc: string
   shortDesc: string
+  hoverLine: string
+  longDesc: string
+  benefits: string[]
   status: ModuleStatus
   badge: ModuleBadge
 }
 
 export const defaultModules: PlatformModule[] = [
-  { name: "Visitor Management", shortName: "VMS", slug: "visitor-management-system", desc: "5-second digital check-in with UAE Pass and Emirates ID integration.", shortDesc: "Digital check-in", status: "live", badge: "star" },
-  { name: "Work Permit", shortName: "Work Permit", slug: "work-permit-system", desc: "QR-coded digital permits. Gate verification. Full compliance trail.", shortDesc: "Digital permits", status: "live", badge: null },
-  { name: "Queue Management", shortName: "QMS", slug: "queue-management", desc: "VIP priority routing. WhatsApp tokens. Self-service kiosk.", shortDesc: "Smart queuing", status: "new", badge: "greenDot" },
-  { name: "Event Management", shortName: "Events", slug: "event-management", desc: "Personalised QR invitations. 8-second entry. Branded communications.", shortDesc: "Event check-in", status: "live", badge: null },
-  { name: "Attendance", shortName: "Attendance", slug: "attendance-management", desc: "NFC/RFID tracking. Real-time punctuality alerts. Shift reports.", shortDesc: "NFC tracking", status: "live", badge: null },
-  { name: "Booking", shortName: "Booking", slug: "booking-management", desc: "Live calendar. Auto-approve rules. VMS-integrated access passes.", shortDesc: "Calendar & passes", status: "new", badge: "greenDot" },
-  { name: "Safeguarding", shortName: "Safeguarding", slug: "safeguarding", desc: "Authorised guardian verification. KHDA-ready audit trail.", shortDesc: "Guardian verification", status: "comingSoon", badge: null },
+  {
+    name: "Visitor Management",
+    shortName: "VMS",
+    slug: "visitor-management-system",
+    desc: "5-second digital check-in with UAE Pass and Emirates ID integration.",
+    shortDesc: "Digital check-in",
+    hoverLine: "Verify and register every visitor in under 5 seconds.",
+    longDesc: "Replace paper logbooks with a fully digital visitor journey. Guests pre-register, verify identity via UAE Pass or Emirates ID, and check in at a self-service kiosk\u00a0\u2014 while the host is notified instantly. Every visit is logged, time-stamped, and audit-ready.",
+    benefits: [
+      "5-second check-in with UAE Pass and Emirates ID integration",
+      "Real-time host notifications via SMS, email, and WhatsApp",
+      "Instant watchlist screening and blocklist enforcement",
+      "Pre-registration links that cut lobby wait times to near zero",
+      "Tamper-proof audit logs exportable in under 30 seconds",
+    ],
+    status: "live",
+    badge: "star",
+  },
+  {
+    name: "Work Permit",
+    shortName: "Work Permit",
+    slug: "work-permit-system",
+    desc: "QR-coded digital permits. Gate verification. Full compliance trail.",
+    shortDesc: "Digital permits",
+    hoverLine: "Issue, track, and verify contractor permits digitally.",
+    longDesc: "Digitise every contractor and maintenance permit from request to expiry. Each permit carries a unique QR code verified at the gate in real time, with automatic expiry alerts and a full compliance trail no inspector can question.",
+    benefits: [
+      "QR-coded permits verified at the gate in real time",
+      "Automatic expiry alerts so no permit runs past its date",
+      "Document upload requirements enforced before approval",
+      "Full compliance trail for audits and regulatory reviews",
+      "Multi-site permit management from a single dashboard",
+    ],
+    status: "live",
+    badge: null,
+  },
+  {
+    name: "Queue Management",
+    shortName: "QMS",
+    slug: "queue-management",
+    desc: "VIP priority routing. WhatsApp tokens. Self-service kiosk.",
+    shortDesc: "Smart queuing",
+    hoverLine: "Eliminate physical queues with smart digital routing.",
+    longDesc: "Turn chaotic lobbies into calm, managed flows. Visitors take a token from a kiosk or via WhatsApp, receive real-time wait updates, and are routed to the right counter automatically\u00a0\u2014 with VIP priority lanes built in.",
+    benefits: [
+      "WhatsApp-based token collection \u2014 no app download needed",
+      "VIP and priority routing for high-value guests",
+      "Real-time wait-time displays on screens and phones",
+      "Service analytics that reveal bottlenecks and peak patterns",
+      "Self-service kiosk mode for unmanned reception areas",
+    ],
+    status: "new",
+    badge: "greenDot",
+  },
+  {
+    name: "Event Management",
+    shortName: "Events",
+    slug: "event-management",
+    desc: "Personalised QR invitations. 8-second entry. Branded communications.",
+    shortDesc: "Event check-in",
+    hoverLine: "Run branded events with 8-second QR entry.",
+    longDesc: "From corporate galas to school open days, manage the entire guest lifecycle digitally. Send branded QR invitations, track RSVPs in real time, and check guests in at the door in eight seconds flat\u00a0\u2014 no paper lists, no bottlenecks.",
+    benefits: [
+      "Personalised QR invitations with your brand identity",
+      "8-second check-in at the door \u2014 no printed guest lists",
+      "Live attendance dashboard with real-time headcount",
+      "Automated post-event thank-you and feedback collection",
+      "Capacity management with automatic waitlist handling",
+    ],
+    status: "live",
+    badge: null,
+  },
+  {
+    name: "Attendance",
+    shortName: "Attendance",
+    slug: "attendance-management",
+    desc: "NFC/RFID tracking. Real-time punctuality alerts. Shift reports.",
+    shortDesc: "NFC tracking",
+    hoverLine: "Track staff presence with NFC taps and live alerts.",
+    longDesc: "Know exactly who is on your premises and when they arrived. Staff tap NFC or RFID badges on entry, and managers receive punctuality alerts in real time. Shift reports, overtime tracking, and attendance history are always one click away.",
+    benefits: [
+      "NFC/RFID badge taps for frictionless clock-in and clock-out",
+      "Real-time punctuality and absence alerts to managers",
+      "Automated shift reports with overtime calculation",
+      "Historical attendance records for HR and payroll integration",
+      "Multi-site roll call for emergency and evacuation scenarios",
+    ],
+    status: "live",
+    badge: null,
+  },
+  {
+    name: "Booking",
+    shortName: "Booking",
+    slug: "booking-management",
+    desc: "Live calendar. Auto-approve rules. VMS-integrated access passes.",
+    shortDesc: "Calendar & passes",
+    hoverLine: "Book amenities and issue access passes in one step.",
+    longDesc: "Replace WhatsApp booking chaos with a live calendar visible to all residents and tenants. Slots are reserved, auto-approved or routed for approval, and the system issues a QR access pass automatically\u00a0\u2014 no double bookings, no manual follow-up.",
+    benefits: [
+      "Live calendar that prevents double-bookings instantly",
+      "Auto-approve rules for low-risk or recurring bookings",
+      "QR access passes issued automatically on confirmation",
+      "Resident and tenant self-service via web or mobile",
+      "Usage analytics that inform amenity planning and investment",
+    ],
+    status: "new",
+    badge: "greenDot",
+  },
+  {
+    name: "Safeguarding",
+    shortName: "Safeguarding",
+    slug: "safeguarding",
+    desc: "Authorised guardian verification. KHDA-ready audit trail.",
+    shortDesc: "Guardian verification",
+    hoverLine: "Verify every guardian before a child leaves your care.",
+    longDesc: "Designed for schools and childcare facilities, Safeguarding verifies that every person collecting a child is an authorised guardian\u00a0\u2014 with photo ID, relationship confirmation, and a KHDA-ready audit trail that protects your institution and the families you serve.",
+    benefits: [
+      "Authorised guardian verification at every pickup",
+      "Photo ID matching and relationship confirmation",
+      "KHDA-compliant audit trail for inspections",
+      "Emergency contact escalation when guardians are unreachable",
+      "Parent-managed authorisation list via a secure portal",
+    ],
+    status: "comingSoon",
+    badge: null,
+  },
 ]
 
 export const defaultIndustries = [
@@ -167,18 +289,18 @@ export const defaultSecurityCerts = [
 export const defaultHowItWorks = [
   {
     number: "01",
-    title: "We assess your premises",
-    desc: "Our team reviews your workflows, security requirements, and existing infrastructure. A configuration built around how your operation actually works.",
+    title: "Discovery",
+    desc: "We visit your premises, map your workflows, and understand what security and compliance look like for your operation\u00a0\u2014 so the platform fits you, not the other way around.",
   },
   {
     number: "02",
-    title: "We configure and deploy",
-    desc: "Cloud-hosted. No servers. No data centre access required. One Android tablet to get started. Live within days, not months.",
+    title: "Go Live",
+    desc: "Cloud-hosted, zero servers. One Android tablet and you\u2019re running. Most organisations are fully live within days, not months.",
   },
   {
     number: "03",
-    title: "You\u2019re supported, not just sold to",
-    desc: "SLA-backed support via phone, email, and WhatsApp. Remote troubleshooting and over-the-air updates. We don\u2019t disappear after go-live.",
+    title: "Grow Together",
+    desc: "SLA-backed support on phone, email, and WhatsApp. Over-the-air updates. We stay with you long after go-live\u00a0\u2014 because partnership doesn\u2019t end at deployment.",
   },
 ]
 

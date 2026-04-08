@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react"
 import { Section, SectionHeader } from "@/components/ui/section"
 import { cn } from "@/lib/cn"
 import { defaultIndustries } from "@/lib/content-defaults"
+import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
 type IndustrySelectorProps = {
   industries?: typeof defaultIndustries
@@ -39,8 +40,12 @@ export function IndustrySelectorBlock({
       />
       <div className="mb-10 flex flex-wrap justify-center gap-2">
         {data.map((ind, i) => (
-          <button
+          <motion.button
             key={ind.key}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={VIEWPORT}
+            transition={{ duration: 0.4, delay: i * 0.1, ease: BRAND_EASE }}
             onClick={() => setActive(i)}
             className={cn(
               "rounded-full px-5 py-2 font-heading text-body-sm font-semibold transition-all duration-200",
@@ -50,7 +55,7 @@ export function IndustrySelectorBlock({
             )}
           >
             {ind.label}
-          </button>
+          </motion.button>
         ))}
       </div>
 

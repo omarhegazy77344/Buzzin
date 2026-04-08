@@ -4,6 +4,7 @@ import { useMemo, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import { cn } from "@/lib/cn"
+import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
 /* ═══════════════════════════════════════
    DATA
@@ -102,24 +103,15 @@ function placeLogos(cluster: typeof CLUSTER, clients: Client[]): HexCell[] {
    ANIMATIONS
    ═══════════════════════════════════════ */
 
-const panelWrap = {
-  hidden: {},
-  visible: {},
-  exit: {
-    opacity: 0,
-    transition: { duration: 0.2, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-}
-
 const cellReveal = {
-  hidden: { opacity: 0, scale: 0.84 },
+  hidden: { opacity: 0, scale: 0.75 },
   visible: (ring: number) => ({
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.4,
-      delay: Math.min(ring * 0.09, 0.5),
-      ease: [0.25, 0.1, 0.25, 1] as const,
+      duration: 0.5,
+      delay: Math.min(ring * 0.08, 0.5),
+      ease: BRAND_EASE,
     },
   }),
 }
@@ -144,6 +136,9 @@ function HexTile({ cell }: { cell: HexCell }) {
     <motion.div
       variants={cellReveal}
       custom={cell.ring}
+      initial="hidden"
+      whileInView="visible"
+      viewport={VIEWPORT}
       className={cn("relative h-full w-full", logo && "group")}
     >
       {/* Wall rim — warm amber, visible as a 1px edge around the fill */}
@@ -195,6 +190,7 @@ function HexTile({ cell }: { cell: HexCell }) {
             alt={cell.client.name}
             width={200}
             height={120}
+            loading="eager"
             className="h-full w-full object-contain"
           />
         </div>
@@ -254,16 +250,19 @@ export function ClientsVariantD({ className }: { className?: string }) {
           {/* ── Left: heading + sector navigation ── */}
           <div className="w-full text-center lg:w-[30%] lg:shrink-0 lg:pr-10 lg:text-left">
             <motion.p
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={VIEWPORT}
+              transition={{ duration: 0.6, ease: BRAND_EASE }}
               className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)] md:text-base"
             >
               Some members of our Buzzin Hive
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.05 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={VIEWPORT}
+              transition={{ duration: 0.5, delay: 0.1, ease: BRAND_EASE }}
               className="mb-8 text-base text-[var(--text-tertiary)] md:text-lg"
             >
               Trusted across hospitality, real estate, education, and
@@ -272,11 +271,15 @@ export function ClientsVariantD({ className }: { className?: string }) {
 
             {/* Desktop — vertical tab list with sliding amber indicator */}
             <nav className="hidden lg:flex lg:flex-col lg:gap-0.5">
-              {sectors.map((s) => {
+              {sectors.map((s, i) => {
                 const on = activeKey === s.key
                 return (
-                  <button
+                  <motion.button
                     key={s.key}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={VIEWPORT}
+                    transition={{ duration: 0.4, delay: i * 0.1, ease: BRAND_EASE }}
                     onClick={() => setActiveKey(s.key)}
                     className={cn(
                       "relative py-3 pl-5 text-left text-base font-medium transition-colors duration-300 lg:text-lg",
@@ -297,7 +300,7 @@ export function ClientsVariantD({ className }: { className?: string }) {
                       />
                     )}
                     {s.label}
-                  </button>
+                  </motion.button>
                 )
               })}
             </nav>
@@ -348,10 +351,9 @@ export function ClientsVariantD({ className }: { className?: string }) {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeKey}
-                  variants={panelWrap}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, transition: { duration: 0.2, ease: BRAND_EASE } }}
                   className="absolute inset-0"
                 >
                   {logoCells.map((cell) => {

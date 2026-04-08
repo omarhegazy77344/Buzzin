@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight, Hexagon, Shield, Globe, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -9,31 +9,47 @@ import { Container } from "@/components/ui/container"
 import { HexagonPattern } from "@/components/ui/hexagon-pattern"
 import { OrbitalCarousel } from "@/components/marketing/orbital-carousel"
 import { type CarouselImage } from "@/lib/content-defaults"
+import { BRAND_EASE } from "@/lib/motion"
 
-/* ═══════════════════════════════════════
-   ANIMATION VARIANTS — reversible
-   ═══════════════════════════════════════ */
-
-const stagger = {
+const heroStagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.05 } },
 }
 
-const fadeUp = {
+const heroHeadline = {
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.7, ease: BRAND_EASE },
+  },
+}
+
+const heroSub = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: 0.15, ease: BRAND_EASE },
+  },
+}
+
+const heroCta = {
   hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const },
+    transition: { duration: 0.5, delay: 0.25, ease: BRAND_EASE },
   },
 }
 
-const fadeUpSoft = {
+const heroFadeUpSoft = {
   hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
+    transition: { duration: 0.6, ease: BRAND_EASE },
   },
 }
 
@@ -51,6 +67,7 @@ type Props = { images: CarouselImage[] }
 
 export function HeroVariantD({ images }: Props) {
   const sectionRef = useRef<HTMLElement>(null)
+  const reduced = useReducedMotion()
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -66,7 +83,7 @@ export function HeroVariantD({ images }: Props) {
     >
       <HexagonPattern className="text-amber-500/[0.12] dark:text-navy-300/[0.06]" />
 
-      {/* Single ambient glow */}
+      {/* Ambient glow — once:true to avoid distracting reverse flicker on a decorative bg layer */}
       <motion.div
         className="pointer-events-none absolute -left-[8%] -top-[8%] h-[60vh] w-[60vh] rounded-full"
         style={{
@@ -76,24 +93,21 @@ export function HeroVariantD({ images }: Props) {
       />
 
       <Container className="relative pt-28 pb-12 lg:pt-36 lg:pb-20">
-        {/* ── Primary message ── */}
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
-            variants={stagger}
+            variants={heroStagger}
             initial="hidden"
-            animate="visible"
+            {...(reduced ? { animate: "visible" } : { whileInView: "visible", viewport: { once: false, amount: 0.2 } })}
           >
-            {/* Overline */}
-            <motion.div variants={fadeUp} className="mb-5 flex items-center justify-center gap-2">
+            <motion.div variants={heroHeadline} className="mb-5 flex items-center justify-center gap-2">
               <Hexagon className="h-3.5 w-3.5 text-amber-500" />
               <span className="font-heading text-overline font-semibold uppercase tracking-[0.14em] text-[var(--text-brand)]">
                 9 Modules. One Intelligent Core.
               </span>
             </motion.div>
 
-            {/* Headline */}
             <motion.h1
-              variants={fadeUp}
+              variants={heroHeadline}
               className="font-display text-display-md leading-[1.06] md:text-display-lg lg:text-[4.5rem] lg:leading-[1.04] text-[var(--text-primary)]"
             >
               The operating system for{" "}
@@ -103,15 +117,14 @@ export function HeroVariantD({ images }: Props) {
                   className="absolute bottom-1 left-0 z-0 h-3 w-full origin-left bg-amber-500/15"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{ duration: 0.8, delay: 0.6, ease: BRAND_EASE }}
                   aria-hidden="true"
                 />
               </span>
             </motion.h1>
 
-            {/* Sub-line */}
             <motion.p
-              variants={fadeUp}
+              variants={heroSub}
               className="mx-auto mt-6 max-w-2xl text-body-md text-[var(--text-secondary)] md:text-body-lg"
             >
               Every visitor, contractor, patrol round, and queue event{"\u00a0"}{"\u2014"}{" "}
@@ -119,9 +132,8 @@ export function HeroVariantD({ images }: Props) {
               Built for the enterprises that run UAE{"\u00a0"}&{"\u00a0"}GCC.
             </motion.p>
 
-            {/* CTA pair */}
             <motion.div
-              variants={fadeUp}
+              variants={heroCta}
               className="mt-8 flex flex-wrap items-center justify-center gap-4"
             >
               <Button size="lg" asChild>
@@ -137,34 +149,33 @@ export function HeroVariantD({ images }: Props) {
           </motion.div>
         </div>
 
-        {/* ── Orbital carousel — reversible on scroll ── */}
         <motion.div
           className="mt-10 flex items-center justify-center lg:mt-14"
           style={{ y: carouselY }}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.15 }}
           variants={{
             hidden: { opacity: 0, scale: 0.92 },
             visible: {
               opacity: 1,
               scale: 1,
-              transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] as const },
+              transition: { duration: 0.8, ease: BRAND_EASE },
             },
           }}
         >
           <OrbitalCarousel images={images} />
         </motion.div>
 
-        {/* ── Enterprise confidence strip — reversible on scroll ── */}
         <motion.div
-          variants={stagger}
+          variants={heroStagger}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
           className="mx-auto mt-12 max-w-3xl lg:mt-16"
         >
-          {/* Proof chips */}
           <motion.div
-            variants={fadeUpSoft}
+            variants={heroFadeUpSoft}
             className="flex flex-wrap items-center justify-center gap-3"
           >
             {proofChips.map(({ icon: Icon, text }) => (
@@ -178,9 +189,8 @@ export function HeroVariantD({ images }: Props) {
             ))}
           </motion.div>
 
-          {/* Trust tagline — reversible on scroll */}
           <motion.p
-            variants={fadeUpSoft}
+            variants={heroFadeUpSoft}
             className="mt-5 text-center text-body-xs text-[var(--text-muted)]"
           >
             Trusted by Atlantis, Aldar, Taaleem, Fairmont, DAMAC, Kempinski, and 300+ organisations

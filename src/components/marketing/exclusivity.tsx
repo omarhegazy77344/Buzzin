@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Container } from "@/components/ui/container"
 import { HexagonPattern } from "@/components/ui/hexagon-pattern"
 import { defaultExclusivity } from "@/lib/content-defaults"
+import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
 type ExclusivityProps = {
   content?: typeof defaultExclusivity
@@ -19,8 +20,9 @@ export function Exclusivity({ content }: ExclusivityProps) {
       <Container className="relative text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={VIEWPORT}
+          transition={{ duration: 0.7, ease: BRAND_EASE }}
           className="mx-auto max-w-4xl"
         >
           <p className="mb-4 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-amber-400">
@@ -43,8 +45,9 @@ export function Exclusivity({ content }: ExclusivityProps) {
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={VIEWPORT}
+            transition={{ duration: 0.5, delay: 0.3, ease: BRAND_EASE }}
             className="mx-auto mt-12 max-w-md rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
           >
             <p className="font-heading text-display-md font-bold text-amber-400">{d.growthMultiplier}</p>

@@ -5,6 +5,7 @@ import { X, Check } from "lucide-react"
 import { Section, SectionHeader } from "@/components/ui/section"
 import { defaultBeforeAfterRows } from "@/lib/content-defaults"
 import { cn } from "@/lib/cn"
+import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
 type BeforeAfterProps = {
   rows?: typeof defaultBeforeAfterRows
@@ -38,8 +39,9 @@ export function BeforeAfterBlock({
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: i * 0.06 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={VIEWPORT}
+            transition={{ duration: 0.4, delay: i * 0.06, ease: BRAND_EASE }}
             className="grid gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 md:grid-cols-2 md:gap-6 md:p-6"
           >
             <div className="flex gap-3">

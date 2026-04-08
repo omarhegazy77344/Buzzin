@@ -24,11 +24,11 @@ export function BrandLogo({
 
   useEffect(() => setMounted(true), [])
 
-  if (!mounted) {
-    return <div style={{ width, height }} className={className} />
-  }
-
-  const src = resolvedTheme === "dark" ? darkSrc : lightSrc
+  const src = mounted
+    ? resolvedTheme === "dark"
+      ? darkSrc
+      : lightSrc
+    : darkSrc
 
   return (
     <Image
@@ -38,6 +38,7 @@ export function BrandLogo({
       height={height}
       className={className}
       priority
+      suppressHydrationWarning
     />
   )
 }

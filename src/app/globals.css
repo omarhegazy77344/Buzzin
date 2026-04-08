@@ -163,22 +163,21 @@ body {
 /* Platform hive — larger tiles for text content (main module cells) */
 .hex-grid-platform {
   --hex-s: 72px;
-  --platform-offset-x: 0px;
 }
 @media (min-width: 480px) {
-  .hex-grid-platform { --hex-s: 86px; --platform-offset-x: -24px; }
+  .hex-grid-platform { --hex-s: 86px; }
 }
 @media (min-width: 640px) {
-  .hex-grid-platform { --hex-s: 100px; --platform-offset-x: -42px; }
+  .hex-grid-platform { --hex-s: 100px; }
 }
 @media (min-width: 768px) {
-  .hex-grid-platform { --hex-s: 112px; --platform-offset-x: -60px; }
+  .hex-grid-platform { --hex-s: 112px; }
 }
 @media (min-width: 1024px) {
-  .hex-grid-platform { --hex-s: 128px; --platform-offset-x: -78px; }
+  .hex-grid-platform { --hex-s: 128px; }
 }
 @media (min-width: 1280px) {
-  .hex-grid-platform { --hex-s: 142px; --platform-offset-x: -90px; }
+  .hex-grid-platform { --hex-s: 142px; }
 }
 
 .hex-cell-module {
