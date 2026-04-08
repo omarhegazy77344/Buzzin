@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   },
   description:
     "Trusted by Atlantis, Aldar & Taaleem. 20M+ secure interactions processed. Visitor management, queue, patrolling & 9 integrated modules.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
