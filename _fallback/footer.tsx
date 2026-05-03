@@ -62,7 +62,7 @@ export function Footer({ content }: FooterProps) {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
-              <Image src="/images/logo-dark.png" alt="Buzzin" width={120} height={40} priority />
+              <Image src="/images/logo-dark.png" alt="Buzzin" width={120} height={40} />
             </Link>
             <p className="mt-4 max-w-xs text-body-sm text-gray-400">{d.tagline}</p>
             <div className="mt-6 space-y-2 text-body-sm text-gray-400">
@@ -86,7 +86,6 @@ export function Footer({ content }: FooterProps) {
           <div className="flex gap-6 text-body-xs text-gray-500">
             <Link href="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-gray-300">Terms</Link>
-            <Link href="/cookies" className="hover:text-gray-300">Cookies</Link>
           </div>
         </div>
       </Container>
