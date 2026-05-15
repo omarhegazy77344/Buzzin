@@ -13,7 +13,6 @@ import { LocaleSwitcher } from "@/components/ui/locale-switcher"
 import { defaultModules } from "@/lib/content-defaults"
 
 const navLinks = [
-  { label: "Industries", href: "/industries" },
   { label: "Why Buzzin", href: "/why-buzzin" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -21,12 +20,24 @@ const navLinks = [
 
 const liveModules = defaultModules.filter((m) => m.status === "live" || m.status === "new")
 
+const industryItems = [
+  { name: "Hospitality", desc: "Hotels & resorts", href: "/industries/hospitality" },
+  { name: "Residential Real Estate", desc: "Communities & towers", href: "/industries/residential-real-estate" },
+  { name: "Education", desc: "Schools & campuses", href: "/industries/education" },
+  { name: "Corporate", desc: "Offices & HQs", href: "/industries/corporate" },
+  { name: "Financial Districts", desc: "Banks & exchanges", href: "/industries/financial-districts" },
+  { name: "Government", desc: "Public sector", href: "/industries/government" },
+]
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [platformOpen, setPlatformOpen] = useState(false)
+  const [industryOpen, setIndustryOpen] = useState(false)
   const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false)
+  const [mobileIndustryOpen, setMobileIndustryOpen] = useState(false)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const closeIndustryTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -40,6 +51,13 @@ export function Navbar() {
   }
   const closeDropdown = () => {
     closeTimer.current = setTimeout(() => setPlatformOpen(false), 150)
+  }
+  const openIndustryDropdown = () => {
+    if (closeIndustryTimer.current) clearTimeout(closeIndustryTimer.current)
+    setIndustryOpen(true)
+  }
+  const closeIndustryDropdown = () => {
+    closeIndustryTimer.current = setTimeout(() => setIndustryOpen(false), 150)
   }
 
   return (
@@ -104,6 +122,58 @@ export function Navbar() {
                       className="flex items-center gap-1 rounded-lg px-3 py-2 font-heading text-[12px] font-medium text-[var(--text-brand)] transition-colors hover:bg-amber-500/5"
                     >
                       View all modules &rarr;
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Industries dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={openIndustryDropdown}
+            onMouseLeave={closeIndustryDropdown}
+          >
+            <button
+              type="button"
+              className="flex items-center gap-1 rounded-md px-3 py-2 font-heading text-body-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+            >
+              Industries
+              <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", industryOpen && "rotate-180")} />
+            </button>
+
+            <AnimatePresence>
+              {industryOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute left-0 top-full mt-1 w-64 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-2 shadow-xl"
+                >
+                  {industryItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIndustryOpen(false)}
+                      className="flex flex-col rounded-lg px-3 py-2.5 transition-colors hover:bg-[var(--bg-surface-raised)]"
+                    >
+                      <span className="font-heading text-[13px] font-semibold text-[var(--text-primary)]">
+                        {item.name}
+                      </span>
+                      <span className="font-body text-[11px] text-[var(--text-muted)]">
+                        {item.desc}
+                      </span>
+                    </Link>
+                  ))}
+                  <div className="mt-1 border-t border-[var(--border-subtle)] pt-1">
+                    <Link
+                      href="/industries"
+                      onClick={() => setIndustryOpen(false)}
+                      className="flex items-center gap-1 rounded-lg px-3 py-2 font-heading text-[12px] font-medium text-[var(--text-brand)] transition-colors hover:bg-amber-500/5"
+                    >
+                      View all industries &rarr;
                     </Link>
                   </div>
                 </motion.div>
@@ -185,6 +255,42 @@ export function Navbar() {
                   className="rounded-lg px-4 py-2 font-heading text-[13px] font-medium text-[var(--text-brand)]"
                 >
                   View all modules &rarr;
+                </Link>
+              </div>
+            )}
+
+            {/* Industries accordion */}
+            <button
+              type="button"
+              onClick={() => setMobileIndustryOpen(!mobileIndustryOpen)}
+              className="flex items-center justify-between rounded-lg px-4 py-3 font-heading text-heading-sm font-semibold text-[var(--text-primary)] hover:bg-[var(--bg-surface-raised)]"
+            >
+              Industries
+              <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", mobileIndustryOpen && "rotate-180")} />
+            </button>
+            {mobileIndustryOpen && (
+              <div className="ml-4 flex flex-col gap-0.5">
+                {industryItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-lg px-4 py-2.5 transition-colors hover:bg-[var(--bg-surface-raised)]"
+                  >
+                    <span className="font-heading text-[14px] font-medium text-[var(--text-primary)]">
+                      {item.name}
+                    </span>
+                    <span className="block font-body text-[11px] text-[var(--text-muted)]">
+                      {item.desc}
+                    </span>
+                  </Link>
+                ))}
+                <Link
+                  href="/industries"
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-lg px-4 py-2 font-heading text-[13px] font-medium text-[var(--text-brand)]"
+                >
+                  View all industries &rarr;
                 </Link>
               </div>
             )}
