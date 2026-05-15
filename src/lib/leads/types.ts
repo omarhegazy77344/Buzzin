@@ -5,6 +5,7 @@ export type LeadSubmission = {
   email?: string
   phone?: string
   company?: string
+  jobTitle?: string
   industry?: string
   premisesDescription?: string
   locale: "en" | "ar"
