@@ -30,7 +30,7 @@ const industries = [
 ]
 
 const inputBase =
-  "w-full rounded-lg border border-[var(--border-default)] bg-white px-4 py-3 font-body text-[14px] text-[var(--text-primary)] placeholder-[var(--text-muted)] outline-none transition-colors focus:border-[#F5A623] focus:ring-2 focus:ring-[#F5A623]/20"
+  "w-full rounded-lg border border-[var(--border-default)] bg-white px-4 py-3 font-body text-[14px] text-[var(--text-primary)] placeholder-[var(--text-muted)] outline-none transition-all duration-200 focus:border-[#F5A623] focus:ring-2 focus:ring-[#F5A623]/20"
 
 const errorText = "mt-1 font-body text-[12px] text-red-500"
 
@@ -96,9 +96,14 @@ export function BookDemoForm() {
   /* ── Form ── */
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <p className="mb-6 font-body text-[14px] text-[var(--text-tertiary)]">
-        Fill in the form and we will be in touch shortly.
-      </p>
+      <div className="mb-6 border-b border-[#E8EDF5] pb-6">
+        <h2 className="font-display text-[26px] font-extrabold leading-tight text-[#1E2547]">
+          Tell us about your premises
+        </h2>
+        <p className="mt-2 font-body text-[15px] leading-relaxed text-[var(--text-tertiary)]">
+          We will match you with the right specialist and confirm a time within four business hours.
+        </p>
+      </div>
 
       {/* Full Name */}
       <div className="mb-4">
