@@ -184,8 +184,8 @@ export const defaultModules: PlatformModule[] = [
       "Emergency contact escalation when guardians are unreachable",
       "Parent-managed authorisation list via a secure portal",
     ],
-    status: "comingSoon",
-    badge: null,
+    status: "live",
+    badge: "greenDot",
   },
 ]
 
