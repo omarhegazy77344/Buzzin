@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useMemo, useState, useCallback, useRef } from "react"
+import Link from "next/link"
 import { Star, X, ChevronRight, Clock } from "lucide-react"
 import { cn } from "@/lib/cn"
 import { defaultModules, type PlatformModule } from "@/lib/content-defaults"
@@ -433,7 +434,7 @@ function ExpandedHex({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.45, duration: 0.25 }}
-                className="mt-3 sm:mt-4"
+                className="mt-3 flex flex-wrap items-center gap-2 sm:mt-4"
               >
                 <a
                   href="/book-demo"
@@ -442,6 +443,13 @@ function ExpandedHex({
                   Book a Demo
                   <ChevronRight className="h-3 w-3" />
                 </a>
+                <Link
+                  href={`/platform/${mod.slug}`}
+                  className="inline-flex items-center gap-1.5 rounded-md border border-[var(--border-brand)] px-3 py-1.5 font-heading text-[0.6rem] font-semibold text-[var(--text-brand)] transition-transform hover:scale-[1.02] sm:px-4 sm:py-2 sm:text-xs"
+                >
+                  More Details
+                  <ChevronRight className="h-3 w-3" />
+                </Link>
               </motion.div>
             )}
 

@@ -1,32 +1,46 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, Phone, ChevronDown } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
 import { cn } from "@/lib/cn"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { BrandLogo } from "@/components/ui/brand-logo"
 import { LocaleSwitcher } from "@/components/ui/locale-switcher"
+import { defaultModules } from "@/lib/content-defaults"
 
 const navLinks = [
-  { label: "Platform", href: "/platform" },
   { label: "Industries", href: "/industries" },
   { label: "Why Buzzin", href: "/why-buzzin" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ]
 
+const liveModules = defaultModules.filter((m) => m.status === "live" || m.status === "new")
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [platformOpen, setPlatformOpen] = useState(false)
+  const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  const openDropdown = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setPlatformOpen(true)
+  }
+  const closeDropdown = () => {
+    closeTimer.current = setTimeout(() => setPlatformOpen(false), 150)
+  }
 
   return (
     <header
@@ -45,6 +59,58 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 lg:flex">
+          {/* Platform dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={openDropdown}
+            onMouseLeave={closeDropdown}
+          >
+            <button
+              type="button"
+              className="flex items-center gap-1 rounded-md px-3 py-2 font-heading text-body-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+            >
+              Platform
+              <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", platformOpen && "rotate-180")} />
+            </button>
+
+            <AnimatePresence>
+              {platformOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute left-0 top-full mt-1 w-64 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-2 shadow-xl"
+                >
+                  {liveModules.map((mod) => (
+                    <Link
+                      key={mod.slug}
+                      href={`/platform/${mod.slug}`}
+                      onClick={() => setPlatformOpen(false)}
+                      className="flex flex-col rounded-lg px-3 py-2.5 transition-colors hover:bg-[var(--bg-surface-raised)]"
+                    >
+                      <span className="font-heading text-[13px] font-semibold text-[var(--text-primary)]">
+                        {mod.name}
+                      </span>
+                      <span className="font-body text-[11px] text-[var(--text-muted)]">
+                        {mod.shortDesc}
+                      </span>
+                    </Link>
+                  ))}
+                  <div className="mt-1 border-t border-[var(--border-subtle)] pt-1">
+                    <Link
+                      href="/platform"
+                      onClick={() => setPlatformOpen(false)}
+                      className="flex items-center gap-1 rounded-lg px-3 py-2 font-heading text-[12px] font-medium text-[var(--text-brand)] transition-colors hover:bg-amber-500/5"
+                    >
+                      View all modules &rarr;
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -85,8 +151,44 @@ export function Navbar() {
 
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-14 z-40 bg-[var(--bg-page)] lg:hidden">
-          <Container className="flex flex-col gap-2 pt-6">
+        <div className="fixed inset-0 top-14 z-40 overflow-y-auto bg-[var(--bg-page)] lg:hidden">
+          <Container className="flex flex-col gap-2 pt-6 pb-8">
+            {/* Platform accordion */}
+            <button
+              type="button"
+              onClick={() => setMobilePlatformOpen(!mobilePlatformOpen)}
+              className="flex items-center justify-between rounded-lg px-4 py-3 font-heading text-heading-sm font-semibold text-[var(--text-primary)] hover:bg-[var(--bg-surface-raised)]"
+            >
+              Platform
+              <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", mobilePlatformOpen && "rotate-180")} />
+            </button>
+            {mobilePlatformOpen && (
+              <div className="ml-4 flex flex-col gap-0.5">
+                {liveModules.map((mod) => (
+                  <Link
+                    key={mod.slug}
+                    href={`/platform/${mod.slug}`}
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-lg px-4 py-2.5 transition-colors hover:bg-[var(--bg-surface-raised)]"
+                  >
+                    <span className="font-heading text-[14px] font-medium text-[var(--text-primary)]">
+                      {mod.name}
+                    </span>
+                    <span className="block font-body text-[11px] text-[var(--text-muted)]">
+                      {mod.shortDesc}
+                    </span>
+                  </Link>
+                ))}
+                <Link
+                  href="/platform"
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-lg px-4 py-2 font-heading text-[13px] font-medium text-[var(--text-brand)]"
+                >
+                  View all modules &rarr;
+                </Link>
+              </div>
+            )}
+
             {navLinks.map((link) => (
               <Link
                 key={link.href}
