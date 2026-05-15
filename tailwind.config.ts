@@ -109,11 +109,16 @@ const config: Config = {
           "0%": { transform: "scale(1)", opacity: "0.6" },
           "100%": { transform: "scale(1.15)", opacity: "0" },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-6px)" },
+        },
       },
       animation: {
         "fade-in-up": "fade-in-up 0.6s var(--ease-smooth) both",
         "marquee": "marquee var(--marquee-duration, 30s) linear infinite",
         "pulse-ring": "pulse-ring 2.5s ease-out infinite",
+        "float": "float 3.5s ease-in-out infinite",
       },
     },
   },
