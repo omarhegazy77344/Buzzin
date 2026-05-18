@@ -9,12 +9,16 @@ import { HexagonPattern } from "@/components/ui/hexagon-pattern"
 import { defaultCtaBanner } from "@/lib/content-defaults"
 import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
+type CtaBannerContent = typeof defaultCtaBanner & {
+  phoneCalloutPrefix?: string
+}
+
 type CtaBannerProps = {
-  content?: typeof defaultCtaBanner
+  content?: CtaBannerContent
 }
 
 export function CtaBanner({ content }: CtaBannerProps) {
-  const d = content || defaultCtaBanner
+  const d: CtaBannerContent = content ?? defaultCtaBanner
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-amber-500 to-amber-600 py-20 md:py-24">
@@ -51,17 +55,35 @@ export function CtaBanner({ content }: CtaBannerProps) {
             </Button>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={VIEWPORT}
-            transition={{ duration: 0.5, delay: 0.35, ease: BRAND_EASE }}
-            className="mt-6 font-heading text-body-md font-medium text-white/70"
-          >
-            <a href={`tel:${d.phone.replace(/\s/g, "")}`} className="underline underline-offset-4 hover:text-white">
-              {d.phone}
-            </a>
-          </motion.p>
+          {d.phoneCalloutPrefix ? (
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={VIEWPORT}
+              transition={{ duration: 0.5, delay: 0.35, ease: BRAND_EASE }}
+              className="mt-6 text-center font-body text-[13px] text-[var(--text-primary)]/70"
+            >
+              {d.phoneCalloutPrefix}{" "}
+              <a
+                href={`tel:${d.phone.replace(/\s/g, "")}`}
+                className="font-heading text-[13px] font-bold text-[var(--text-primary)] hover:underline"
+              >
+                {d.phone}
+              </a>
+            </motion.p>
+          ) : (
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={VIEWPORT}
+              transition={{ duration: 0.5, delay: 0.35, ease: BRAND_EASE }}
+              className="mt-6 font-heading text-body-md font-medium text-white/70"
+            >
+              <a href={`tel:${d.phone.replace(/\s/g, "")}`} className="underline underline-offset-4 hover:text-white">
+                {d.phone}
+              </a>
+            </motion.p>
+          )}
         </motion.div>
       </Container>
     </section>
