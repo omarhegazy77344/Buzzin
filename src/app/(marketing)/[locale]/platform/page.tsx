@@ -16,6 +16,7 @@ import { defaultModules, type PlatformModule } from "@/lib/content-defaults"
 import {
   SectionReveal, StaggerGrid, StaggerItem,
 } from "@/components/marketing/hospitality-layout"
+import { PlatformHero } from "@/components/marketing/platform-hero"
 
 export const dynamic = "force-static"
 
@@ -31,12 +32,6 @@ export const metadata: Metadata = {
 }
 
 /* ─── Data ─── */
-
-const statChips = [
-  "9 Modules \u2014 One Platform",
-  "20M+ Interactions Processed",
-  "300+ Organisations",
-]
 
 const platformPageModules: PlatformModule[] = [
   ...defaultModules,
@@ -216,47 +211,7 @@ export default function PlatformPage() {
 
       <main>
         {/* ━━━ SECTION 1 — HERO ━━━ */}
-        <section className="bg-[var(--bg-page)] pt-28 pb-16 md:pt-36 md:pb-20">
-          <Container>
-            <div className="mx-auto max-w-[760px] text-center">
-              <SectionReveal>
-                <nav className="mb-5 font-body text-[12px] text-[var(--text-muted)]">
-                  <Link href="/en" className="hover:text-[var(--text-secondary)]">Home</Link>
-                  <span className="mx-1.5">/</span>
-                  <span>Platform</span>
-                </nav>
-              </SectionReveal>
-
-              <SectionReveal>
-                <p className="mb-5 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  &mdash; The Platform
-                </p>
-              </SectionReveal>
-
-              <SectionReveal>
-                <h1 className="mb-5 font-display text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)] md:text-[4rem]">
-                  One platform. Nine integrated modules. Zero&nbsp;silos.
-                </h1>
-              </SectionReveal>
-
-              <SectionReveal>
-                <p className="mx-auto mb-8 max-w-[600px] font-body text-[18px] font-light leading-[1.75] text-[var(--text-secondary)]">
-                  Every module in the Buzzin platform shares the same data, the same dashboard, and the same audit trail. When a visitor arrives, the queue system knows. When a permit expires, the gate knows. When a child is collected, the safeguarding log knows. Everything connected. Nothing missed.
-                </p>
-              </SectionReveal>
-
-              <StaggerGrid className="flex flex-wrap justify-center gap-4" interval={0.1}>
-                {statChips.map((chip) => (
-                  <StaggerItem key={chip}>
-                    <span className="inline-flex items-center rounded-full border border-amber-500/20 bg-amber-500/[0.08] px-5 py-2.5 font-heading text-[12px] font-semibold text-amber-700">
-                      {chip}
-                    </span>
-                  </StaggerItem>
-                ))}
-              </StaggerGrid>
-            </div>
-          </Container>
-        </section>
+        <PlatformHero />
 
         {/* ━━━ SECTION 2 — PLATFORM HIVE ━━━ */}
         <PlatformOverview modules={platformPageModules} />

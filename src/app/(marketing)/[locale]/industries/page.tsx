@@ -11,7 +11,7 @@ import { HexagonPattern } from "@/components/ui/hexagon-pattern"
 import { StatsBar } from "@/components/marketing/stats-bar"
 import { CtaBanner } from "@/components/marketing/cta-banner"
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/marketing/hospitality-layout"
-import { IndustryChips } from "@/components/marketing/industry-chips"
+import { IndustriesHero } from "@/components/marketing/industries-hero"
 
 export const dynamic = "force-static"
 
@@ -100,39 +100,7 @@ export default function IndustriesPage() {
 
       <main>
         {/* ━━━ SECTION 1 — HERO ━━━ */}
-        <section className="bg-[var(--bg-page)] pt-28 pb-16 md:pt-36 md:pb-20">
-          <Container>
-            <div className="mx-auto max-w-[760px] text-center">
-              <SectionReveal>
-                <nav className="mb-5 font-body text-[12px] text-[var(--text-muted)]">
-                  <Link href="/en" className="hover:text-[var(--text-secondary)]">Home</Link>
-                  <span className="mx-1.5">/</span>
-                  <span>Industries</span>
-                </nav>
-              </SectionReveal>
-
-              <SectionReveal>
-                <p className="mb-5 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  &mdash; Industries
-                </p>
-              </SectionReveal>
-
-              <SectionReveal>
-                <h1 className="mb-5 font-display text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)] md:text-[4rem]">
-                  Built around how your industry actually operates.
-                </h1>
-              </SectionReveal>
-
-              <SectionReveal>
-                <p className="mx-auto mb-8 max-w-[620px] font-body text-[18px] font-light leading-[1.75] text-[var(--text-secondary)]">
-                  Buzzin is not a generic premises management system deployed the same way for every client. Each industry has different compliance requirements, different buyer pain points, and different operational workflows. The platform is configured to match all of them.
-                </p>
-              </SectionReveal>
-
-              <IndustryChips />
-            </div>
-          </Container>
-        </section>
+        <IndustriesHero />
 
         {/* ━━━ SECTION 2 — STATS BAR ━━━ */}
         <StatsBar />
