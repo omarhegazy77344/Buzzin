@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import {
-  Users, ClipboardCheck, CalendarCheck, ShieldCheck, UserCheck,
+  Users, ClipboardCheck, CalendarCheck, UserCheck, ShieldCheck,
   XCircle, ArrowRight, CheckCircle, AlertCircle,
 } from "lucide-react"
 import { Navbar } from "@/components/marketing/navbar"
@@ -12,9 +12,9 @@ import { HexagonPattern } from "@/components/ui/hexagon-pattern"
 import { Button } from "@/components/ui/button"
 import { SecurityBar } from "@/components/marketing/security-bar"
 import { CtaBanner } from "@/components/marketing/cta-banner"
-import { EducationComplianceStrip } from "@/components/marketing/education-compliance-strip"
+import { EducationComplianceBanner } from "@/components/marketing/education-compliance-banner"
 import {
-  HospitalityHero, HeroBlock,
+  HospitalityHero as Hero, HeroBlock,
   SectionReveal, StaggerGrid, StaggerItem,
 } from "@/components/marketing/hospitality-layout"
 
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 /* ─── Data ─── */
 
-const painPoints = [
+const consequences = [
   "KHDA inspection failure — paper visitor log is no longer acceptable evidence",
   "Unauthorised person collects a child — no verification system, no photo ID check",
   "Contractor on campus with no valid permit — no RERA-equivalent audit trail",
@@ -42,90 +42,30 @@ const painPoints = [
 ]
 
 const safeguardingFeatures = [
-  {
-    title: "Authorised pickup verification",
-    body: "Child can only be collected by pre-approved contacts. Photo ID captured and compared at the gate.",
-  },
-  {
-    title: "Unknown person alert",
-    body: "Unregistered person attempts pickup — instant alert fires to school admin and designated staff.",
-  },
-  {
-    title: "KHDA audit export",
-    body: "Complete safeguarding log exportable for KHDA inspection — tamper-proof, timestamped, one click.",
-  },
-  {
-    title: "Parent mobile management",
-    body: "Parents manage authorised pickup contacts from their phone — no admin overhead for the school office.",
-  },
-  {
-    title: "Real-time safeguarding alerts",
-    body: "School admin notified instantly of any safeguarding event anywhere on the campus.",
-  },
-  {
-    title: "Compliance dashboard",
-    body: "Track safeguarding events, view audit readiness score, export documentation for inspectors.",
-  },
-]
-
-const timelineRows = [
-  {
-    date: "Dec 2025",
-    title: "Federal Decree-Law 26/2025 enacted",
-    body: "UAE Child Digital Safety Law officially passed",
-  },
-  {
-    date: "Jan 2026",
-    title: "KHDA awareness campaign begins",
-    body: "Schools formally notified of new safeguarding record requirements",
-  },
-  {
-    date: "Mid 2026",
-    title: "Inspection criteria updated",
-    body: "Digital safeguarding logs become part of KHDA inspection checklist",
-  },
-  {
-    date: "Jan 2027",
-    title: "Full compliance required",
-    body: "All UAE schools must have auditable digital safeguarding records",
-  },
+  { title: "Authorised pickup verification", body: "Child can only be collected by pre-approved contacts. Photo ID captured and compared at the gate." },
+  { title: "Unknown person alert", body: "Unregistered person attempts pickup — instant alert fires to school admin and designated staff." },
+  { title: "KHDA audit export", body: "Complete safeguarding log exportable for KHDA inspection — tamper-proof, timestamped, one click." },
+  { title: "Parent mobile management", body: "Parents manage authorised pickup contacts from their phone — no admin overhead for the school office." },
+  { title: "Real-time safeguarding alerts", body: "School admin notified instantly of any safeguarding event anywhere on the campus." },
+  { title: "Compliance dashboard", body: "Track safeguarding events, view audit readiness score, export documentation for inspectors." },
 ]
 
 const modules = [
-  {
-    icon: ShieldCheck,
-    name: "Safeguarding",
-    badge: "Live",
-    body: "Authorised pickup verification. KHDA audit export. UAE Child Safety Law 2026 compliant. Built for international schools.",
-    href: "/en/platform/safeguarding",
-  },
-  {
-    icon: Users,
-    name: "Visitor Management",
-    body: "Emirates ID and UAE Pass scanning at reception. Every visitor logged, verified, and host notified. Paper logbook replaced.",
-    href: "/en/platform/visitor-management-system",
-  },
-  {
-    icon: ClipboardCheck,
-    name: "Work Permit System",
-    body: "Every contractor on campus holds a verified, active digital permit. RERA-equivalent audit trail for school site works.",
-    href: "/en/platform/work-permit-system",
-  },
-  {
-    icon: UserCheck,
-    name: "Attendance Management",
-    body: "NFC card or phone tap for staff. Real-time punctuality alerts. Late arrivals flagged to management automatically.",
-    href: "/en/platform/attendance-management",
-  },
-  {
-    icon: CalendarCheck,
-    name: "Event Management",
-    body: "Sports days, parent evenings, graduation ceremonies. Unique QR per attendee. Location-controlled access. Branded invitations.",
-    href: "/en/platform/event-management",
-  },
+  { icon: ShieldCheck, name: "Safeguarding", badge: "Live", badgeColor: "emerald", body: "Authorised pickup verification. KHDA audit export. UAE Child Safety Law 2026 compliant. Built for international schools.", href: "/en/platform/safeguarding" },
+  { icon: Users, name: "Visitor Management", body: "Emirates ID and UAE Pass scanning at reception. Every visitor logged, verified, and host notified. Paper logbook replaced.", href: "/en/platform/visitor-management-system" },
+  { icon: ClipboardCheck, name: "Work Permit System", body: "Every contractor on campus holds a verified, active digital permit. RERA-equivalent audit trail for school site works.", href: "/en/platform/work-permit-system" },
+  { icon: UserCheck, name: "Attendance Management", body: "NFC card or phone tap for staff. Real-time punctuality alerts. Late arrivals flagged to management automatically.", href: "/en/platform/attendance-management" },
+  { icon: CalendarCheck, name: "Event Management", body: "Sports days, parent evenings, graduation ceremonies. Unique QR per attendee. Location-controlled access. Branded invitations.", href: "/en/platform/event-management" },
 ]
 
-const groupBenefits = [
+const timeline = [
+  { date: "Dec 2025", title: "Federal Decree-Law 26/2025 enacted", body: "UAE Child Digital Safety Law officially passed" },
+  { date: "Jan 2026", title: "KHDA awareness campaign begins", body: "Schools formally notified of new safeguarding record requirements" },
+  { date: "Mid 2026", title: "Inspection criteria updated", body: "Digital safeguarding logs become part of KHDA inspection checklist" },
+  { date: "Jan 2027", title: "Full compliance required", body: "All UAE schools must have auditable digital safeguarding records" },
+]
+
+const groupBullets = [
   "Group admin dashboard — see all schools from one login with drill-down to individual campus level",
   "School-level autonomy — each campus manages their own operations within group-defined policies",
   "Cross-campus reporting — compare visitor volumes, compliance scores, and safeguarding events by school",
@@ -133,46 +73,16 @@ const groupBenefits = [
 ]
 
 const beforeAfter = [
-  {
-    before: "Paper visitor logbook at reception — KHDA inspector asks for records, you hand them a notebook",
-    after: "Digital visitor log — tamper-proof, timestamped, exportable in 30 seconds for any KHDA inspection",
-  },
-  {
-    before: "Unknown person arrives to collect a child — receptionist has no way to verify they are authorised",
-    after: "Authorised pickup verification — photo ID checked against approved list, instant alert if person is not registered",
-  },
-  {
-    before: "Contractor on site with a WhatsApp PDF permit — no expiry check, no gate scan, no audit record",
-    after: "QR work permit scanned at school entrance — valid or denied in 2 seconds, complete contractor log always available",
-  },
-  {
-    before: "Evacuation drill — teacher counting children manually, no record of contractors or visitors on site",
-    after: "Real-time evacuation list — every child, staff member, visitor, and contractor on site, one click",
-  },
+  { before: "Paper visitor logbook at reception — KHDA inspector asks for records, you hand them a notebook", after: "Digital visitor log — tamper-proof, timestamped, exportable in 30 seconds for any KHDA inspection" },
+  { before: "Unknown person arrives to collect a child — receptionist has no way to verify they are authorised", after: "Authorised pickup verification — photo ID checked against approved list, instant alert if person is not registered" },
+  { before: "Contractor on site with a WhatsApp PDF permit — no expiry check, no gate scan, no audit record", after: "QR work permit scanned at school entrance — valid or denied in 2 seconds, complete contractor log always available" },
+  { before: "Evacuation drill — teacher counting children manually, no record of contractors or visitors on site", after: "Real-time evacuation list — every child, staff member, visitor, and contractor on site, one click" },
 ]
 
 const clients = [
-  "Taaleem",
-  "Brighton College UAE",
-  "GEMS Education",
-  "Rashid & Latifa Schools",
-  "Misk Schools KSA",
-  "Massar Sharjah",
+  "Taaleem", "Brighton College UAE", "GEMS Education",
+  "Rashid & Latifa Schools", "Misk Schools KSA", "Massar Sharjah",
   "Bloom Education Group",
-]
-
-const heroClients = [
-  "Taaleem",
-  "Brighton College UAE",
-  "GEMS Education",
-  "Rashid & Latifa Schools",
-  "Misk Schools KSA",
-]
-
-const readinessRows = [
-  "Authorised pickup verification — live",
-  "KHDA audit export — one click",
-  "Tamper-proof digital log — always on",
 ]
 
 /* ─── Page ─── */
@@ -180,6 +90,7 @@ const readinessRows = [
 export default function EducationPage() {
   return (
     <>
+      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -203,6 +114,7 @@ export default function EducationPage() {
           <HexagonPattern className="text-white/[0.04]" />
 
           <Container className="relative z-[1]">
+            {/* Breadcrumb */}
             <nav className="mb-8 font-body text-[12px] text-white/40">
               <Link href="/en" className="hover:text-white/60">Home</Link>
               <span className="mx-1.5">/</span>
@@ -211,36 +123,40 @@ export default function EducationPage() {
               <span>Education</span>
             </nav>
 
-            <HospitalityHero
+            <Hero
               left={
                 <>
+                  {/* Badges */}
                   <HeroBlock className="mb-5 flex flex-wrap gap-3">
                     <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/15 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wide text-amber-400">
                       Education &amp; Schools
                     </span>
-                    <span className="inline-flex items-center rounded-full border border-red-500/30 bg-red-500/15 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wide text-red-400">
+                    <span className="inline-flex items-center rounded-full border border-red-500/30 bg-red-500/15 px-3 py-1 font-heading text-[11px] font-semibold uppercase text-red-400">
                       UAE Child Safety Law — Jan 2027
                     </span>
                   </HeroBlock>
 
+                  {/* H1 */}
                   <HeroBlock>
                     <h1 className="font-display text-display-lg leading-[1.1] tracking-[-0.03em] text-white md:text-display-xl lg:text-display-2xl">
                       Every child.{"\n"}Known. Verified. Safe.
                     </h1>
                   </HeroBlock>
 
+                  {/* Sub */}
                   <HeroBlock className="mt-4 max-w-[480px]">
                     <p className="font-body text-[18px] font-light leading-[1.7] text-white/70">
                       UAE Federal Decree-Law No. 26/2025 requires every school to have auditable safeguarding records by January 2027. Buzzin is KHDA-ready — visitor management, authorised pickup verification, and a tamper-proof audit log built specifically for international schools.
                     </p>
                   </HeroBlock>
 
+                  {/* Trusted by */}
                   <HeroBlock className="mt-7">
                     <p className="mb-2.5 font-heading text-[10px] font-semibold uppercase tracking-wide text-amber-400/60">
                       Trusted By
                     </p>
                     <div className="flex flex-wrap gap-3">
-                      {heroClients.map((c) => (
+                      {["Taaleem", "Brighton College UAE", "GEMS Education", "Rashid & Latifa Schools", "Misk Schools KSA"].map((c) => (
                         <span
                           key={c}
                           className="rounded-full border border-white/15 bg-white/[0.08] px-3 py-1.5 font-heading text-[11px] font-semibold text-white/80 transition-colors hover:bg-white/[0.14]"
@@ -251,6 +167,7 @@ export default function EducationPage() {
                     </div>
                   </HeroBlock>
 
+                  {/* CTAs */}
                   <HeroBlock className="mt-8 flex flex-wrap gap-3">
                     <Button size="lg" asChild>
                       <Link href="/en/book-demo">Book a School Demo &rarr;</Link>
@@ -268,30 +185,23 @@ export default function EducationPage() {
                 <HeroBlock>
                   <div className="rounded-2xl border border-white/12 bg-white/[0.07] p-6">
                     <div className="mb-4 flex items-center gap-3">
-                      <AlertCircle className="h-5 w-5 shrink-0 text-red-400" strokeWidth={1.5} />
-                      <p className="font-heading text-[13px] font-bold text-red-400">COMPLIANCE DEADLINE</p>
+                      <AlertCircle className="h-5 w-5 text-red-400" strokeWidth={1.5} />
+                      <span className="font-heading text-[13px] font-bold text-red-400">Compliance Deadline</span>
                     </div>
-                    <h3 className="font-heading text-[1.5rem] font-bold tracking-[-0.02em] text-white">
-                      January 2027
-                    </h3>
+                    <h3 className="font-heading text-[1.5rem] font-bold tracking-[-0.02em] text-white">January 2027</h3>
                     <p className="mt-2 font-body text-[14px] font-light leading-[1.65] text-white/65">
                       UAE Federal Decree-Law No. 26/2025 on Child Digital Safety requires every school to maintain auditable safeguarding records. KHDA inspectors will ask for this log. A paper notebook is no longer acceptable.
                     </p>
                     <div className="my-4 h-px bg-white/10" />
-                    <StaggerGrid className="space-y-2.5" interval={0.1}>
-                      {readinessRows.map((row) => (
-                        <StaggerItem key={row}>
-                          <div className="flex items-center gap-3">
-                            <CheckCircle className="h-4 w-4 shrink-0 text-[var(--text-brand)]" strokeWidth={1.5} />
-                            <p className="font-body text-[13px] text-white/70">{row}</p>
-                          </div>
-                        </StaggerItem>
+                    <div className="space-y-2.5">
+                      {["Authorised pickup verification — live", "KHDA audit export — one click", "Tamper-proof digital log — always on"].map((r) => (
+                        <div key={r} className="flex items-center gap-3">
+                          <CheckCircle className="h-4 w-4 shrink-0 text-emerald-400" strokeWidth={1.5} />
+                          <span className="font-body text-[13px] text-white/70">{r}</span>
+                        </div>
                       ))}
-                    </StaggerGrid>
-                    <Link
-                      href="/en/book-demo"
-                      className="mt-4 block font-body text-[13px] font-semibold text-[var(--text-brand)] hover:underline"
-                    >
+                    </div>
+                    <Link href="/en/book-demo" className="mt-4 block font-body text-[13px] font-semibold text-[var(--text-brand)]">
                       Check your school&apos;s readiness &rarr;
                     </Link>
                   </div>
@@ -302,7 +212,7 @@ export default function EducationPage() {
         </section>
 
         {/* ━━━ SECTION 2 — COMPLIANCE URGENCY BANNER ━━━ */}
-        <EducationComplianceStrip />
+        <EducationComplianceBanner />
 
         {/* ━━━ SECTION 3 — THE MONDAY MORNING PROBLEM ━━━ */}
         <section className="bg-[var(--bg-canvas)] py-16 md:py-20">
@@ -337,11 +247,11 @@ export default function EducationPage() {
                   What This Puts at Risk
                 </p>
                 <StaggerGrid className="space-y-3" interval={0.1}>
-                  {painPoints.map((p) => (
-                    <StaggerItem key={p}>
+                  {consequences.map((c) => (
+                    <StaggerItem key={c}>
                       <div className="flex gap-3">
                         <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" strokeWidth={1.5} />
-                        <p className="font-body text-[14px] leading-[1.55] text-[var(--text-secondary)]">{p}</p>
+                        <p className="font-body text-[14px] leading-[1.55] text-[var(--text-secondary)]">{c}</p>
                       </div>
                     </StaggerItem>
                   ))}
@@ -363,7 +273,8 @@ export default function EducationPage() {
               </h2>
             </SectionReveal>
 
-            <div className="mt-10 grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
+            <div className="mt-10 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-start">
+              {/* Left — features */}
               <SectionReveal>
                 <p className="mb-7 max-w-[460px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
                   Buzzin&apos;s Safeguarding module is built specifically for the UAE school environment. KHDA-ready from day one. Authorised pickup verification at every gate.
@@ -390,35 +301,36 @@ export default function EducationPage() {
                 </div>
               </SectionReveal>
 
+              {/* Right — compliance timeline */}
               <SectionReveal>
                 <div className="rounded-2xl border-[1.5px] border-[rgba(245,166,35,0.25)] bg-[var(--bg-canvas)] p-7">
                   <p className="mb-4 font-heading text-[14px] font-bold uppercase tracking-wide text-[var(--text-brand)]">
                     UAE Compliance Timeline
                   </p>
+
                   <StaggerGrid className="space-y-4" interval={0.12}>
-                    {timelineRows.map((row) => (
-                      <StaggerItem key={row.date}>
+                    {timeline.map((t) => (
+                      <StaggerItem key={t.date}>
                         <div className="flex gap-4">
-                          <span className="min-w-[80px] shrink-0 rounded-lg bg-[var(--bg-proof)] px-2.5 py-1.5 text-center font-heading text-[11px] font-bold text-[var(--text-brand)]">
-                            {row.date}
+                          <span className="flex min-w-[80px] items-center justify-center rounded-lg bg-[var(--bg-proof)] px-2.5 py-1.5 font-heading text-[11px] font-bold text-[var(--text-brand)]">
+                            {t.date}
                           </span>
                           <div>
-                            <p className="font-heading text-[13px] font-semibold text-[var(--text-primary)]">{row.title}</p>
-                            <p className="mt-0.5 font-body text-[12px] leading-[1.5] text-[var(--text-muted)]">{row.body}</p>
+                            <p className="font-heading text-[13px] font-semibold text-[var(--text-primary)]">{t.title}</p>
+                            <p className="font-body text-[12px] leading-[1.5] text-[var(--text-muted)]">{t.body}</p>
                           </div>
                         </div>
                       </StaggerItem>
                     ))}
                   </StaggerGrid>
+
                   <div className="mt-5 rounded-[10px] border border-amber-500/20 bg-amber-500/[0.08] px-4 py-3.5">
                     <p className="font-body text-[13px] text-[var(--text-primary)]">
                       Buzzin is already KHDA-ready. Schools deploying now will have 12+ months of verified records before the deadline.
                     </p>
                   </div>
-                  <Link
-                    href="/en/book-demo"
-                    className="mt-4 inline-block font-body text-[12px] font-semibold text-[var(--text-brand)] hover:underline"
-                  >
+
+                  <Link href="/en/book-demo" className="mt-4 block font-body text-[13px] font-semibold text-[var(--text-brand)] hover:underline">
                     Book your school&apos;s demo now &rarr;
                   </Link>
                 </div>
@@ -443,16 +355,25 @@ export default function EducationPage() {
             </SectionReveal>
 
             <StaggerGrid className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" interval={0.1}>
-              {modules.slice(0, 3).map((m) => (
+              {modules.map((m) => (
                 <StaggerItem key={m.name}>
-                  <ModuleCard module={m} />
-                </StaggerItem>
-              ))}
-            </StaggerGrid>
-            <StaggerGrid className="mt-5 flex flex-wrap justify-center gap-5 lg:justify-center" interval={0.1}>
-              {modules.slice(3).map((m) => (
-                <StaggerItem key={m.name} className="w-full sm:w-[calc(50%-10px)] lg:max-w-[calc(33.333%-14px)]">
-                  <ModuleCard module={m} />
+                  <div className="relative rounded-[14px] border-[1.5px] border-[var(--border-default)] bg-[var(--bg-surface)] p-[22px] transition-all duration-[220ms] hover:border-[rgba(245,166,35,0.45)] hover:-translate-y-[3px] hover:shadow-md">
+                    {m.badge && (
+                      <span className={`absolute right-4 top-4 rounded-full border px-2 py-0.5 font-heading text-[8px] font-bold ${m.badgeColor === "emerald" ? "border-emerald-500/30 bg-emerald-500/15 text-emerald-600" : "border-amber-500/30 bg-amber-500/15 text-[var(--text-brand)]"}`}>
+                        {m.badge}
+                      </span>
+                    )}
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-lg bg-amber-500/10">
+                        <m.icon className="h-4 w-4 text-[var(--text-brand)]" strokeWidth={1.5} />
+                      </div>
+                      <h3 className="font-heading text-[14px] font-bold text-[var(--text-primary)]">{m.name}</h3>
+                    </div>
+                    <p className="mb-3.5 font-body text-[13px] leading-[1.55] text-[var(--text-muted)]">{m.body}</p>
+                    <Link href={m.href} className="font-body text-[12px] font-semibold text-[var(--text-brand)] hover:underline">
+                      Learn more &rarr;
+                    </Link>
+                  </div>
                 </StaggerItem>
               ))}
             </StaggerGrid>
@@ -466,38 +387,43 @@ export default function EducationPage() {
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
                 &mdash; Built for School Groups
               </p>
-              <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
+              <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 40 schools. One dashboard.
               </h2>
             </SectionReveal>
 
-            <div className="mt-10 grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+            <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+              {/* Left — group features */}
               <SectionReveal>
-                <p className="mb-6 max-w-[440px] font-body text-[16px] font-light text-[var(--text-tertiary)]">
+                <p className="mb-6 max-w-[440px] font-body text-[16px] font-light text-[var(--text-muted)]">
                   Taaleem chose Buzzin specifically because of how the platform scales across a large portfolio of schools — centralised visibility, school-level control, group-level reporting.
                 </p>
+
                 <StaggerGrid className="space-y-3.5" interval={0.1}>
-                  {groupBenefits.map((row) => (
-                    <StaggerItem key={row}>
+                  {groupBullets.map((b) => (
+                    <StaggerItem key={b}>
                       <div className="flex gap-3">
-                        <CheckCircle className="mt-[3px] h-4 w-4 shrink-0 text-[var(--text-brand)]" strokeWidth={1.5} />
-                        <p className="font-body text-[14px] leading-[1.55] text-[var(--text-secondary)]">{row}</p>
+                        <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[var(--text-brand)]" strokeWidth={1.5} />
+                        <p className="font-body text-[14px] leading-[1.55] text-[var(--text-secondary)]">{b}</p>
                       </div>
                     </StaggerItem>
                   ))}
                 </StaggerGrid>
+
                 <div className="mt-7">
                   <Button size="lg" asChild>
                     <Link href="/en/book-demo">Book a School Group Demo &rarr;</Link>
                   </Button>
                 </div>
+
                 <p className="mt-4">
-                  <Link href="/en/industries/hospitality" className="font-body text-[13px] text-[var(--text-muted)] hover:text-[var(--text-brand)] hover:underline">
+                  <Link href="/en/industries/hospitality" className="font-body text-[13px] text-[var(--text-brand)] hover:underline">
                     See our hospitality clients &rarr;
                   </Link>
                 </p>
               </SectionReveal>
 
+              {/* Right — proof card */}
               <SectionReveal>
                 <div className="relative overflow-hidden rounded-2xl bg-[var(--bg-proof)] p-7">
                   <div className="pointer-events-none absolute right-0 top-0 h-[200px] w-[200px] bg-[radial-gradient(circle,rgba(245,166,35,0.08)_0%,transparent_70%)]" />
@@ -604,14 +530,12 @@ export default function EducationPage() {
         <CtaBanner
           content={{
             headline: "Your KHDA inspection is coming. Is your school ready?",
-            subline:
-              "We will walk you through exactly how Buzzin works for your school — visitor management, safeguarding, contractor permits, and attendance in one platform.",
+            subline: "We will walk you through exactly how Buzzin works for your school — visitor management, safeguarding, contractor permits, and attendance in one platform.",
             primaryLabel: "Book a Free Demo",
-            primaryHref: "/en/book-demo",
+            primaryHref: "/book-demo",
             whatsappLabel: "Chat on WhatsApp",
-            whatsappHref:
-              "https://wa.me/97143201265?text=Hi%2C%20I%20visited%20buzzin.ae%20and%20would%20like%20to%20learn%20more%20about%20the%20platform.",
-            phone: "+971 4 3201265",
+            whatsappHref: "https://wa.me/97143201265?text=Hi%2C%20I%20visited%20buzzin.ae%20and%20would%20like%20to%20learn%20more%20about%20the%20platform.",
+            phone: "+971 4 320 1265",
             phoneCalloutPrefix: "Prefer to speak directly? Call us now:",
           }}
         />
@@ -625,29 +549,5 @@ export default function EducationPage() {
       <Footer />
       <WhatsAppFab />
     </>
-  )
-}
-
-type ModuleItem = (typeof modules)[number]
-
-function ModuleCard({ module: m }: { module: ModuleItem }) {
-  return (
-    <div className="relative h-full rounded-[14px] border-[1.5px] border-[var(--border-default)] bg-[var(--bg-surface)] p-[22px] transition-all duration-[220ms] hover:border-[rgba(245,166,35,0.45)] hover:-translate-y-[3px] hover:shadow-md">
-      {m.badge && (
-        <span className="absolute right-4 top-4 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 font-heading text-[8px] font-bold text-emerald-600">
-          {m.badge}
-        </span>
-      )}
-      <div className="mb-3 flex items-center gap-3">
-        <div className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-lg bg-amber-500/10">
-          <m.icon className="h-4 w-4 text-[var(--text-brand)]" strokeWidth={1.5} />
-        </div>
-        <h3 className="font-heading text-[14px] font-bold text-[var(--text-primary)]">{m.name}</h3>
-      </div>
-      <p className="mb-3.5 font-body text-[13px] leading-[1.55] text-[var(--text-muted)]">{m.body}</p>
-      <Link href={m.href} className="font-body text-[12px] font-semibold text-[var(--text-brand)] hover:underline">
-        Learn more &rarr;
-      </Link>
-    </div>
   )
 }
