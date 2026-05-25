@@ -147,7 +147,7 @@ export function ClientsVariantA({ className }: { className?: string }) {
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.5 }}
           className="mb-1 text-center font-heading text-overline font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]"
         >
@@ -156,7 +156,7 @@ export function ClientsVariantA({ className }: { className?: string }) {
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.5, delay: 0.05 }}
           className="mb-10 text-center text-body-sm text-[var(--text-tertiary)]"
         >
@@ -247,7 +247,7 @@ export function ClientsVariantA({ className }: { className?: string }) {
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-10 text-center text-body-xs text-[var(--text-muted)]"
         >

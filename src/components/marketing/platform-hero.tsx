@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container"
 import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
 const STATS = [
-  { num: "9", label: "Modules" },
+  { num: "10", label: "Modules" },
   { num: "20M+", label: "Interactions" },
   { num: "300+", label: "Organisations" },
 ]
@@ -59,7 +59,7 @@ export function PlatformHero() {
             viewport={VIEWPORT}
             className="mb-5 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]"
           >
-            &mdash; The Platform
+            The Platform
           </motion.p>
 
           <motion.h1
@@ -69,7 +69,7 @@ export function PlatformHero() {
             viewport={VIEWPORT}
             className="mb-5 font-display text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)] md:text-[4rem]"
           >
-            One platform. Nine integrated modules. Zero&nbsp;silos.
+            10+ modules, one shared core. Everything&nbsp;connected.
           </motion.h1>
 
           <motion.p
@@ -79,11 +79,11 @@ export function PlatformHero() {
             viewport={VIEWPORT}
             className="mx-auto mb-10 max-w-[600px] font-body text-[18px] font-light leading-[1.75] text-[var(--text-secondary)]"
           >
-            Every module in the Buzzin platform shares the same data, the same
-            dashboard, and the same audit trail. When a visitor arrives, the
-            queue system knows. When a permit expires, the gate knows. When a
-            child is collected, the safeguarding log knows. Everything
-            connected. Nothing missed.
+            Buzzin modules share one data layer, one dashboard, and one audit
+            trail. A visitor checks in and the queue updates automatically. A
+            permit lapses and the gate locks in real time. A child is collected
+            and the safeguarding log records every detail. No copy-pasting
+            between systems, no gaps.
           </motion.p>
 
           {/* Stat rail — large inline figures with dividers */}

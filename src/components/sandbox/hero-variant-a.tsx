@@ -23,7 +23,7 @@ const proofChips = [
   { icon: Building2, label: "300+ Organisations" },
   { icon: Globe, label: "UAE, KSA, Lebanon" },
   { icon: Users, label: "20M+ Secure Interactions" },
-  { icon: Shield, label: "ISO 27001 & SOC Aligned" },
+  { icon: Shield, label: "GDPR & UAE PDPL Aligned" },
 ]
 
 const trustedNames = ["Atlantis", "Aldar", "Taaleem", "Fairmont", "DAMAC", "Kempinski"]
@@ -42,7 +42,7 @@ export function HeroVariantA({ images }: Props) {
             variants={stagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="py-8 lg:py-16"
           >
             {/* Authority overline */}
@@ -119,7 +119,7 @@ export function HeroVariantA({ images }: Props) {
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] as const }}
             className="flex items-center justify-center"
           >

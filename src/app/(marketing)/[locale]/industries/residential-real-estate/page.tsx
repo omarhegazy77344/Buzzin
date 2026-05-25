@@ -23,7 +23,7 @@ export const dynamic = "force-static"
 export const metadata: Metadata = {
   title: "Residential Community Management Software UAE | Buzzin — Aldar & Asteco Partner",
   description:
-    "Premises intelligence platform for UAE residential communities. Visitor management, contractor permits, queue management, and patrolling — one dashboard across your entire portfolio. Exclusive partner to Aldar Properties and Asteco.",
+    "Community management platform for UAE residential properties. Visitor management, contractor permits, queue management, and patrolling in one dashboard across your entire portfolio. Exclusive partner to Aldar Properties and Asteco.",
   openGraph: {
     title: "Residential Community Management UAE | Buzzin",
     description:
@@ -50,11 +50,11 @@ const heroStats = [
 ]
 
 const painPoints = [
-  "No single view across communities — each gate operates in complete isolation",
-  "Contractors on site after permit expires — no automated gate denial",
-  "Amenity double-bookings — residents calling to complain every weekend",
-  "No audit trail for RERA compliance — paper records scattered across 12 sites",
-  "Security patrol logbooks filled retrospectively — no verified checkpoints",
+  "No single view across communities, so each gate operates in complete isolation",
+  "Contractors remain on site after permits expire because there is no automated gate denial",
+  "Amenity double-bookings lead to resident complaints every weekend",
+  "Paper records scattered across 12 sites make RERA compliance audits a scramble",
+  "Security patrol logbooks are filled retrospectively with no verified checkpoints",
 ]
 
 const modules = [
@@ -67,7 +67,7 @@ const modules = [
   {
     icon: ClipboardCheck,
     name: "Work Permit System",
-    body: "Contractor self-registers remotely. QR permit scanned at gate — valid or denied in 2 seconds. RERA-ready audit trail across your entire portfolio.",
+    body: "Contractors self-register remotely. Their QR permit is scanned at the gate and validated or denied in 2 seconds, with a RERA-ready audit trail across your entire portfolio.",
     href: "/en/platform/work-permit-system",
   },
   {
@@ -81,13 +81,13 @@ const modules = [
     icon: BookOpen,
     name: "Booking Management",
     badge: "New",
-    body: "Pool, gym, tennis court, clubhouse. Live amenity calendar. Auto-approve rules. QR access pass issued on booking — no reception staff needed.",
+    body: "Pool, gym, tennis court, clubhouse. A live amenity calendar with auto-approve rules. QR access pass issued on booking, so no reception staff are needed.",
     href: "/en/platform/booking-management",
   },
   {
     icon: Shield,
     name: "Patrolling System",
-    body: "NFC checkpoint scanning across community perimeter. Timestamped rounds. Missed checkpoint alerts to security management. Board-ready reports.",
+    body: "NFC checkpoint scanning across community perimeter. Timestamped rounds. Missed checkpoint alerts to security management. Reports ready for the board.",
     href: "/en/platform/patrolling",
   },
   {
@@ -100,28 +100,28 @@ const modules = [
 ]
 
 const qmsFeatures = [
-  "VIP priority routing — residents with premium status bypass the standard queue automatically",
-  "WhatsApp and SMS tokens — residents receive their position number and estimated wait time on their phone",
-  "Self-service Emirates ID kiosk — residents join the queue without speaking to any staff",
-  "Salesforce integration — queue events logged directly to CRM for service team follow-up",
+  "Residents with premium status bypass the standard queue automatically through VIP priority routing",
+  "WhatsApp and SMS tokens let residents see their position and estimated wait time on their phone",
+  "A self-service Emirates ID kiosk means residents can join the queue without speaking to any staff",
+  "Queue events are logged directly to Salesforce so the service team can follow up in CRM",
 ]
 
 const beforeAfter = [
   {
-    before: "12 communities managed across 12 WhatsApp groups — no single view, no portfolio-level visibility",
-    after: "One dashboard across all communities — drill down to any gate, any contractor, any visitor in real time",
+    before: "12 communities managed across 12 WhatsApp groups with no single view and no portfolio-level visibility",
+    after: "One dashboard across all communities. Drill down to any gate, any contractor, or any visitor in real time.",
   },
   {
-    before: "Contractor permit expires — security has no way to know, contractor continues working on site unchallenged",
-    after: "Gate scan denies entry automatically when permit expires — zero manual oversight required",
+    before: "A contractor permit expires and security has no way to know, so the contractor keeps working unchallenged",
+    after: "The gate scan denies entry automatically when a permit expires. No manual oversight required.",
   },
   {
-    before: "Amenity booking by phone call — double-bookings, resident complaints, reception staff overwhelmed every weekend",
-    after: "Live booking calendar — slot taken, QR access pass issued, no staff involvement for standard bookings",
+    before: "Amenity booking by phone call leads to double-bookings, resident complaints, and overwhelmed reception staff every weekend",
+    after: "A live booking calendar locks the slot, issues a QR access pass, and removes staff from routine bookings entirely.",
   },
   {
-    before: "RERA compliance audit — search through months of paper permit records across 12 separate sites",
-    after: "Complete portfolio audit export in under 30 seconds — tamper-proof, timestamped, RERA-ready",
+    before: "For a RERA compliance audit, staff search through months of paper permit records across 12 separate sites",
+    after: "A complete portfolio audit export takes under 30 seconds. Timestamped, protected from edits, and RERA-ready.",
   },
 ]
 
@@ -190,13 +190,13 @@ export default function ResidentialRealEstatePage() {
 
                   <HeroBlock>
                     <h1 className="font-display text-display-lg leading-[1.1] tracking-[-0.03em] text-white md:text-display-xl lg:text-display-2xl">
-                      Every community.{"\n"}One dashboard.{"\n"}Total control.
+                      Manage every community{"\n"}from a single dashboard.
                     </h1>
                   </HeroBlock>
 
                   <HeroBlock className="mt-4 max-w-[480px]">
                     <p className="font-body text-[18px] font-light leading-[1.7] text-white/70">
-                      Managing multiple communities from separate WhatsApp groups and paper logbooks is not a strategy &mdash; it is a liability. Buzzin gives your operations team complete visibility across every gate, every contractor, and every visitor in your entire portfolio.
+                      Running multiple communities from separate WhatsApp groups and paper logbooks leaves your portfolio exposed. Buzzin gives your operations team a single view of every gate, contractor, and visitor across your entire portfolio.
                     </p>
                   </HeroBlock>
 
@@ -233,7 +233,7 @@ export default function ResidentialRealEstatePage() {
                 <HeroBlock>
                   <div className="rounded-2xl border border-white/12 bg-white/[0.07] p-6">
                     <p className="mb-4 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">
-                      Aldar Properties &mdash; Live
+                      Aldar Properties · Live
                     </p>
                     <StaggerGrid className="divide-y divide-white/[0.08]" interval={0.1}>
                       {heroStats.map((row) => (
@@ -263,10 +263,10 @@ export default function ResidentialRealEstatePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Problem
+                The Problem
               </p>
               <h2 className="mt-4 max-w-[580px] font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                Managing multiple communities from a WhatsApp group is not a strategy. It is a liability.
+                WhatsApp groups and paper logbooks cannot run a multi-community portfolio.
               </h2>
             </SectionReveal>
 
@@ -276,10 +276,10 @@ export default function ResidentialRealEstatePage() {
                   What a Community Manager Told Us
                 </p>
                 <blockquote className="border-l-[3px] border-[var(--text-brand)] pl-5 font-display text-[1.5rem] leading-[1.5] text-[var(--text-primary)]">
-                  &ldquo;I manage 12 communities. I need one dashboard across all of them &mdash; not 12 WhatsApp groups, not 12 paper logbooks, not 12 separate systems that don&apos;t talk to each other.&rdquo;
+                  &ldquo;I manage 12 communities. I need one dashboard across all of them, not 12 WhatsApp groups, 12 paper logbooks, and 12 separate systems that don&apos;t talk to each other.&rdquo;
                 </blockquote>
                 <p className="mt-3 font-body text-[12px] text-[var(--text-muted)]">
-                  &mdash; Community Manager, Residential Portfolio, Abu Dhabi
+                  Community Manager, Residential Portfolio, Abu Dhabi
                 </p>
                 <p className="mt-5 font-body text-[15px] leading-[1.7] text-[var(--text-secondary)]">
                   With hundreds of contractors on site across multiple communities every day, a single expired permit or unverified visitor is a security and compliance incident waiting to happen.
@@ -310,7 +310,7 @@ export default function ResidentialRealEstatePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Platform
+                The Platform
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Six modules built for residential communities.
@@ -338,7 +338,7 @@ export default function ResidentialRealEstatePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Built for Aldar
+                Built for Aldar
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 When Aldar needed a queue management system, they asked Buzzin to build it.
@@ -392,7 +392,7 @@ export default function ResidentialRealEstatePage() {
                     <div className="my-4 h-px bg-[var(--border-default)]" />
 
                     {[
-                      { label: "Module status", value: "Live \u2014 New" },
+                      { label: "Module status", value: "Live · New" },
                       { label: "Built for", value: "Aldar Properties" },
                       { label: "Now available to", value: "All clients" },
                     ].map((row) => (
@@ -413,7 +413,7 @@ export default function ResidentialRealEstatePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Transformation
+                The Transformation
               </p>
               <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 What changes when your portfolio runs on Buzzin.
@@ -449,7 +449,7 @@ export default function ResidentialRealEstatePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Real Estate Clients
+                Real Estate Clients
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Trusted by the UAE&apos;s leading property developers and managers.
@@ -470,7 +470,7 @@ export default function ResidentialRealEstatePage() {
             </StaggerGrid>
 
             <p className="mt-4 text-center font-body text-[12px] text-[var(--text-muted)]">
-              Logo files will be placed here &mdash; tiles sized and ready for SVG/PNG upload
+              Logo files will be placed here. Tiles sized and ready for SVG/PNG upload.
             </p>
 
             <p className="mt-3 text-center">
@@ -492,7 +492,7 @@ export default function ResidentialRealEstatePage() {
           content={{
             headline: "Ready to manage your entire portfolio from one dashboard?",
             subline:
-              "We will show you exactly how Buzzin works across multiple communities — visitor management, contractor permits, amenity booking, and security patrols in one connected platform.",
+              "We will show you exactly how Buzzin works across multiple communities: visitor management, contractor permits, amenity booking, and security patrols in one connected platform.",
             primaryLabel: "Book a Free Demo",
             primaryHref: "/en/book-demo",
             whatsappLabel: "Chat on WhatsApp",

@@ -436,13 +436,13 @@ function ExpandedHex({
                 transition={{ delay: 0.45, duration: 0.25 }}
                 className="mt-3 flex flex-wrap items-center gap-2 sm:mt-4"
               >
-                <a
+                <Link
                   href="/book-demo"
                   className="inline-flex items-center gap-1.5 rounded-md bg-[var(--text-brand)] px-3 py-1.5 font-heading text-[0.6rem] font-semibold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.02] sm:px-4 sm:py-2 sm:text-xs"
                 >
                   Book a Demo
                   <ChevronRight className="h-3 w-3" />
-                </a>
+                </Link>
                 <Link
                   href={`/platform/${mod.slug}`}
                   className="inline-flex items-center gap-1.5 rounded-md border border-[var(--border-brand)] px-3 py-1.5 font-heading text-[0.6rem] font-semibold text-[var(--text-brand)] transition-transform hover:scale-[1.02] sm:px-4 sm:py-2 sm:text-xs"
@@ -454,11 +454,27 @@ function ExpandedHex({
             )}
 
             {isComingSoon && (
-              <div className="mt-3 rounded border border-dashed border-[var(--border-default)] px-3 py-2 sm:mt-4">
-                <p className="text-[0.55rem] text-[var(--text-muted)] sm:text-xs">
-                  In development. Join the waitlist for early access.
-                </p>
-              </div>
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.35, duration: 0.25 }}
+                  className="mt-3 flex flex-wrap items-center justify-center gap-2 sm:mt-4"
+                >
+                  <Link
+                    href={`/platform/${mod.slug}`}
+                    className="inline-flex items-center gap-1.5 rounded-md bg-slate-500 px-3 py-1.5 font-heading text-[0.6rem] font-semibold text-white shadow-sm transition-transform hover:scale-[1.02] hover:bg-slate-600 sm:px-4 sm:py-2 sm:text-xs dark:bg-slate-600 dark:hover:bg-slate-500"
+                  >
+                    View Page
+                    <ChevronRight className="h-3 w-3" />
+                  </Link>
+                </motion.div>
+                <div className="mt-2 rounded border border-dashed border-[var(--border-default)] px-3 py-2 sm:mt-3">
+                  <p className="text-[0.55rem] text-[var(--text-muted)] sm:text-xs">
+                    In development. Preview the page or join the waitlist for early access.
+                  </p>
+                </div>
+              </>
             )}
           </div>
         </div>
@@ -606,12 +622,12 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
                 The Platform
               </p>
               <h2 className="font-heading text-display-md font-bold text-[var(--text-primary)] md:text-display-lg">
-                One platform. Seven integrated modules. Zero&nbsp;silos.
+                Seven modules, one connected&nbsp;platform.
               </h2>
               <p className="mt-4 text-body-lg text-[var(--text-secondary)]">
-                Every module shares the same data, dashboard, and subscription.
-                When a visitor arrives, the queue system knows. When a permit
-                expires, the gate&nbsp;knows.
+                All modules draw from the same data and appear in a single
+                dashboard. Visitor check-ins flow straight into queuing, and
+                expired permits trigger gate lockdowns&nbsp;automatically.
               </p>
             </motion.div>
           </div>

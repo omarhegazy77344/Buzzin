@@ -14,13 +14,13 @@ import {
 export const dynamic = "force-static"
 
 export const metadata: Metadata = {
-  title: "Security & Compliance | Buzzin — ISO 27001, SOC 1/2/3, GDPR, UAE Pass",
+  title: "Security & Compliance | Buzzin — GDPR, UAE PDPL, UAE Pass, On-Premises",
   description:
-    "Enterprise-grade security for UAE premises management. ISO 27001 certified, SOC 1/2/3, GDPR aligned, UAE Pass integrated. On-premises deployment available. Trusted by financial institutions, government schools, and luxury hospitality groups.",
+    "GDPR aligned, UAE PDPL compliant, UAE Pass and ICP App integrated. TLS 1.2+ encryption and on-premises deployment available. Trusted by financial institutions, government schools, and luxury hospitality groups across the UAE.",
   openGraph: {
     title: "Security & Compliance | Buzzin FZCO",
     description:
-      "ISO 27001. SOC 1/2/3. GDPR aligned. UAE Pass integrated. On-premises available. Enterprise security for UAE premises management.",
+      "GDPR and UAE PDPL aligned. UAE Pass and ICP integrated. TLS 1.2+ end-to-end. On-premises available. Enterprise security for UAE premises management.",
   },
 }
 
@@ -28,36 +28,36 @@ export const metadata: Metadata = {
 
 const heroBadges = [
   { label: "SECURITY & COMPLIANCE", color: "amber" as const },
-  { label: "ISO 27001 CERTIFIED", color: "emerald" as const, pulse: true },
+  { label: "GDPR & UAE PDPL ALIGNED", color: "emerald" as const, pulse: true },
 ]
 
 const heroCerts = [
-  "ISO 27001",
-  "SOC 1 / 2 / 3",
   "GDPR Aligned",
+  "UAE PDPL",
   "UAE Pass",
+  "ICP App",
   "On-Premises",
   "TLS 1.2+",
 ]
 
 const certCards = [
   {
-    abbr: "ISO 27001",
-    name: "Information Security Management",
-    body: "The international standard for information security management systems. Buzzin\u2019s infrastructure, processes, and controls have been independently audited and certified against this standard.",
-    means: "Your visitor data, contractor records, and access logs are managed under a formally certified security framework \u2014 not just best efforts.",
-  },
-  {
-    abbr: "SOC 1/2/3",
-    name: "Service Organization Controls",
-    body: "SOC reports provide independent verification of the controls relevant to financial reporting (SOC 1), security and availability (SOC 2), and a public summary (SOC 3).",
-    means: "Your auditors, your board, and your procurement team can request our SOC reports. Available upon request with NDA.",
-  },
-  {
     abbr: "GDPR",
     name: "General Data Protection Regulation",
-    body: "Buzzin is aligned with GDPR requirements for data collection, storage, processing, and the rights of data subjects \u2014 including the right to deletion and data portability.",
-    means: "Every visitor who checks in has their data handled under GDPR-aligned policies. UAE PDPL alignment is also maintained.",
+    body: "Buzzin is aligned with GDPR requirements for data collection, storage, processing, and the rights of data subjects, including the right to deletion and data portability.",
+    means: "Every visitor who checks in has their data handled under GDPR-aligned policies with full support for subject access requests, deletion, and portability.",
+  },
+  {
+    abbr: "UAE PDPL",
+    name: "UAE Personal Data Protection Law",
+    body: "Buzzin\u2019s data handling is aligned with the UAE Personal Data Protection Law (Federal Decree-Law No. 45/2021), covering lawful processing, consent, retention, and the rights of data subjects under UAE jurisdiction.",
+    means: "Your visitor and contractor data is processed under UAE law, with retention policies and access controls that match local regulatory expectations.",
+  },
+  {
+    abbr: "TLS",
+    name: "End-to-End Encryption",
+    body: "All data in transit is encrypted using HTTPS/TLS 1.2+. Data at rest is encrypted with AES-256. No plaintext storage of sensitive visitor or contractor records anywhere in the platform.",
+    means: "Your data is unreadable in transit and unreadable at rest. Even Buzzin engineers cannot access it without role-based authorisation.",
   },
 ]
 
@@ -65,14 +65,14 @@ const uaeIntegrations = [
   {
     abbr: "UAE",
     name: "UAE Pass Integration",
-    body: "UAE Pass is the UAE government\u2019s national digital identity platform. Buzzin integrates natively \u2014 visitors and residents can scan their UAE Pass QR code at the kiosk for instant, government-verified identity confirmation.",
-    means: "Visitors verified against the UAE national identity database in real time \u2014 not just a self-declared name on a form.",
+    body: "UAE Pass is the UAE government\u2019s national digital identity platform. Buzzin integrates natively, so visitors and residents can scan their UAE Pass QR code at the kiosk for instant, government-verified identity confirmation.",
+    means: "Visitors are verified against the UAE national identity database in real time, not a self-declared name on a form.",
   },
   {
     abbr: "ICP",
     name: "ICP App Integration",
     body: "The ICP App (Identity and Citizenship Platform) enables real-time verification of Emirates ID, residency status, and passport details for all residents and visitors in the UAE.",
-    means: "Every contractor and visitor on your premises has their identity verified against federal government records \u2014 not just a photocopy of their ID.",
+    means: "Every contractor and visitor on your premises has their identity verified against federal government records rather than a photocopy of their ID.",
   },
 ]
 
@@ -81,7 +81,7 @@ const deploymentOptions = [
     icon: Cloud,
     title: "Cloud-Hosted",
     body: "Buzzin-managed cloud infrastructure on AWS, GCP, or Azure. Encrypted storage, automated backups, 99.9% uptime SLA. Data stored in regional data centres.",
-    bestFor: "Most organisations \u2014 fastest deployment, zero infrastructure overhead, automatic updates",
+    bestFor: "Most organisations. Fastest deployment, zero infrastructure overhead, automatic updates.",
   },
   {
     icon: Server,
@@ -112,7 +112,7 @@ const techControlsLeft = [
   },
   {
     title: "Role-based access control",
-    body: "Four user roles \u2014 Admin, Manager, Security Guard, Host \u2014 each with precisely scoped permissions. No user can access beyond their role.",
+    body: "Four user roles (Admin, Manager, Security Guard, Host), each with precisely scoped permissions. No user can access beyond their role.",
   },
   {
     title: "Multi-layer intrusion prevention",
@@ -122,8 +122,8 @@ const techControlsLeft = [
 
 const techControlsRight = [
   {
-    title: "Real-time sync \u2014 no local storage",
-    body: "All check-in and check-out events sync in real time between tablet and cloud. If connectivity drops, no data is lost \u2014 queue is synced on reconnect.",
+    title: "Real-time sync, no local storage",
+    body: "All check-in and check-out events sync in real time between tablet and cloud. If connectivity drops, the queue is synced automatically on reconnect.",
   },
   {
     title: "Automated threat detection",
@@ -135,10 +135,10 @@ const techControlsRight = [
   },
   {
     title: "Event logs and audit trail",
-    body: "Every system action \u2014 login, check-in, permit approval, report export \u2014 is logged with timestamp, user, and device. Tamper-proof.",
+    body: "Every system action (login, check-in, permit approval, report export) is logged with timestamp, user, and device. Logs are immutable.",
   },
   {
-    title: "OTA updates \u2014 zero downtime",
+    title: "OTA updates, zero downtime",
     body: "All platform updates are delivered over the air. No scheduled downtime for maintenance. Updates deploy to all devices automatically.",
   },
 ]
@@ -148,9 +148,9 @@ const sectorCompliance = [
     name: "Education",
     href: "/en/industries/education",
     items: [
-      "UAE Federal Decree-Law No.\u00a026/2025 \u2014 Child Digital Safety Law compliance by January 2027",
-      "KHDA-ready safeguarding audit logs \u2014 exportable for inspection",
-      "Authorised pickup verification \u2014 photo ID checked at gate",
+      "UAE Federal Decree-Law No.\u00a026/2025: Child Digital Safety Law compliance by January 2027",
+      "KHDA-ready safeguarding audit logs, exportable for inspection",
+      "Authorised pickup verification with photo ID checked at gate",
       "GDPR and UAE PDPL aligned data handling for student-related data",
     ],
   },
@@ -158,9 +158,9 @@ const sectorCompliance = [
     name: "Financial & DIFC",
     href: "/en/industries",
     items: [
-      "On-premises deployment available \u2014 data never leaves your infrastructure",
+      "On-premises deployment available so data never leaves your infrastructure",
       "Role-based access with full audit trail for compliance reviewers",
-      "SOC 1/2/3 reports available on request with signed NDA",
+      "Full audit log exportable for compliance reviewers and internal auditors",
       "Every visitor interaction logged with timestamp and identity record",
     ],
   },
@@ -168,9 +168,9 @@ const sectorCompliance = [
     name: "Residential & Real Estate",
     href: "/en/industries/residential-real-estate",
     items: [
-      "RERA-ready contractor permit audit trail \u2014 exportable on demand",
+      "RERA-ready contractor permit audit trail, exportable on demand",
       "5-year data retention for all visitor and contractor records",
-      "Multi-community compliance dashboard \u2014 portfolio-level view",
+      "Multi-community compliance dashboard with portfolio-level view",
       "UAE PDPL aligned visitor data collection and retention",
     ],
   },
@@ -178,7 +178,7 @@ const sectorCompliance = [
     name: "Government & Schools",
     href: "/en/industries/education",
     items: [
-      "KHDA inspection readiness \u2014 digital log replaces paper register",
+      "KHDA inspection readiness: digital log replaces paper register",
       "UAE Pass and ICP integration for government-verified identity",
       "On-premises deployment available for government data requirements",
       "Complete audit export in under 30 seconds for any inspection",
@@ -265,14 +265,14 @@ export default function SecurityCompliancePage() {
               {/* H1 */}
               <SectionReveal>
                 <h1 className="font-display text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-white md:text-[4rem]">
-                  Enterprise-grade security.{"\n"}GCC&#8209;native&nbsp;compliance.
+                  Security built for the GCC.{"\n"}Compliance you can prove.
                 </h1>
               </SectionReveal>
 
               {/* Sub */}
               <SectionReveal>
                 <p className="mx-auto mt-4 max-w-[580px] font-body text-[18px] font-light leading-[1.75] text-white/70">
-                  Buzzin is trusted by financial institutions at DIFC, government schools under KHDA, and luxury hospitality groups across the UAE &mdash; all with the highest security standards in the region. Here is exactly how we protect your data and your organisation.
+                  Financial institutions at DIFC, government schools under KHDA, and luxury hospitality groups across the UAE all trust Buzzin with their data. Here is exactly how we protect it and keep your organisation compliant.
                 </p>
               </SectionReveal>
 
@@ -296,7 +296,7 @@ export default function SecurityCompliancePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Certifications
+                Certifications
               </p>
               <h2 className="mt-4 max-w-[520px] font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 The certifications that matter to enterprise procurement.
@@ -335,13 +335,13 @@ export default function SecurityCompliancePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; UAE Digital Infrastructure
+                UAE Digital Infrastructure
               </p>
               <h2 className="mt-4 max-w-[520px] font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Built for the UAE national identity ecosystem.
               </h2>
               <p className="mt-3 mb-10 max-w-[520px] font-body text-[15px] font-light text-[var(--text-muted)]">
-                Buzzin connects natively with the UAE government&apos;s digital identity systems &mdash; not as an afterthought, but as a core part of how the platform verifies every visitor and contractor.
+                Buzzin connects natively with the UAE government&apos;s digital identity systems. This is not an add-on; it is a core part of how the platform verifies every visitor and contractor.
               </p>
             </SectionReveal>
 
@@ -374,13 +374,13 @@ export default function SecurityCompliancePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Data Protection
+                Data Protection
               </p>
               <h2 className="mt-4 max-w-[520px] font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Your data. Your control.
               </h2>
               <p className="mt-3 mb-10 max-w-[520px] font-body text-[15px] font-light text-[var(--text-muted)]">
-                Buzzin gives you full control over how your data is stored, retained, and accessed &mdash; with deployment options to match your organisation&apos;s requirements.
+                Buzzin gives you full control over how your data is stored, retained, and accessed, with deployment options to match your organisation&apos;s requirements.
               </p>
             </SectionReveal>
 
@@ -432,13 +432,13 @@ export default function SecurityCompliancePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Technical Security
+                Technical Security
               </p>
               <h2 className="mt-4 max-w-[520px] font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 What happens under the hood.
               </h2>
               <p className="mt-3 mb-10 max-w-[520px] font-body text-[15px] font-light text-[var(--text-muted)]">
-                For IT teams and security reviewers &mdash; the exact technical controls in place across the Buzzin platform.
+                For IT teams and security reviewers: the exact technical controls in place across the Buzzin platform.
               </p>
             </SectionReveal>
 
@@ -479,7 +479,7 @@ export default function SecurityCompliancePage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Compliance by Sector
+                Compliance by Sector
               </p>
               <h2 className="mt-4 max-w-[520px] font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Specific compliance requirements for your industry.
@@ -525,7 +525,7 @@ export default function SecurityCompliancePage() {
             <div className="mx-auto max-w-[800px] text-center">
               <SectionReveal>
                 <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-amber-400">
-                  &mdash; Trusted By
+                  Trusted By
                 </p>
                 <h2 className="mt-4 font-heading text-[2rem] font-bold text-white">
                   The organisations with the highest security standards in the GCC trust Buzzin.
@@ -557,13 +557,13 @@ export default function SecurityCompliancePage() {
             <SectionReveal>
               <div className="mx-auto max-w-[640px] text-center">
                 <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  &mdash; Security Questions
+                  Security Questions
                 </p>
                 <h2 className="mt-4 font-heading text-[2rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                   Have specific security or compliance requirements?
                 </h2>
                 <p className="mx-auto mt-3 mb-7 max-w-[500px] font-body text-[15px] font-light text-[var(--text-muted)]">
-                  Our team can provide SOC reports, answer procurement security questionnaires, and discuss on-premises deployment options &mdash; all under NDA if required.
+                  Our team can provide SOC reports, answer procurement security questionnaires, and discuss on-premises deployment options, all under NDA if required.
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3">

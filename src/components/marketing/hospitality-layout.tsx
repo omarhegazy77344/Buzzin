@@ -59,7 +59,7 @@ export function SectionReveal({ children, className }: { children: ReactNode; cl
       className={className}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.6, ease: BRAND_EASE }}
     >
       {children}
@@ -81,7 +81,7 @@ export function StaggerGrid({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: false, amount: 0.15 }}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: interval } },

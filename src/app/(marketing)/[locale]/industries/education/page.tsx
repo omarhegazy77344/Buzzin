@@ -34,28 +34,28 @@ export const metadata: Metadata = {
 /* ─── Data ─── */
 
 const consequences = [
-  "KHDA inspection failure — paper visitor log is no longer acceptable evidence",
-  "Unauthorised person collects a child — no verification system, no photo ID check",
-  "Contractor on campus with no valid permit — no RERA-equivalent audit trail",
-  "Evacuation drill — no accurate headcount of every child and adult on site",
-  "Data breach — visitor data in a paper logbook has no GDPR protection",
+  "KHDA inspection failure because a paper visitor log is no longer acceptable evidence",
+  "An unauthorised person collects a child with no verification system and no photo ID check",
+  "Contractors on campus without a valid permit, leaving no audit trail for regulators",
+  "During an evacuation drill, there is no accurate headcount of children and adults on site",
+  "Visitor data sits in a paper logbook with no data-protection controls",
 ]
 
 const safeguardingFeatures = [
-  { title: "Authorised pickup verification", body: "Child can only be collected by pre-approved contacts. Photo ID captured and compared at the gate." },
-  { title: "Unknown person alert", body: "Unregistered person attempts pickup — instant alert fires to school admin and designated staff." },
-  { title: "KHDA audit export", body: "Complete safeguarding log exportable for KHDA inspection — tamper-proof, timestamped, one click." },
-  { title: "Parent mobile management", body: "Parents manage authorised pickup contacts from their phone — no admin overhead for the school office." },
-  { title: "Real-time safeguarding alerts", body: "School admin notified instantly of any safeguarding event anywhere on the campus." },
-  { title: "Compliance dashboard", body: "Track safeguarding events, view audit readiness score, export documentation for inspectors." },
+  { title: "Authorised pickup verification", body: "Only pre-approved contacts can collect a child. Photo ID is captured and compared at the gate before release." },
+  { title: "Unknown person alert", body: "If an unregistered person attempts pickup, school admin and designated staff receive an instant alert." },
+  { title: "KHDA audit export", body: "Your complete safeguarding log is timestamped, protected from edits, and exportable in one click for any KHDA inspection." },
+  { title: "Parent mobile management", body: "Parents add or remove authorised pickup contacts from their phone, so the school office does not have to." },
+  { title: "Real-time safeguarding alerts", body: "Any safeguarding event on campus triggers an immediate notification to school admin, wherever they are." },
+  { title: "Compliance dashboard", body: "View safeguarding events at a glance, check your readiness score, and export documentation for inspectors." },
 ]
 
 const modules = [
-  { icon: ShieldCheck, name: "Safeguarding", badge: "Live", badgeColor: "emerald", body: "Authorised pickup verification. KHDA audit export. UAE Child Safety Law 2026 compliant. Built for international schools.", href: "/en/platform/safeguarding" },
-  { icon: Users, name: "Visitor Management", body: "Emirates ID and UAE Pass scanning at reception. Every visitor logged, verified, and host notified. Paper logbook replaced.", href: "/en/platform/visitor-management-system" },
-  { icon: ClipboardCheck, name: "Work Permit System", body: "Every contractor on campus holds a verified, active digital permit. RERA-equivalent audit trail for school site works.", href: "/en/platform/work-permit-system" },
-  { icon: UserCheck, name: "Attendance Management", body: "NFC card or phone tap for staff. Real-time punctuality alerts. Late arrivals flagged to management automatically.", href: "/en/platform/attendance-management" },
-  { icon: CalendarCheck, name: "Event Management", body: "Sports days, parent evenings, graduation ceremonies. Unique QR per attendee. Location-controlled access. Branded invitations.", href: "/en/platform/event-management" },
+  { icon: ShieldCheck, name: "Safeguarding", badge: "Coming Soon", badgeColor: "emerald", body: "Authorised pickup verification and KHDA audit export. Designed for UAE Child Safety Law 2026 and built for international schools.", href: null as string | null },
+  { icon: Users, name: "Visitor Management", body: "Emirates ID and UAE Pass scanning at reception. Every visitor is logged, verified, and their host notified. No more paper logbooks.", href: "/en/platform/visitor-management-system" },
+  { icon: ClipboardCheck, name: "Work Permit System", body: "Every contractor on campus holds a verified, active digital permit with a full audit trail for school site works.", href: "/en/platform/work-permit-system" },
+  { icon: UserCheck, name: "Attendance Management", body: "Staff tap an NFC card or phone to clock in. Late arrivals are flagged to management automatically, with real-time punctuality alerts.", href: "/en/platform/attendance-management" },
+  { icon: CalendarCheck, name: "Event Management", body: "Sports days, parent evenings, and graduation ceremonies. Each attendee gets a unique QR with location-controlled access and branded invitations.", href: "/en/platform/event-management" },
 ]
 
 const timeline = [
@@ -66,17 +66,17 @@ const timeline = [
 ]
 
 const groupBullets = [
-  "Group admin dashboard — see all schools from one login with drill-down to individual campus level",
-  "School-level autonomy — each campus manages their own operations within group-defined policies",
-  "Cross-campus reporting — compare visitor volumes, compliance scores, and safeguarding events by school",
-  "Single subscription — one platform for your entire group, priced by scale not by module or campus",
+  "A single group admin dashboard lets you see all schools from one login and drill down to any campus",
+  "Each campus manages its own operations within group-defined policies, so individual schools stay in control",
+  "Cross-campus reports let you compare visitor volumes, compliance scores, and safeguarding events side by side",
+  "One subscription covers your entire group, priced by scale rather than by module or campus",
 ]
 
 const beforeAfter = [
-  { before: "Paper visitor logbook at reception — KHDA inspector asks for records, you hand them a notebook", after: "Digital visitor log — tamper-proof, timestamped, exportable in 30 seconds for any KHDA inspection" },
-  { before: "Unknown person arrives to collect a child — receptionist has no way to verify they are authorised", after: "Authorised pickup verification — photo ID checked against approved list, instant alert if person is not registered" },
-  { before: "Contractor on site with a WhatsApp PDF permit — no expiry check, no gate scan, no audit record", after: "QR work permit scanned at school entrance — valid or denied in 2 seconds, complete contractor log always available" },
-  { before: "Evacuation drill — teacher counting children manually, no record of contractors or visitors on site", after: "Real-time evacuation list — every child, staff member, visitor, and contractor on site, one click" },
+  { before: "Paper visitor logbook at reception. When the KHDA inspector asks for records, you hand them a notebook.", after: "Digital visitor log that is timestamped, protected from edits, and exportable in 30 seconds for any inspection." },
+  { before: "An unknown person arrives to collect a child and the receptionist has no way to verify they are authorised.", after: "Authorised pickup verification checks photo ID against the approved list and sends an instant alert if the person is not registered." },
+  { before: "A contractor on site with a WhatsApp PDF permit. No expiry check, no gate scan, no audit record.", after: "QR work permit scanned at the school entrance. Valid or denied in 2 seconds, with a complete contractor log always available." },
+  { before: "During an evacuation drill, a teacher counts children manually with no record of contractors or visitors on site.", after: "A real-time evacuation list shows every child, staff member, visitor, and contractor on site in one click." },
 ]
 
 const clients = [
@@ -132,21 +132,21 @@ export default function EducationPage() {
                       Education &amp; Schools
                     </span>
                     <span className="inline-flex items-center rounded-full border border-red-500/30 bg-red-500/15 px-3 py-1 font-heading text-[11px] font-semibold uppercase text-red-400">
-                      UAE Child Safety Law — Jan 2027
+                      UAE Child Safety Law · Jan 2027
                     </span>
                   </HeroBlock>
 
                   {/* H1 */}
                   <HeroBlock>
                     <h1 className="font-display text-display-lg leading-[1.1] tracking-[-0.03em] text-white md:text-display-xl lg:text-display-2xl">
-                      Every child.{"\n"}Known. Verified. Safe.
+                      Safeguarding every child{"\n"}on your campus.
                     </h1>
                   </HeroBlock>
 
                   {/* Sub */}
                   <HeroBlock className="mt-4 max-w-[480px]">
                     <p className="font-body text-[18px] font-light leading-[1.7] text-white/70">
-                      UAE Federal Decree-Law No. 26/2025 requires every school to have auditable safeguarding records by January 2027. Buzzin is KHDA-ready — visitor management, authorised pickup verification, and a tamper-proof audit log built specifically for international schools.
+                      UAE Federal Decree-Law No. 26/2025 requires every school to have auditable safeguarding records by January 2027. Buzzin is KHDA-ready with visitor management, authorised pickup verification, and a secure audit log built specifically for international schools.
                     </p>
                   </HeroBlock>
 
@@ -194,7 +194,7 @@ export default function EducationPage() {
                     </p>
                     <div className="my-4 h-px bg-white/10" />
                     <div className="space-y-2.5">
-                      {["Authorised pickup verification — live", "KHDA audit export — one click", "Tamper-proof digital log — always on"].map((r) => (
+                      {["Authorised pickup verification, live now", "KHDA audit export in one click", "Secure digital log, always on"].map((r) => (
                         <div key={r} className="flex items-center gap-3">
                           <CheckCircle className="h-4 w-4 shrink-0 text-emerald-400" strokeWidth={1.5} />
                           <span className="font-body text-[13px] text-white/70">{r}</span>
@@ -219,7 +219,7 @@ export default function EducationPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Problem
+                The Problem
               </p>
               <h2 className="mt-4 max-w-[580px] font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 KHDA will ask for the safeguarding log. What will you show them?
@@ -235,7 +235,7 @@ export default function EducationPage() {
                   &ldquo;KHDA inspection is in six weeks. Our visitor log is still a paper notebook at reception. Our safeguarding record is three different spreadsheets. I cannot hand that to an inspector.&rdquo;
                 </blockquote>
                 <p className="mt-3 font-body text-[12px] text-[var(--text-muted)]">
-                  — School Principal, International School, Dubai
+                  School Principal, International School, Dubai
                 </p>
                 <p className="mt-5 font-body text-[15px] leading-[1.7] text-[var(--text-secondary)]">
                   With 40+ schools in some groups, a manual process does not scale. And with the January 2027 deadline, the risk of not having a system is no longer theoretical.
@@ -266,10 +266,10 @@ export default function EducationPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Safeguarding
+                Safeguarding
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                Every child. Known. Verified. Safe.
+                Know who is picking up every child, every time.
               </h2>
             </SectionReveal>
 
@@ -277,7 +277,7 @@ export default function EducationPage() {
               {/* Left — features */}
               <SectionReveal>
                 <p className="mb-7 max-w-[460px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                  Buzzin&apos;s Safeguarding module is built specifically for the UAE school environment. KHDA-ready from day one. Authorised pickup verification at every gate.
+                  Buzzin&apos;s Safeguarding module is built specifically for UAE schools. It ships KHDA-ready and handles authorised pickup verification at every gate on your campus.
                 </p>
 
                 <StaggerGrid className="space-y-4" interval={0.1}>
@@ -344,13 +344,13 @@ export default function EducationPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Platform
+                The Platform
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 One platform for your entire school operation.
               </h2>
               <p className="mt-3 mb-10 max-w-[520px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                Safeguarding, visitor management, contractor permits, and attendance — all connected. One dashboard. One audit trail.
+                Safeguarding, visitor management, contractor permits, and attendance all feed into one dashboard with a single audit trail.
               </p>
             </SectionReveal>
 
@@ -370,9 +370,11 @@ export default function EducationPage() {
                       <h3 className="font-heading text-[14px] font-bold text-[var(--text-primary)]">{m.name}</h3>
                     </div>
                     <p className="mb-3.5 font-body text-[13px] leading-[1.55] text-[var(--text-muted)]">{m.body}</p>
-                    <Link href={m.href} className="font-body text-[12px] font-semibold text-[var(--text-brand)] hover:underline">
-                      Learn more &rarr;
-                    </Link>
+                    {m.href ? (
+                      <Link href={m.href} className="font-body text-[12px] font-semibold text-[var(--text-brand)] hover:underline">
+                        Learn more &rarr;
+                      </Link>
+                    ) : null}
                   </div>
                 </StaggerItem>
               ))}
@@ -385,7 +387,7 @@ export default function EducationPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Built for School Groups
+                Built for School Groups
               </p>
               <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 40 schools. One dashboard.
@@ -396,7 +398,7 @@ export default function EducationPage() {
               {/* Left — group features */}
               <SectionReveal>
                 <p className="mb-6 max-w-[440px] font-body text-[16px] font-light text-[var(--text-muted)]">
-                  Taaleem chose Buzzin specifically because of how the platform scales across a large portfolio of schools — centralised visibility, school-level control, group-level reporting.
+                  Taaleem chose Buzzin specifically because of how the platform scales across a large portfolio of schools: centralised visibility, school-level control, and group-level reporting.
                 </p>
 
                 <StaggerGrid className="space-y-3.5" interval={0.1}>
@@ -432,7 +434,7 @@ export default function EducationPage() {
                       Taaleem Group
                     </p>
                     <p className="font-display text-[1.2rem] italic leading-[1.5] text-white">
-                      &ldquo;Attracted by the scalability and the level of control they could have across a large number of schools — with a system simple enough for every campus to use independently.&rdquo;
+                      &ldquo;Attracted by the scalability and the level of control they could have across a large number of schools, with a system simple enough for every campus to use independently.&rdquo;
                     </p>
                     <div className="my-4 h-px bg-white/10" />
                     <div className="flex gap-6">
@@ -462,7 +464,7 @@ export default function EducationPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Transformation
+                The Transformation
               </p>
               <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 What changes when your school runs on Buzzin.
@@ -498,7 +500,7 @@ export default function EducationPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Education Clients
+                Education Clients
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Trusted by international schools across the UAE and GCC.
@@ -518,7 +520,7 @@ export default function EducationPage() {
             </StaggerGrid>
 
             <p className="mt-4 text-center font-body text-[12px] text-[var(--text-muted)]">
-              Logo files will be placed here — tiles sized and ready for SVG/PNG upload
+              Logo files will be placed here. Tiles sized and ready for SVG/PNG upload.
             </p>
           </Container>
         </section>
@@ -530,7 +532,7 @@ export default function EducationPage() {
         <CtaBanner
           content={{
             headline: "Your KHDA inspection is coming. Is your school ready?",
-            subline: "We will walk you through exactly how Buzzin works for your school — visitor management, safeguarding, contractor permits, and attendance in one platform.",
+            subline: "We will walk you through exactly how Buzzin works for your school: visitor management, safeguarding, contractor permits, and attendance in one platform.",
             primaryLabel: "Book a Free Demo",
             primaryHref: "/book-demo",
             whatsappLabel: "Chat on WhatsApp",

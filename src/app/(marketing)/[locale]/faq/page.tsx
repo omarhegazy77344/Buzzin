@@ -34,7 +34,7 @@ const faqData = [
         q: "What exactly is Buzzin?",
         a: (
           <>
-            Buzzin is a premises intelligence platform &mdash; a single system that manages every person, permit, and patrol across your physical operation. It is not just a visitor management system. It has nine integrated modules covering visitor check-in, contractor permits, queue management, event check-in, amenity booking, attendance tracking, safeguarding, security patrols, and parking. Every module shares the same data and dashboard.
+            Buzzin is a single platform that manages every person, permit, and patrol across your physical operation. It goes well beyond visitor management: 10+ modules cover visitor check-in, contractor permits, queue management, event check-in, amenity booking, attendance tracking, safeguarding, security patrols, key management, and parking. All modules share the same data and dashboard.
           </>
         ),
       },
@@ -42,7 +42,7 @@ const faqData = [
         q: "Who is Buzzin for?",
         a: (
           <>
-            Buzzin is built for enterprise organisations that manage complex physical premises &mdash; residential property developers, luxury hotels, international schools, corporate headquarters, financial district buildings, and government institutions. Current clients include Aldar Properties, Atlantis The Palm, Taaleem, Fairmont, and 300+ organisations across UAE, KSA, Kuwait, and Lebanon.
+            Organisations that manage complex physical premises: residential property developers, luxury hotels, international schools, corporate headquarters, financial district buildings, and government institutions. Current clients include Aldar Properties, Atlantis The Palm, Taaleem, Fairmont, and 300+ organisations across UAE, KSA, Kuwait, and Lebanon.
           </>
         ),
       },
@@ -50,7 +50,7 @@ const faqData = [
         q: "Is Buzzin only for large organisations?",
         a: (
           <>
-            Buzzin works for single-site operations and multi-community portfolios. A single hotel with one kiosk and a property developer managing 40 communities both run on the same platform. The system scales to your operation &mdash; you start with what you need and expand over time.
+            No. A single hotel with one kiosk and a property developer managing 40 communities both run on the same platform. You start with what you need and expand over time.
           </>
         ),
       },
@@ -58,7 +58,7 @@ const faqData = [
         q: "What hardware do I need?",
         a: (
           <>
-            One Android tablet (Android 8.0+, 8GB+ RAM) to get started. Buzzin can also supply an NFC card reader, branded badge printer, and kiosk stand as optional hardware. No servers required &mdash; the platform is cloud-hosted. For on-premises deployment, your own server infrastructure is used.
+            One Android tablet (Android 8.0+, 8GB+ RAM) to get started. Buzzin can also supply an NFC card reader, branded badge printer, and kiosk stand as optional hardware. The platform is cloud-hosted, so no servers are required. For on-premises deployment, your own server infrastructure is used.
           </>
         ),
       },
@@ -66,7 +66,7 @@ const faqData = [
         q: "What modules are currently live?",
         a: (
           <>
-            Seven modules are currently live: <Link href="/en/platform/visitor-management-system" className="text-[var(--text-brand)] hover:underline">Visitor Management System</Link>, Work Permit System, Event Management, Attendance Management, <Link href="/en/platform/queue-management" className="text-[var(--text-brand)] hover:underline">Queue Management System</Link>, Booking Management, and <Link href="/en/platform/safeguarding" className="text-[var(--text-brand)] hover:underline">Safeguarding</Link>. Patrolling System and Parking Management are in final development and coming soon.
+            Six modules are currently live: <Link href="/en/platform/visitor-management-system" className="text-[var(--text-brand)] hover:underline">Visitor Management System</Link>, Work Permit System, Event Management, Attendance Management, <Link href="/en/platform/queue-management" className="text-[var(--text-brand)] hover:underline">Queue Management System</Link>, and Booking Management. Safeguarding, Patrolling System, and Parking Management are in final development and coming soon.
           </>
         ),
       },
@@ -80,7 +80,7 @@ const faqData = [
         q: "How long does it take to go live?",
         a: (
           <>
-            Most deployments are live within days of the site assessment &mdash; not months. The process is: site visit and workflow review, platform configuration to your specific operation, hardware setup if required, and staff training. There is no complex IT project required on your side. One Android tablet and a stable Wi-Fi or 4G connection is all you need.
+            Most deployments are live within days of the site assessment. The process involves a site visit and workflow review, platform configuration to your specific operation, hardware setup if required, and staff training. One Android tablet and a stable Wi-Fi or 4G connection is all you need on your side.
           </>
         ),
       },
@@ -96,7 +96,7 @@ const faqData = [
         q: "Can Buzzin be customised for our specific operation?",
         a: (
           <>
-            Yes &mdash; and this is one of the primary reasons enterprise clients choose Buzzin. Permit types, approval workflows, document requirements, access rules, notification settings, and branded kiosk interfaces are all configurable. For requirements that go beyond configuration, Buzzin offers custom module development &mdash; the <Link href="/en/industries/residential-real-estate" className="text-[var(--text-brand)] hover:underline">Queue Management System was built specifically for Aldar Properties</Link>.
+            Yes, and this is one of the primary reasons large clients choose Buzzin. Permit types, approval workflows, document requirements, access rules, notification settings, and branded kiosk interfaces are all configurable. For requirements that go beyond configuration, Buzzin offers custom module development. The <Link href="/en/industries/residential-real-estate" className="text-[var(--text-brand)] hover:underline">Queue Management System was built specifically for Aldar Properties</Link>.
           </>
         ),
       },
@@ -104,7 +104,7 @@ const faqData = [
         q: "What happens during the site visit?",
         a: (
           <>
-            Our team visits your premises, maps your visitor and contractor flows, reviews your compliance requirements, and configures the platform around how you actually operate. Nothing is generic &mdash; the deployment is built specifically for your premises type, your team, and your operational challenges.
+            Our team visits your premises, maps your visitor and contractor flows, reviews your compliance requirements, and configures the platform around how you actually operate. The deployment is built specifically for your premises type, your team, and your operational challenges.
           </>
         ),
       },
@@ -115,10 +115,10 @@ const faqData = [
     id: "security-data",
     items: [
       {
-        q: "Is Buzzin ISO 27001 certified?",
+        q: "How does Buzzin protect our data?",
         a: (
           <>
-            Yes. Buzzin is ISO 27001 certified &mdash; the international standard for information security management systems. The platform also aligns with SOC 1/2/3 and GDPR. ISO 27001 and SOC reports are available on request with a signed NDA. <Link href="/en/security-compliance" className="text-[var(--text-brand)] hover:underline">View security documentation</Link>.
+            Buzzin uses HTTPS/TLS 1.2+ end-to-end encryption, AES-256 encryption for data at rest, role-based access control, and GDPR and UAE PDPL aligned data handling. On-premises deployment is available for organisations with strict data residency requirements. Contact us for full security documentation. <Link href="/en/security-compliance" className="text-[var(--text-brand)] hover:underline">View security documentation</Link>.
           </>
         ),
       },
@@ -126,7 +126,7 @@ const faqData = [
         q: "Where is our data stored?",
         a: (
           <>
-            By default, data is stored in encrypted cloud storage on AWS, GCP, or Azure in regional data centres. For organisations with strict data residency requirements &mdash; financial institutions, government entities &mdash; full on-premises deployment is available where all data remains within your own infrastructure.
+            By default, data is stored in encrypted cloud storage on AWS, GCP, or Azure in regional data centres. For organisations with strict data residency requirements (financial institutions, government entities), full on-premises deployment is available where all data remains within your own infrastructure.
           </>
         ),
       },
@@ -150,7 +150,7 @@ const faqData = [
         q: "Is Buzzin compliant with UAE data protection law?",
         a: (
           <>
-            Yes. Buzzin aligns with the UAE Personal Data Protection Law (PDPL), GDPR, and KHDA safeguarding requirements. UAE Pass and ICP App integration means visitor identity is verified against UAE federal government systems &mdash; not just self-declared information.
+            Yes. Buzzin aligns with the UAE Personal Data Protection Law (PDPL), GDPR, and KHDA safeguarding requirements. UAE Pass and ICP App integration means visitor identity is verified against UAE federal government systems rather than self-declared information alone.
           </>
         ),
       },
@@ -164,7 +164,7 @@ const faqData = [
         q: "Does Buzzin integrate with UAE Pass?",
         a: (
           <>
-            Yes. UAE Pass integration is native to the platform &mdash; visitors and residents can scan their UAE Pass QR code at the kiosk for instant, government-verified identity confirmation. No additional setup required.
+            Yes. UAE Pass integration is native to the platform. Visitors and residents scan their UAE Pass QR code at the kiosk for instant, government-verified identity confirmation with no additional setup required.
           </>
         ),
       },
@@ -232,7 +232,7 @@ const faqData = [
         q: "How is Buzzin priced?",
         a: (
           <>
-            Buzzin is a subscription-based platform. Pricing is based on your deployment scale &mdash; number of sites, modules required, and transaction volume. We do not publish standard pricing because every deployment is configured specifically for the client. Book a demo to receive a quote tailored to your operation.
+            Buzzin is subscription-based, with pricing determined by your deployment scale: number of sites, modules required, and transaction volume. We do not publish standard pricing because every deployment is configured specifically for the client. Book a demo to receive a quote tailored to your operation.
           </>
         ),
       },
@@ -240,7 +240,7 @@ const faqData = [
         q: "Is there a minimum contract term?",
         a: (
           <>
-            Standard deployments are on annual subscription terms. Multi-year agreements are available and preferred for enterprise clients &mdash; Aldar Properties and Asteco are both on 5-year exclusive agreements. Speak to the team about the terms that work for your organisation.
+            Standard deployments run on annual subscription terms. Multi-year agreements are available and preferred for larger clients. Aldar Properties and Asteco are both on 5-year exclusive agreements. Speak to the team about the terms that work for your organisation.
           </>
         ),
       },
@@ -248,7 +248,7 @@ const faqData = [
         q: "Are there additional costs for hardware?",
         a: (
           <>
-            The subscription covers the software platform. Hardware &mdash; tablets, NFC readers, badge printers, kiosk stands &mdash; is priced separately and can be supplied by Buzzin or sourced independently. WhatsApp and SMS notification add-ons may also incur additional charges depending on volume.
+            The subscription covers the software platform. Hardware (tablets, NFC readers, badge printers, kiosk stands) is priced separately and can be supplied by Buzzin or sourced independently. WhatsApp and SMS notification add-ons may also incur additional charges depending on volume.
           </>
         ),
       },
@@ -274,7 +274,7 @@ export default function FaqPage() {
                 name: "What exactly is Buzzin?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Buzzin is a premises intelligence platform with nine integrated modules covering visitor check-in, contractor permits, queue management, event check-in, amenity booking, attendance tracking, safeguarding, security patrols, and parking.",
+                  text: "Buzzin is a premises management platform with 10+ modules covering visitor check-in, contractor permits, queue management, event check-in, amenity booking, attendance tracking, safeguarding, security patrols, key management, and parking.",
                 },
               },
               {
@@ -287,10 +287,10 @@ export default function FaqPage() {
               },
               {
                 "@type": "Question",
-                name: "Is Buzzin ISO 27001 certified?",
+                name: "How does Buzzin protect our data?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. Buzzin is ISO 27001 certified. The platform also aligns with SOC 1/2/3 and GDPR. Reports available on request with signed NDA.",
+                  text: "Buzzin uses HTTPS/TLS 1.2+ encryption in transit, AES-256 encryption at rest, role-based access control, and GDPR and UAE PDPL aligned data handling. On-premises deployment is available for organisations with strict data residency requirements.",
                 },
               },
               {
@@ -314,7 +314,7 @@ export default function FaqPage() {
                 name: "How is Buzzin priced?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Buzzin is subscription-based, priced by deployment scale. We do not publish standard pricing \u2014 book a demo to receive a tailored quote.",
+                  text: "Buzzin is subscription-based, priced by deployment scale. We do not publish standard pricing. Book a demo to receive a tailored quote.",
                 },
               },
             ],
@@ -354,7 +354,7 @@ export default function FaqPage() {
 
               <SectionReveal>
                 <p className="mb-5 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  &mdash; FAQ
+                  FAQ
                 </p>
               </SectionReveal>
 
@@ -419,7 +419,7 @@ export default function FaqPage() {
             <div className="mx-auto max-w-[600px] text-center">
               <SectionReveal>
                 <p className="mb-4 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  &mdash; Still Have Questions
+                  Still Have Questions
                 </p>
                 <h2 className="mb-3 font-heading text-[2rem] font-bold text-[var(--text-primary)]">
                   We answer every question before the demo.
@@ -440,7 +440,7 @@ export default function FaqPage() {
                   <MessageCircle className="mb-3 h-6 w-6 text-[#25D366]" strokeWidth={1.5} />
                   <p className="mb-1 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Chat Now</p>
                   <p className="mb-1.5 font-heading text-[14px] font-bold text-[var(--text-primary)]">WhatsApp</p>
-                  <p className="font-body text-[12px] leading-[1.5] text-[var(--text-muted)]">Available 24/7 &mdash; fastest response</p>
+                  <p className="font-body text-[12px] leading-[1.5] text-[var(--text-muted)]">Available 24/7, fastest response</p>
                 </a>
               </StaggerItem>
 
@@ -453,7 +453,7 @@ export default function FaqPage() {
                   <Calendar className="mb-3 h-6 w-6 text-[var(--text-brand)]" strokeWidth={1.5} />
                   <p className="mb-1 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Book a Demo</p>
                   <p className="mb-1.5 font-heading text-[14px] font-bold text-[var(--text-primary)]">30-minute call</p>
-                  <p className="font-body text-[12px] leading-[1.5] text-[var(--text-muted)]">We answer all questions during the demo &mdash; tailored to your operation</p>
+                  <p className="font-body text-[12px] leading-[1.5] text-[var(--text-muted)]">We answer all questions during the demo, tailored to your operation</p>
                 </Link>
               </StaggerItem>
 
@@ -466,7 +466,7 @@ export default function FaqPage() {
                   <Mail className="mb-3 h-6 w-6 text-[var(--text-brand)]" strokeWidth={1.5} />
                   <p className="mb-1 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Email Us</p>
                   <p className="mb-1.5 font-heading text-[14px] font-bold text-[var(--text-primary)]">info@buzzin.ae</p>
-                  <p className="font-body text-[12px] leading-[1.5] text-[var(--text-muted)]">Detailed questions welcome &mdash; we respond within 4 business hours</p>
+                  <p className="font-body text-[12px] leading-[1.5] text-[var(--text-muted)]">Detailed questions welcome. We respond within 4 business hours.</p>
                 </a>
               </StaggerItem>
             </StaggerGrid>

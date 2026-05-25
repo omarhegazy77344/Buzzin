@@ -58,8 +58,8 @@ const heroFadeUpSoft = {
    ═══════════════════════════════════════ */
 
 const proofChips = [
-  { icon: Shield, text: "ISO 27001 & SOC Aligned" },
-  { icon: Globe, text: "UAE, KSA, Lebanon" },
+  { icon: Shield, text: "GDPR & UAE PDPL Aligned" },
+  { icon: Globe, text: "UAE, KSA, Kuwait, Lebanon" },
   { icon: CheckCircle2, text: "Deployed in days, not months" },
 ]
 
@@ -102,7 +102,7 @@ export function HeroVariantD({ images }: Props) {
             <motion.div variants={heroHeadline} className="mb-5 flex items-center justify-center gap-2">
               <Hexagon className="h-3.5 w-3.5 text-amber-500" />
               <span className="font-heading text-overline font-semibold uppercase tracking-[0.14em] text-[var(--text-brand)]">
-                9 Modules. One Intelligent Core.
+                10+ Modules. One Platform.
               </span>
             </motion.div>
 
@@ -112,7 +112,7 @@ export function HeroVariantD({ images }: Props) {
             >
               The operating system for{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">premises intelligence</span>
+                <span className="relative z-10">smarter premises</span>
                 <motion.span
                   className="absolute bottom-1 left-0 z-0 h-3 w-full origin-left bg-amber-500/15"
                   initial={{ scaleX: 0 }}
@@ -127,9 +127,9 @@ export function HeroVariantD({ images }: Props) {
               variants={heroSub}
               className="mx-auto mt-6 max-w-2xl text-body-md text-[var(--text-secondary)] md:text-body-lg"
             >
-              Every visitor, contractor, patrol round, and queue event{"\u00a0"}{"\u2014"}{" "}
-              captured, verified, and auditable in real time.
-              Built for the enterprises that run UAE{"\u00a0"}&{"\u00a0"}GCC.
+              Visitors, contractors, patrol rounds, and queues, all captured and
+              verified in real time. Built for the organisations that
+              run the UAE{"\u00a0"}&{"\u00a0"}GCC.
             </motion.p>
 
             <motion.div

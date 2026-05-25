@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import {
-  Building2, Hotel, GraduationCap, Briefcase, Landmark, Shield,
-} from "lucide-react"
+import { Building2, Hotel, GraduationCap } from "lucide-react"
 import { Navbar } from "@/components/marketing/navbar"
 import { Footer } from "@/components/marketing/footer"
 import { WhatsAppFab } from "@/components/marketing/whatsapp-fab"
@@ -16,11 +14,11 @@ import { IndustriesHero } from "@/components/marketing/industries-hero"
 export const dynamic = "force-static"
 
 export const metadata: Metadata = {
-  title: "Industries | Buzzin \u2014 Premises Intelligence for Hospitality, Real Estate, Education & More",
-  description: "Buzzin serves hospitality, residential real estate, education, corporate, financial districts, and government across UAE and GCC. Trusted by Atlantis, Aldar, Taaleem, Fairmont, and 300+ organisations.",
+  title: "Industries | Buzzin \u2014 Premises Intelligence for Hospitality, Real Estate & Education",
+  description: "Buzzin serves hospitality, residential real estate, and education across UAE and GCC. Trusted by Atlantis, Aldar, Taaleem, Fairmont, and 300+ organisations.",
   openGraph: {
-    title: "Industries | Buzzin Premises Intelligence Platform UAE",
-    description: "Six industries. One platform. Configured specifically for how each sector operates. Trusted by 300+ organisations across UAE and GCC.",
+    title: "Industries | Buzzin Platform UAE",
+    description: "Three industries. One platform. Configured specifically for how each sector operates. Trusted by 300+ organisations across UAE and GCC.",
   },
 }
 
@@ -119,7 +117,7 @@ export default function IndustriesPage() {
                   One dashboard across your entire portfolio.
                 </h2>
                 <p className="mb-5 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
-                  Managing multiple communities from separate WhatsApp groups is not a strategy. Buzzin gives your operations team complete visibility across every gate, every contractor, and every visitor in your entire portfolio &mdash; from one dashboard.
+                  Running multiple communities from separate WhatsApp groups leaves your portfolio exposed. Buzzin gives your operations team a single view of every gate, contractor, and visitor across your entire portfolio.
                 </p>
                 <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Modules Used</p>
                 <div className="mb-5">
@@ -166,10 +164,10 @@ export default function IndustriesPage() {
                   <span className="font-heading text-[11px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Hospitality</span>
                 </div>
                 <h2 className="mb-3 font-heading text-[2rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                  Every guest expected. Every contractor verified. Every event flawless.
+                  Guests, contractors, and events managed from a single dashboard.
                 </h2>
                 <p className="mb-5 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
-                  For a 5-star property, operational precision is not optional. Buzzin gives your team complete visibility over every person, permit, and event &mdash; from lobby to loading bay.
+                  For a 5-star property, operational precision is not optional. Buzzin gives your team a clear view of every person, permit, and event, from lobby to loading bay.
                 </p>
                 <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Modules Used</p>
                 <div className="mb-5">
@@ -196,10 +194,10 @@ export default function IndustriesPage() {
                   <span className="font-heading text-[11px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Education</span>
                 </div>
                 <h2 className="mb-3 font-heading text-[2rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                  Every child. Known. Verified. Safe.
+                  Safeguarding every child on your campus.
                 </h2>
                 <p className="mb-4 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
-                  UAE Federal Decree-Law No. 26/2025 requires every school to have auditable safeguarding records by January 2027. Buzzin is KHDA-ready &mdash; safeguarding, visitor management, and contractor permits built specifically for international schools across the UAE.
+                  UAE Federal Decree-Law No. 26/2025 requires every school to have auditable safeguarding records by January 2027. Buzzin is KHDA-ready, with safeguarding, visitor management, and contractor permits built specifically for international schools across the UAE.
                 </p>
                 {/* Compliance urgency chip */}
                 <div className="mb-5">
@@ -209,7 +207,7 @@ export default function IndustriesPage() {
                       <path d="M6 5V7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
                       <circle cx="6" cy="8.5" r="0.6" fill="currentColor"/>
                     </svg>
-                    KHDA Compliance Deadline &mdash; Jan 2027
+                    KHDA Compliance Deadline · Jan 2027
                   </span>
                 </div>
                 <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Modules Used</p>
@@ -236,143 +234,17 @@ export default function IndustriesPage() {
           </Container>
         </section>
 
-        {/* ━━━ SECTION 6 — CORPORATE ━━━ */}
-        <section id="corporate" className="border-b border-[var(--border-subtle)] bg-[var(--bg-canvas)] py-16 md:py-20">
-          <Container>
-            <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.1fr_1fr]">
-              {/* Left — proof card */}
-              <SectionReveal>
-                <ProofCard
-                  label="Corporate Offices"
-                  quote="Visitor management, contractor access, and attendance tracking \u2014 all connected on one platform for corporate headquarters and multi-tenant office buildings."
-                  stats={["One", "tablet to start", "Days", "to go live"]}
-                  pill="Corporate"
-                />
-              </SectionReveal>
-
-              {/* Right — text */}
-              <SectionReveal>
-                <div className="mb-4 flex items-center gap-3">
-                  <Briefcase className="h-5 w-5 text-[var(--text-brand)]" strokeWidth={1.5} />
-                  <span className="font-heading text-[11px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Corporate</span>
-                </div>
-                <h2 className="mb-3 font-heading text-[2rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                  Professional premises. Professional standard.
-                </h2>
-                <p className="mb-5 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
-                  Corporate headquarters, business parks, and multi-tenant office buildings require visitor management, contractor access control, and meeting room booking &mdash; all without a complex IT project. Buzzin deploys in days and runs on one Android tablet.
-                </p>
-                <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Modules Used</p>
-                <div className="mb-5">
-                  <ModulePills modules={["VMS", "Work Permits", "Booking Management", "Attendance"]} />
-                </div>
-                <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Key Clients</p>
-                <p className="mb-6 font-body text-[13px] text-[var(--text-muted)]">Central Park Towers DIFC &middot; Masdar City</p>
-                <Link href="/en/book-demo" className="font-body text-[13px] font-semibold text-[var(--text-brand)] hover:underline">
-                  Book a corporate demo &rarr;
-                </Link>
-              </SectionReveal>
-            </div>
-          </Container>
-        </section>
-
-        {/* ━━━ SECTION 7 — FINANCIAL DISTRICTS ━━━ */}
-        <section id="financial" className="border-b border-[var(--border-subtle)] bg-[var(--bg-page)] py-16 md:py-20">
-          <Container>
-            <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_1.1fr]">
-              {/* Left — text */}
-              <SectionReveal>
-                <div className="mb-4 flex items-center gap-3">
-                  <Landmark className="h-5 w-5 text-[var(--text-brand)]" strokeWidth={1.5} />
-                  <span className="font-heading text-[11px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Financial Districts</span>
-                </div>
-                <h2 className="mb-3 font-heading text-[2rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                  Every visitor carries compliance weight.
-                </h2>
-                <p className="mb-5 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
-                  At DIFC and equivalent financial addresses, every visitor interaction carries regulatory significance. Buzzin provides identity-verified check-in, complete audit trail, and on-premises deployment for organisations with strict data residency requirements.
-                </p>
-                {/* On-prem note */}
-                <div className="mb-5 rounded-[10px] border border-amber-500/20 bg-amber-500/[0.08] px-4 py-3.5">
-                  <p className="font-body text-[13px] leading-[1.55] text-[var(--text-primary)]">
-                    On-premises deployment available &mdash; your data never leaves your infrastructure.
-                  </p>
-                </div>
-                <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Modules Used</p>
-                <div className="mb-5">
-                  <ModulePills modules={["VMS", "Work Permits", "Attendance"]} />
-                </div>
-                <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Key Clients</p>
-                <p className="mb-6 font-body text-[13px] text-[var(--text-muted)]">Central Park Towers DIFC</p>
-                <Link href="/en/book-demo" className="font-body text-[13px] font-semibold text-[var(--text-brand)] hover:underline">
-                  Book a financial district demo &rarr;
-                </Link>
-              </SectionReveal>
-
-              {/* Right — proof card */}
-              <SectionReveal>
-                <ProofCard
-                  label="Central Park Towers, DIFC"
-                  quote="Every visitor at this address carries compliance weight. Absolute certainty is the only standard."
-                  stats={["100%", "audit readiness", "On-prem", "deployment option"]}
-                  pill="Financial Districts"
-                />
-              </SectionReveal>
-            </div>
-          </Container>
-        </section>
-
-        {/* ━━━ SECTION 8 — GOVERNMENT ━━━ */}
-        <section id="government" className="bg-[var(--bg-canvas)] py-16 md:py-20">
-          <Container>
-            <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.1fr_1fr]">
-              {/* Left — proof card */}
-              <SectionReveal>
-                <ProofCard
-                  label="Government Sector"
-                  quote="KHDA will ask for the safeguarding log. A paper notebook is no longer acceptable evidence of duty of care."
-                  stats={["UAE Pass", "integrated", "ICP App", "verified identity"]}
-                  pill="Government"
-                />
-              </SectionReveal>
-
-              {/* Right — text */}
-              <SectionReveal>
-                <div className="mb-4 flex items-center gap-3">
-                  <Shield className="h-5 w-5 text-[var(--text-brand)]" strokeWidth={1.5} />
-                  <span className="font-heading text-[11px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Government</span>
-                </div>
-                <h2 className="mb-3 font-heading text-[2rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                  Government-grade compliance. Government-verified identity.
-                </h2>
-                <p className="mb-5 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
-                  Government schools, public institutions, and government-adjacent facilities require UAE Pass integration, ICP-verified identity, and on-premises deployment options. Buzzin integrates natively with UAE federal digital identity infrastructure.
-                </p>
-                <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Modules Used</p>
-                <div className="mb-5">
-                  <ModulePills modules={["VMS", "Safeguarding", "Work Permits", "Attendance"]} />
-                </div>
-                <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">Key Clients</p>
-                <p className="mb-6 font-body text-[13px] text-[var(--text-muted)]">Rashid &amp; Latifa Schools &middot; Massar Sharjah</p>
-                <Link href="/en/book-demo" className="font-body text-[13px] font-semibold text-[var(--text-brand)] hover:underline">
-                  Book a government sector demo &rarr;
-                </Link>
-              </SectionReveal>
-            </div>
-          </Container>
-        </section>
-
-        {/* ━━━ SECTION 9 — CROSS-INDUSTRY PROOF ━━━ */}
+        {/* ━━━ SECTION 6 — CROSS-INDUSTRY PROOF ━━━ */}
         <section className="relative overflow-hidden bg-[var(--bg-proof)] py-14 md:py-16">
           <HexagonPattern className="text-white/[0.04]" />
           <Container className="relative z-[1]">
             <div className="mx-auto max-w-[800px] text-center">
               <SectionReveal>
                 <p className="mb-4 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  &mdash; 300+ Organisations
+                  300+ Organisations
                 </p>
                 <h2 className="font-heading text-[2rem] font-bold text-white">
-                  Every sector. Every scale. One platform.
+                  One platform, configured for how each industry actually works.
                 </h2>
               </SectionReveal>
               <StaggerGrid className="mt-6 flex flex-wrap justify-center gap-3" interval={0.04}>

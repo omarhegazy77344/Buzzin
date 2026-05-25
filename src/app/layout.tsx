@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Buzzin",
   },
   description:
-    "Trusted by Atlantis, Aldar & Taaleem. 20M+ secure interactions processed. Visitor management, queue, patrolling & 9 integrated modules.",
+    "Trusted by Atlantis, Aldar & Taaleem. 20M+ secure interactions processed. Visitor management, queue, patrolling & 10+ integrated modules.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",

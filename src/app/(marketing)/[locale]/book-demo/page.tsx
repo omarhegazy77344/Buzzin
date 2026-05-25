@@ -10,7 +10,7 @@ import { BookDemoLayout } from "@/components/marketing/book-demo-layout"
 export const dynamic = "force-static"
 
 export const metadata: Metadata = {
-  title: "Book a Free Demo | Buzzin — Premises Intelligence Platform",
+  title: "Book a Free Demo | Buzzin",
   description:
     "Book a free Buzzin demo tailored to your industry. Trusted by Atlantis, Aldar, Taaleem, and 300+ organisations across UAE & GCC. We respond within 4 business hours.",
   robots: "noindex",
@@ -42,7 +42,7 @@ export default function BookDemoPage() {
                   </h1>
 
                   <p className="mt-5 max-w-[420px] font-body text-[16px] font-light leading-relaxed text-[var(--text-tertiary)]">
-                    We tailor every demo to your industry and your specific operation. Not a generic walkthrough — your exact use case, your exact premises type.
+                    We tailor every demo to your industry and your specific operation. Not a generic walkthrough, but your exact use case and your exact premises type.
                   </p>
 
                   <div className="mt-6 flex items-center gap-2.5">

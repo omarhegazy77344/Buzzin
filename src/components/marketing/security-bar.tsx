@@ -7,11 +7,11 @@ import { defaultSecurityCerts } from "@/lib/content-defaults"
 import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
 const iconMap: Record<string, typeof Shield> = {
-  "ISO 27001": Shield,
-  "SOC 1/2/3": Lock,
   "GDPR Aligned": FileCheck,
   "UAE Pass": Fingerprint,
+  "UAE PDPL": Shield,
   "On-Prem Available": Server,
+  "TLS 1.2+": Lock,
 }
 
 type SecurityBarProps = {
@@ -37,7 +37,7 @@ export function SecurityBar({ certs }: SecurityBarProps) {
             Security & Compliance
           </p>
           <h2 className="font-heading text-display-sm font-bold text-white md:text-display-md">
-            Enterprise-grade security. GCC&#8209;native&nbsp;compliance.
+            Built for GCC security and compliance&nbsp;standards.
           </h2>
         </motion.div>
 
@@ -69,8 +69,8 @@ export function SecurityBar({ certs }: SecurityBarProps) {
           transition={{ duration: 0.5, delay: 0.4, ease: BRAND_EASE }}
           className="mx-auto mt-8 max-w-xl text-center text-body-sm text-gray-400"
         >
-          Meeting the security and compliance requirements of financial institutions, government
-          schools, and luxury hospitality groups across the&nbsp;GCC.
+          Trusted by financial institutions, government schools, and luxury hospitality
+          groups across the GCC to meet their strictest security&nbsp;requirements.
         </motion.p>
       </Container>
     </section>

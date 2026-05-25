@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+
 import Link from "next/link"
 import {
   ScanLine, Bell, Shield, FileCheck, BarChart2, Server,
@@ -35,8 +36,8 @@ export const metadata: Metadata = {
 const steps = [
   { title: "Visitor arrives at kiosk", body: "Self-service Android tablet at reception or gate entrance. No receptionist required." },
   { title: "Identity verified instantly", body: "National ID, Emirates ID, driving license, passport, or UAE Pass scanned and authenticated via ICP in real time." },
-  { title: "Host notified immediately", body: "Your host receives an instant notification — their visitor has arrived, with photo and name confirmed." },
-  { title: "Badge printed automatically", body: "Client-branded visitor badge prints on arrival — photo, name, timestamp, and QR code included." },
+  { title: "Host notified immediately", body: "Your host receives an instant notification. Their visitor has arrived, with photo and name confirmed." },
+  { title: "Badge printed automatically", body: "A client-branded visitor badge prints on arrival with photo, name, timestamp, and QR code." },
   { title: "Departure logged", body: "Sign-out recorded. Audit trail complete. Evacuation list updated automatically." },
 ]
 
@@ -47,15 +48,15 @@ const features = [
   },
   {
     icon: Bell, title: "Notifications & Alerts",
-    items: ["Host notifications via push and email", "WhatsApp and SMS notifications (add-on)", "Multi-host support — up to 5 hosts", "Exceeding visit time automatic alert", "Delivery driver separate flow", "Pre-registration invitation link", "Visitor self-registration via QR"],
+    items: ["Host notifications via push and email", "WhatsApp and SMS notifications (add-on)", "Multi-host support for up to 5 hosts", "Exceeding visit time automatic alert", "Delivery driver separate flow", "Pre-registration invitation link", "Visitor self-registration via QR"],
   },
   {
     icon: Shield, title: "Access & Control",
-    items: ["Multi-gate support — one dashboard", "Phone-based virtual NFC card access", "QR code badge for gate scanning", "Real-time headcount — always accurate", "Emergency evacuation list one click", "Blacklist with instant gate alert", "Community communication to tenants"],
+    items: ["Multi-gate support from one dashboard", "Phone-based virtual NFC card access", "QR code badge for gate scanning", "Real-time headcount, always accurate", "Emergency evacuation list one click", "Blacklist with instant gate alert", "Community communication to tenants"],
   },
   {
     icon: FileCheck, title: "Compliance & Audit",
-    items: ["Tamper-proof digital audit log", "Complete audit export in 30 seconds", "GDPR and UAE PDPL compliant", "Data retained securely for 5 years", "Right to deletion on request", "HTTPS/TLS 1.2+ end-to-end encryption", "No sensitive data stored on tablets"],
+    items: ["Immutable digital audit log (cannot be altered after the fact)", "Complete audit export in 30 seconds", "GDPR and UAE PDPL compliant", "Data retained securely for 5 years", "Right to deletion on request", "HTTPS/TLS 1.2+ end-to-end encryption", "No sensitive data stored on tablets"],
   },
   {
     icon: BarChart2, title: "Analytics & Reporting",
@@ -63,53 +64,53 @@ const features = [
   },
   {
     icon: Server, title: "Hardware & Deployment",
-    items: ["Android tablet (8.0+, 8GB RAM, 13MP)", "NFC card reader — MIFARE compatible", "Client-branded badge printer supplied", "On-premises deployment available", "Encrypted cloud — AWS, GCP, or Azure", "Wi-Fi or 4G/LTE connectivity", "Scalable — grows with your operation"],
+    items: ["Android tablet (8.0+, 8GB RAM, 13MP)", "NFC card reader, MIFARE compatible", "Client-branded badge printer supplied", "On-premises deployment available", "Encrypted cloud (AWS, GCP, or Azure)", "Wi-Fi or 4G/LTE connectivity", "Scales as your operation grows"],
   },
 ]
 
 const integrations = [
-  { abbr: "UAE", name: "UAE Pass", desc: "National digital identity — QR scan check-in for UAE nationals and residents" },
+  { abbr: "UAE", name: "UAE Pass", desc: "National digital identity. QR scan check-in for UAE nationals and residents." },
   { abbr: "ICP", name: "ICP App", desc: "Federal identity verification for residents, visitors, and contractors" },
-  { abbr: "WA", name: "WhatsApp Business", desc: "Host notifications via WATI integration — available as add-on" },
+  { abbr: "WA", name: "WhatsApp Business", desc: "Host notifications via WATI integration, available as add-on" },
   { abbr: "AD", name: "Active Directory / SSO", desc: "Single sign-on and automated user synchronization for enterprise IT" },
-  { abbr: "NFC", name: "NFC Card Readers", desc: "MIFARE compatible readers — supplied and configured by Buzzin" },
+  { abbr: "NFC", name: "NFC Card Readers", desc: "MIFARE compatible readers, supplied and configured by Buzzin" },
   { abbr: "ACC", name: "Access Control Systems", desc: "Turnstiles, gate barriers, and ANPR cameras for automated entry" },
 ]
 
 const proofCards = [
   { name: "Atlantis The Palm", body: "Managing visitor flows, contractor access, and event check-in across one of the UAE\u2019s most visited luxury destinations.", tag: "Hospitality" },
-  { name: "Aldar Properties", body: "Exclusive 5-year partner across the entire Aldar UAE portfolio — residential communities, commercial assets, and retail.", tag: "Real Estate", href: "/en/industries/residential-real-estate" },
-  { name: "Taaleem Group", body: "Visitor management and safeguarding across multiple international school campuses — one dashboard, complete control.", tag: "Education", href: "/en/industries/education" },
+  { name: "Aldar Properties", body: "Exclusive 5-year partner across the entire Aldar UAE portfolio, covering residential communities, commercial assets, and retail.", tag: "Real Estate", href: "/en/industries/residential-real-estate" },
+  { name: "Taaleem Group", body: "Visitor management and safeguarding across multiple international school campuses. One dashboard, complete control.", tag: "Education", href: "/en/industries/education" },
 ]
 
 const beforeAfter = [
   {
-    before: "Visitor signs in by hand — illegible writing, no photo, no identity verification, no timestamp",
-    after: "National ID or UAE Pass scanned — identity confirmed by ICP, photo captured, host notified in 3 to 5 seconds",
+    before: "Visitor signs in by hand. Illegible writing, no photo, no identity verification, no timestamp.",
+    after: "National ID or UAE Pass scanned. Identity confirmed by ICP, photo captured, host notified in 3 to 5 seconds.",
   },
   {
-    before: "Host has no idea their visitor arrived — they find out 15 minutes later by accident",
-    after: "Host receives an instant notification the moment their visitor checks in at the gate",
+    before: "Host has no idea their visitor arrived. They find out 15 minutes later by accident.",
+    after: "Host receives an instant notification the moment their visitor checks in at the gate.",
   },
   {
-    before: "Evacuation alert — you have no accurate list of who is currently on your premises",
-    after: "Real-time evacuation list — every person on site, one click, always accurate, always current",
+    before: "Evacuation alert goes out, but you have no accurate list of who is currently on your premises.",
+    after: "Real-time evacuation list. Every person on site, one click, always accurate, always current.",
   },
 ]
 
-const certs = ["ISO 27001 Certified", "SOC 1 / 2 / 3", "GDPR Aligned", "UAE Pass Integrated", "On-Premises Available", "5-Year Data Retention"]
+const certs = ["GDPR Aligned", "UAE PDPL", "UAE Pass Integrated", "ICP App Integrated", "On-Premises Available", "5-Year Data Retention"]
 
 const supportCards = [
-  { icon: Wifi, title: "Remote Troubleshooting", body: "OTA updates and MDM-based remote access — issues resolved without a site visit in most cases" },
-  { icon: MessageSquare, title: "SLA-Backed Support", body: "Phone, email, and chat support with guaranteed response times — not a ticketing queue" },
+  { icon: Wifi, title: "Remote Troubleshooting", body: "OTA updates and MDM-based remote access. Most issues resolved without a site visit." },
+  { icon: MessageSquare, title: "SLA-Backed Support", body: "Phone, email, and chat support with guaranteed response times. You talk to a person, not a ticketing queue." },
   { icon: GraduationCap, title: "Training & Onboarding", body: "Full user training during deployment for reception, security, and admin teams" },
   { icon: Wrench, title: "Routine Site Visits", body: "Regular on-site visits for maintenance, performance checks, and hardware inspection" },
 ]
 
 const consequences = [
-  "No identity verification — anyone can write any name in your visitor logbook",
+  "No identity verification. Anyone can write any name in your visitor logbook.",
   "Your host has no idea their visitor has been waiting at reception for 10 minutes",
-  "A GDPR or PDPL audit would expose you immediately — no data retention policy",
+  "A GDPR or PDPL audit would expose you immediately because there is no data retention policy",
   "In an emergency evacuation you have no accurate headcount of who is on premises",
 ]
 
@@ -174,21 +175,21 @@ export default function VmsPage() {
                     </span>
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 font-heading text-[11px] font-semibold text-emerald-600">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                      Core Module — Live
+                      Core Module · Live
                     </span>
                   </HeroBlock>
 
                   {/* H1 */}
                   <HeroBlock>
                     <h1 className="font-display text-display-lg md:text-display-xl lg:text-display-2xl text-[var(--text-primary)]">
-                      Every visitor. Registered, verified, and host notified — in 3 to 5&nbsp;seconds.
+                      Every visitor. Registered, verified, and host notified in 3 to 5&nbsp;seconds.
                     </h1>
                   </HeroBlock>
 
                   {/* Sub */}
                   <HeroBlock className="mt-4 max-w-[480px]">
                     <p className="font-body text-body-lg leading-[1.7] text-[var(--text-secondary)]">
-                      The UAE&apos;s most trusted enterprise visitor management system. National ID, Emirates ID, and UAE Pass scanning. WhatsApp host alerts. Tamper-proof audit log. Already running across Atlantis, Aldar, Fairmont, and 300+ organisations across the GCC.
+                      The UAE&apos;s most trusted visitor management system for large organisations. National ID, Emirates ID, and UAE Pass scanning. WhatsApp host alerts. Immutable audit log. Already running across Atlantis, Aldar, Fairmont, and 300+ organisations across the GCC.
                     </p>
                   </HeroBlock>
 
@@ -230,7 +231,7 @@ export default function VmsPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Problem
+                The Problem
               </p>
               <h2 className="mt-4 max-w-[560px] font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Your visitor register is a liability waiting to happen.
@@ -240,10 +241,10 @@ export default function VmsPage() {
             <div className="mt-10 grid grid-cols-1 gap-16 lg:grid-cols-2">
               <VmsSectionReveal>
                 <blockquote className="border-l-[3px] border-[var(--text-brand)] pl-5 font-display text-[1.5rem] leading-[1.5] text-[var(--text-primary)]">
-                  &ldquo;Managing visitors with a paper logbook is not just inefficient — it is a compliance risk, a security gap, and a liability your organisation cannot afford.&rdquo;
+                  &ldquo;Managing visitors with a paper logbook is not just inefficient. It is a compliance risk, a security gap, and a liability your organisation cannot afford.&rdquo;
                 </blockquote>
                 <p className="mt-4 font-body text-[15px] leading-[1.7] text-[var(--text-secondary)]">
-                  Every time a visitor signs in by hand, you have no verified identity, no photo, no host notification, and no audit trail. When a regulator asks, an incident occurs, or an evacuation happens — that paper register will fail you.
+                  Every time a visitor signs in by hand, you have no verified identity, no photo, no host notification, and no audit trail. When a regulator asks, an incident occurs, or an evacuation happens, that paper register will fail you.
                 </p>
               </VmsSectionReveal>
 
@@ -269,13 +270,13 @@ export default function VmsPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; How It Works
+                How It Works
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                From arrival to verified — in five steps.
+                From arrival to verified in five steps.
               </h2>
               <p className="mt-3 mb-10 max-w-[500px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                Every check-in follows the same precise flow — whether it is a VIP guest at Atlantis or a contractor at an Aldar community gate.
+                Every check-in follows the same precise flow, whether it is a VIP guest at Atlantis or a contractor at an Aldar community gate.
               </p>
             </VmsSectionReveal>
 
@@ -300,13 +301,13 @@ export default function VmsPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Features
+                Features
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Every feature an enterprise premises requires.
               </h2>
               <p className="mt-3 mb-9 max-w-[520px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                27 features built for the operational and compliance demands of UAE enterprise — residential, hospitality, education, and financial districts.
+                27 features built for the operational and compliance demands of UAE enterprise, spanning residential, hospitality, education, and financial districts.
               </p>
             </VmsSectionReveal>
 
@@ -326,7 +327,7 @@ export default function VmsPage() {
                           <span className="mt-[5px] block h-[5px] w-[5px] shrink-0 rounded-full bg-[var(--text-brand)]" />
                           <span className="font-body text-[13px] text-[var(--text-secondary)]">
                             {f.title === "Compliance & Audit" && item === "GDPR and UAE PDPL compliant" ? (
-                              <>{item} — <Link href="/en/security-compliance" className="text-[var(--text-brand)] hover:underline">view all security certifications</Link></>
+                              <>{item} · <Link href="/en/security-compliance" className="text-[var(--text-brand)] hover:underline">view all security certifications</Link></>
                             ) : item}
                           </span>
                         </li>
@@ -344,13 +345,13 @@ export default function VmsPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Integrations
+                Integrations
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Built for the UAE digital infrastructure.
               </h2>
               <p className="mt-3 mb-8 max-w-[480px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                Buzzin connects natively with the UAE&apos;s national identity systems — not as an afterthought, but as a core part of how the platform works.
+                Buzzin connects natively with the UAE&apos;s national identity systems. These are a core part of how the platform works, not an afterthought.
               </p>
             </VmsSectionReveal>
 
@@ -378,7 +379,7 @@ export default function VmsPage() {
           <Container className="relative">
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Trusted By
+                Trusted By
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-white">
                 The most demanding premises in the UAE run on Buzzin.
@@ -414,7 +415,7 @@ export default function VmsPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Transformation
+                The Transformation
               </p>
               <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 What changes when you replace the paper logbook.
@@ -453,10 +454,10 @@ export default function VmsPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Security & Compliance
+                Security &amp; Compliance
               </p>
               <h2 className="mt-4 font-heading text-[2rem] font-bold text-[var(--text-primary)]">
-                Enterprise-grade security. GCC-native compliance.
+                Bank-level security. GCC-native compliance.
               </h2>
             </VmsSectionReveal>
 
@@ -480,13 +481,13 @@ export default function VmsPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Support & Deployment
+                Support &amp; Deployment
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 We do not disappear after go-live.
               </h2>
               <p className="mt-3 mb-9 max-w-[480px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                From first site visit to routine maintenance — Buzzin is with you at every stage.
+                From first site visit to routine maintenance, Buzzin is with you at every stage.
               </p>
             </VmsSectionReveal>
 
@@ -508,7 +509,7 @@ export default function VmsPage() {
         <CtaBanner
           content={{
             headline: "Ready to replace your paper logbook with a system Atlantis trusts?",
-            subline: "We will show you exactly how Buzzin works for your premises type — in a 30-minute tailored demo.",
+            subline: "We will show you exactly how Buzzin works for your premises type. Book a 30-minute tailored demo.",
             primaryLabel: "Book a Free Demo",
             primaryHref: "/book-demo",
             whatsappLabel: "Chat on WhatsApp",

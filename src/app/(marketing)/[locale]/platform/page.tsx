@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import {
-  Building2, GraduationCap, Briefcase, Landmark, Shield,
+  Building2, GraduationCap,
   Smartphone, Cloud, Wifi, RefreshCw, ArrowRight,
   XCircle, CheckCircle,
 } from "lucide-react"
@@ -21,13 +21,13 @@ import { PlatformHero } from "@/components/marketing/platform-hero"
 export const dynamic = "force-static"
 
 export const metadata: Metadata = {
-  title: "Platform Overview | Buzzin \u2014 Nine Integrated Premises Management Modules",
+  title: "Platform Overview | Buzzin \u2014 10+ Integrated Premises Management Modules",
   description:
-    "Nine integrated premises management modules on one platform. Visitor management, work permits, queue management, safeguarding, patrolling, booking, events, attendance, and parking. Trusted by Aldar, Atlantis, Taaleem, and 300+ organisations.",
+    "10+ integrated premises management modules on one platform. Visitor management, work permits, queue management, safeguarding, patrolling, booking, events, attendance, key management, and parking. Trusted by Aldar, Atlantis, Taaleem, and 300+ organisations.",
   openGraph: {
-    title: "Buzzin Platform \u2014 Nine Integrated Modules",
+    title: "Buzzin Platform \u2014 10+ Integrated Modules",
     description:
-      "One platform. Nine modules. Zero silos. Visitor management, contractor permits, queue management, safeguarding, and more \u2014 all sharing the same data and dashboard.",
+      "Visitor management, contractor permits, queue management, safeguarding, key management, and more. 10+ modules sharing the same data and dashboard.",
   },
 }
 
@@ -42,12 +42,12 @@ const platformPageModules: PlatformModule[] = [
     desc: "NFC checkpoint scanning. Timestamped rounds. Missed patrol alerts.",
     shortDesc: "Guard patrols",
     hoverLine: "Prove every patrol round with NFC checkpoint scans.",
-    longDesc: "Digitise security patrols with NFC checkpoint scanning. Every round is timestamped, every missed station flagged, and every report board-ready — replacing handwritten logbooks with verifiable proof.",
+    longDesc: "Digitise security patrols with NFC checkpoint scanning. Every round is timestamped, every missed station is flagged, and reports can be exported in seconds. Replaces handwritten logbooks with verifiable proof.",
     benefits: [
       "NFC checkpoint scanning at every patrol station",
       "Timestamped rounds with GPS confirmation",
       "Missed patrol alerts sent to supervisors in real time",
-      "Board-ready patrol reports exportable in seconds",
+      "Patrol reports exportable in seconds for management review",
     ],
     status: "comingSoon",
     badge: null,
@@ -59,11 +59,11 @@ const platformPageModules: PlatformModule[] = [
     desc: "ANPR integration. Visitor parking linked to VMS. Smart bay tracking.",
     shortDesc: "Smart parking",
     hoverLine: "Link visitor parking to your VMS with ANPR.",
-    longDesc: "Integrate parking with your visitor and resident management. ANPR cameras recognise plates on entry, visitor parking is linked to VMS pre-registration, and resident permits are managed digitally — no more stickers, no more barriers.",
+    longDesc: "Integrate parking with your visitor and resident management. ANPR cameras recognise plates on entry, visitor parking is linked to VMS pre-registration, and resident permits are managed digitally. No more stickers, no more barrier queues.",
     benefits: [
       "ANPR integration for automatic plate recognition",
       "Visitor parking linked to VMS pre-registration",
-      "Resident permit management — digital, not stickers",
+      "Resident permit management done digitally, replacing stickers",
       "Smart bay tracking with occupancy analytics",
     ],
     status: "comingSoon",
@@ -91,21 +91,21 @@ const pageModules = [
     slug: "event-management",
     desc: "Unique QR per attendee. Time and location controlled access. Branded invitations. Full attendance log.",
     status: "core" as const,
-    sectors: ["Hospitality", "Corporate"],
+    sectors: ["Hospitality"],
   },
   {
     name: "Attendance Management",
     slug: "attendance-management",
     desc: "NFC card or phone tap. Real-time punctuality alerts. Shift reports. Late arrival notifications.",
     status: "core" as const,
-    sectors: ["Education", "Corporate"],
+    sectors: ["Education"],
   },
   {
     name: "Queue Management System",
     slug: "queue-management",
     desc: "VIP priority routing. WhatsApp tokens. Self-service Emirates ID kiosk. Built first for Aldar Properties.",
     status: "new" as const,
-    sectors: ["Real Estate", "Government"],
+    sectors: ["Real Estate"],
   },
   {
     name: "Booking Management",
@@ -118,8 +118,8 @@ const pageModules = [
     name: "Safeguarding System",
     slug: "safeguarding",
     desc: "KHDA-ready. Authorised pickup verification. UAE Child Safety Law 2026 compliant. Built for schools.",
-    status: "new" as const,
-    sectors: ["Education", "Government"],
+    status: "soon" as const,
+    sectors: ["Education"],
   },
   {
     name: "Patrolling System",
@@ -135,35 +135,39 @@ const pageModules = [
     status: "soon" as const,
     sectors: ["Real Estate", "Hospitality"],
   },
+  {
+    name: "Key Management System",
+    slug: "key-management",
+    desc: "NFC key tracking. Real-time status board. Overdue escalations. Immutable audit trail. Built for Atlantis.",
+    status: "soon" as const,
+    sectors: ["Hospitality", "Real Estate"],
+  },
 ]
 
 const industries = [
   { icon: Building2, name: "Residential & Real Estate", modules: "6 modules available", clients: "Aldar \u00B7 Asteco \u00B7 DAMAC \u00B7 Azizi", href: "/en/industries/residential-real-estate" },
   { icon: Building2, name: "Hospitality", modules: "5 modules available", clients: "Atlantis \u00B7 Fairmont \u00B7 Kempinski \u00B7 Hyatt", href: "/en/industries/hospitality" },
   { icon: GraduationCap, name: "Education", modules: "5 modules available", clients: "Taaleem \u00B7 Brighton \u00B7 GEMS", href: "/en/industries/education" },
-  { icon: Briefcase, name: "Corporate", modules: "4 modules available", clients: "Central Park Towers DIFC", href: "/en/industries" },
-  { icon: Landmark, name: "Financial Districts", modules: "3 modules available", clients: "DIFC \u00B7 Masdar City", href: "/en/industries" },
-  { icon: Shield, name: "Government", modules: "4 modules available", clients: "Rashid & Latifa \u00B7 Massar Sharjah", href: "/en/industries" },
 ]
 
 const techSpecs = [
   { icon: Smartphone, title: "One Android tablet", body: "Android 8.0+. That is all you need to go live. No servers. No complex infrastructure." },
-  { icon: Cloud, title: "Cloud or on-premises", body: "AWS, GCP, or Azure cloud hosting \u2014 or full on-premises deployment for data sovereignty requirements." },
-  { icon: Wifi, title: "Wi-Fi or 4G/LTE", body: "Requires stable internet. Real-time sync between kiosk and cloud \u2014 no data stored on device." },
+  { icon: Cloud, title: "Cloud or on-premises", body: "AWS, GCP, or Azure cloud hosting. Full on-premises deployment also available for data sovereignty requirements." },
+  { icon: Wifi, title: "Wi-Fi or 4G/LTE", body: "Requires stable internet. Real-time sync between kiosk and cloud with no data stored on device." },
   { icon: RefreshCw, title: "OTA updates", body: "All platform updates delivered over the air. Zero downtime. Zero manual intervention required." },
 ]
 
 const painRows = [
   "4 separate vendor contracts",
   "Data does not sync between systems",
-  "4 separate audit trails \u2014 or none",
+  "4 separate audit trails, or none at all",
   "When something goes wrong, nobody knows which system to check",
 ]
 
 const benefitRows = [
   "One subscription, all modules",
   "Every module shares the same data",
-  "One tamper-proof audit trail",
+  "A single immutable audit trail",
   "When something happens, the whole platform knows instantly",
 ]
 
@@ -216,15 +220,15 @@ export default function PlatformPage() {
         {/* ━━━ SECTION 2 — PLATFORM HIVE ━━━ */}
         <PlatformOverview modules={platformPageModules} />
 
-        {/* ━━━ SECTION 3 — ALL NINE MODULES ━━━ */}
+        {/* ━━━ SECTION 3 — ALL MODULES ━━━ */}
         <section className="bg-[var(--bg-page)] py-16 md:py-20">
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; All Modules
+                All Modules
               </p>
               <h2 className="mt-4 max-w-[480px] font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                Every module. Every detail.
+                The full module list, with details.
               </h2>
               <p className="mt-3 mb-10 max-w-[520px] font-body text-[15px] font-light text-[var(--text-muted)]">
                 Click any module to see the full feature set, how it works, and which organisations use it.
@@ -240,7 +244,7 @@ export default function PlatformPage() {
 
             <StaggerGrid className="flex flex-col" interval={0.06}>
               {pageModules.map((m) => {
-                const href = m.status === "soon" ? "/en/platform" : `/en/platform/${m.slug}`
+                const href = `/en/platform/${m.slug}`
                 return (
                   <StaggerItem key={m.slug}>
                     <Link
@@ -280,13 +284,13 @@ export default function PlatformPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Why Integration Matters
+                Why Integration Matters
               </p>
               <h2 className="mt-4 max-w-[540px] font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                Nine separate tools would cost more and do less.
+                10+ separate tools would cost more and do less.
               </h2>
               <p className="mt-3 mb-10 max-w-[520px] font-body text-[15px] font-light text-[var(--text-muted)]">
-                Most organisations manage visitors, contractors, queues, and bookings with separate tools from separate vendors. The cost is not just money &mdash; it is the data silos, the audit gaps, and the operational blind spots between systems.
+                Most organisations manage visitors, contractors, queues, and bookings with separate tools from separate vendors. The real cost is not just the licences. It is the gaps between systems: disconnected data, duplicated audit trails, and blind spots that nobody owns.
               </p>
             </SectionReveal>
 
@@ -346,13 +350,13 @@ export default function PlatformPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Industries
+                Industries
               </p>
               <h2 className="mt-4 max-w-[480px] font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Built around how your industry actually operates.
               </h2>
               <p className="mt-3 mb-10 max-w-[520px] font-body text-[15px] font-light text-[var(--text-muted)]">
-                The platform is configured differently for each sector &mdash; the modules, the workflows, and the compliance requirements are all specific to your industry.
+                The platform is configured differently for each sector. Modules, workflows, and compliance requirements are all specific to your industry.
               </p>
             </SectionReveal>
 
@@ -389,7 +393,7 @@ export default function PlatformPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Technical
+                Technical
               </p>
               <h2 className="mt-4 max-w-[480px] font-heading text-[2rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Built to deploy fast and run forever.
@@ -427,7 +431,7 @@ export default function PlatformPage() {
         {/* ━━━ SECTION 8 — BOTTOM CTA ━━━ */}
         <CtaBanner
           content={{
-            headline: "Ready to see all nine modules working together?",
+            headline: "Ready to see all 10+ modules working together?",
             subline:
               "We will walk you through the platform in a 30-minute demo \u2014 showing exactly how the modules relevant to your premises connect in practice.",
             primaryLabel: "Book a Free Demo",

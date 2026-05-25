@@ -128,7 +128,7 @@ const clients = [
   ["Misk Schools", "Education", "KSA", true, true],
   ["Massar Sharjah", "Education", "UAE", false, false],
   ["Bloom", "Education", "UAE", false, false],
-  ["Central Park Towers DIFC", "Financial", "UAE", false, false],
+  ["Central Park Towers DIFC", "Real Estate", "UAE", false, false],
 ].map(([clientName, sector, country, showOnHomepageTicker, showOnTrustBar]) => ({
   _id: `client-${String(clientName).toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
   _type: "client",

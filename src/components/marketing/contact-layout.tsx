@@ -16,7 +16,7 @@ export function ContactHeroAnimated({ children }: { children: ReactNode }) {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: false, amount: 0.15 }}
       variants={heroVariants}
     >
       {children}
@@ -30,7 +30,7 @@ export function ContactCardsAnimated({ children }: { children: ReactNode }) {
       className="grid grid-cols-1 gap-6 md:grid-cols-3"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
       variants={staggerContainer}
     >
       {children}
@@ -71,7 +71,7 @@ export function ContactFormSection({
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
+        viewport={{ once: false, amount: 0.15 }}
         variants={leftVariants}
       >
         {left}
@@ -79,7 +79,7 @@ export function ContactFormSection({
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
+        viewport={{ once: false, amount: 0.15 }}
         variants={rightVariants}
       >
         {right}

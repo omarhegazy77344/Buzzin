@@ -42,7 +42,7 @@ export function HeroVariantB({ images }: Props) {
             variants={stagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="py-8 lg:py-20"
           >
             {/* Micro-label */}
@@ -105,7 +105,7 @@ export function HeroVariantB({ images }: Props) {
 
             {/* Compliance whisper */}
             <motion.p variants={fadeUp} className="mt-5 text-body-xs text-[var(--text-muted)]">
-              ISO 27001{" "}&bull;{" "}SOC 1/2/3{" "}&bull;{" "}UAE Pass{" "}&bull;{" "}On-Prem Available
+              GDPR{" "}&bull;{" "}UAE PDPL{" "}&bull;{" "}UAE Pass{" "}&bull;{" "}On-Prem Available
             </motion.p>
           </motion.div>
 
@@ -113,7 +113,7 @@ export function HeroVariantB({ images }: Props) {
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 1, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] as const }}
             className="flex items-center justify-center"
           >

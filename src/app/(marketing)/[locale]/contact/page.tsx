@@ -17,7 +17,7 @@ import {
 export const dynamic = "force-static"
 
 export const metadata: Metadata = {
-  title: "Contact Us | Buzzin — Premises Intelligence Platform",
+  title: "Contact Us | Buzzin",
   description:
     "Get in touch with the Buzzin team. Support, partnerships, press, or general enquiries. Call +971 4 3201265 or email info@buzzin.ae. We respond within 4 business hours.",
 }
@@ -33,7 +33,7 @@ export default function ContactPage() {
             <div className="py-16 md:py-20">
               <ContactHeroAnimated>
                 <p className="font-heading text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--text-brand)]">
-                  &mdash; Contact Us
+                  Contact Us
                 </p>
 
                 <h1 className="mt-4 font-display text-[44px] font-extrabold leading-[1.08] tracking-[-1.5px] text-[#1E2547]">
@@ -45,7 +45,7 @@ export default function ContactPage() {
                   <Link href="/en/book-demo" className="font-medium text-[#F5A623] hover:underline">
                     booking page
                   </Link>
-                  . For everything else — support, partnerships, press, or general questions — reach us here.
+                  . For everything else (support, partnerships, press, or general questions), reach us here.
                 </p>
               </ContactHeroAnimated>
 
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   </p>
 
                   <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.15] text-[#1E2547]">
-                    New client, existing client, or just curious — we read every&nbsp;message.
+                    New client, existing client, or just curious? We read every&nbsp;message.
                   </h2>
 
                   <p className="mt-5 mb-7 font-body text-[15px] font-light leading-[1.7] text-[var(--text-tertiary)]">

@@ -33,17 +33,17 @@ export const metadata: Metadata = {
 /* ─── Data ─── */
 
 const painPoints = [
-  "Contractors entering through guest areas — no separate verified access flow",
-  "Event attendees queuing at reception — no pre-registration or QR check-in",
-  "Hosts unaware their guest has arrived — reputational damage with VIP visitors",
+  "Contractors entering through guest areas because there is no separate verified access flow",
+  "Event attendees queuing at reception with no pre-registration or QR check-in",
+  "Hosts are unaware their guest has arrived, causing reputational damage with VIP visitors",
   "No audit trail of who was on property during an incident or insurance claim",
-  "Multiple WhatsApp groups managing contractors, events, and visitors separately",
+  "Contractors, events, and visitors are each managed in separate WhatsApp groups",
 ]
 
 const modules = [
   {
     icon: Users, name: "Visitor Management",
-    body: "Emirates ID and UAE Pass scanning at your lobby kiosk. Guest arrives, identity verified, host notified on WhatsApp — in 3 to 5 seconds.",
+    body: "Emirates ID and UAE Pass scanning at your lobby kiosk. Guest arrives, identity verified, and host notified on WhatsApp in 3 to 5 seconds.",
     href: "/en/platform/visitor-management-system",
   },
   {
@@ -71,38 +71,38 @@ const modules = [
 const featureRows = [
   {
     title: "VIP guest pre-registration",
-    body: "Invitation link sent in advance. Guest arrives and taps through in under 5 seconds — no queue, no friction.",
+    body: "An invitation link is sent in advance. On arrival, the guest taps through in under 5 seconds with no queue.",
   },
   {
     title: "Contractor service entrance",
-    body: "Separate kiosk flow. QR work permit scanned. Contractor details logged. Host notified. Never enters guest areas.",
+    body: "A separate kiosk flow scans the QR work permit, logs contractor details, and notifies the host. Contractors never enter guest areas.",
   },
   {
     title: "Event QR check-in",
-    body: "Unique QR per attendee. Gala dinner, conference, private function — contactless entry with full attendance log.",
+    body: "Each attendee receives a unique QR. Whether it is a gala dinner, conference, or private function, entry is contactless with a full attendance log.",
   },
   {
     title: "Real-time property headcount",
-    body: "Every person on property logged. Emergency evacuation list always accurate. One click, any device, any time.",
+    body: "Every person on property is logged. The emergency evacuation list is always accurate, accessible in one click from any device.",
   },
 ]
 
 const beforeAfter = [
   {
-    before: "VIP guest arrives — receptionist manually calls the host, guest waits, first impression damaged",
-    after: "VIP guest taps UAE Pass — host notified instantly, guest escorted within 60 seconds of arrival",
+    before: "A VIP guest arrives. The receptionist manually calls the host, the guest waits, and the first impression is damaged.",
+    after: "The VIP guest taps UAE Pass. The host is notified instantly and the guest is escorted within 60 seconds of arrival.",
   },
   {
-    before: "Contractors entering via guest entrance — no separate verified flow, no permit check at door",
-    after: "Service entrance kiosk — QR work permit scanned, identity verified, contractor logged and directed correctly",
+    before: "Contractors enter through the guest entrance with no separate verified flow and no permit check at the door.",
+    after: "A service entrance kiosk scans the QR work permit, verifies identity, and logs the contractor with correct routing.",
   },
   {
-    before: "Gala dinner check-in — long queue at reception, paper guest list, no QR codes",
-    after: "Event QR check-in — unique code per attendee, contactless, 8-second entry, full attendance log in real time",
+    before: "Gala dinner check-in means a long queue at reception, a paper guest list, and no QR codes.",
+    after: "Event QR check-in gives each attendee a unique code. Entry takes 3 seconds with a full attendance log in real time.",
   },
   {
-    before: "Incident report — no accurate record of who was on property or which contractors were on site",
-    after: "Complete tamper-proof audit log — every person, permit, and event exported in under 30 seconds",
+    before: "An incident report reveals no accurate record of who was on property or which contractors were on site.",
+    after: "A secure audit log captures every person, permit, and event, exportable in under 30 seconds.",
   },
 ]
 
@@ -166,14 +166,14 @@ export default function HospitalityPage() {
                   {/* H1 */}
                   <HeroBlock>
                     <h1 className="font-display text-display-lg leading-[1.1] tracking-[-0.03em] text-white md:text-display-xl lg:text-display-2xl">
-                      Every guest expected.{"\n"}Every contractor verified.{"\n"}Every event flawless.
+                      Guest, contractor, and event{"\n"}operations under one roof.
                     </h1>
                   </HeroBlock>
 
                   {/* Sub */}
                   <HeroBlock className="mt-4 max-w-[480px]">
                     <p className="font-body text-[18px] font-light leading-[1.7] text-white/70">
-                      For a 5-star property, operational precision is not optional. Buzzin gives your team complete visibility over every person, permit, and event across your entire property — from lobby to loading bay.
+                      For a 5-star property, operational precision is not optional. Buzzin gives your team a clear view of every person, permit, and event across your entire property, from lobby to loading bay.
                     </p>
                   </HeroBlock>
 
@@ -212,8 +212,8 @@ export default function HospitalityPage() {
                 <div className="flex flex-col gap-4">
                   {[
                     { val: "5\u2605", title: "5-star standard", body: "Every check-in reflects the quality of your property" },
-                    { val: "5 sec", title: "Lobby check-in", body: "From arrival to verified in 3 to 5 seconds \u2014 no queue" },
-                    { val: "24/7", title: "Always on", body: "Real-time visibility across your property \u2014 any time, any device" },
+                    { val: "5 sec", title: "Lobby check-in", body: "From arrival to verified in 3 to 5 seconds, no queue" },
+                    { val: "24/7", title: "Always on", body: "Real-time visibility across your property, any time, any device" },
                   ].map((card) => (
                     <HeroBlock key={card.title}>
                       <div className="flex items-center gap-4 rounded-[14px] border border-white/10 bg-white/[0.07] px-6 py-5 transition-colors hover:bg-white/10">
@@ -236,7 +236,7 @@ export default function HospitalityPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Problem
+                The Problem
               </p>
               <h2 className="mt-4 max-w-[600px] font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 When operations break down, it shows in the lobby.
@@ -252,7 +252,7 @@ export default function HospitalityPage() {
                   &ldquo;During peak check-in, my lobby became chaos. Contractors at the wrong entrance. Visitors waiting with no host notified. For a 5-star property, that is not the standard we operate to.&rdquo;
                 </blockquote>
                 <p className="mt-3 font-body text-[12px] text-[var(--text-muted)]">
-                  — General Manager, Luxury Hotel, Dubai
+                  General Manager, Luxury Hotel, Dubai
                 </p>
                 <p className="mt-5 font-body text-[15px] leading-[1.7] text-[var(--text-secondary)]">
                   Peak season, back-to-back events, and a construction contractor at the wrong gate. Without a connected system, every one of these is a separate problem with no single source of truth.
@@ -283,10 +283,10 @@ export default function HospitalityPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Platform
+                The Platform
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                Five modules. One property. Total operational control.
+                Five modules working together across your entire property.
               </h2>
               <p className="mt-3 mb-10 max-w-[520px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
                 Every module shares the same dashboard and data. When a contractor is checked in via the work permit system, security knows. When an event guest registers, the lobby team knows.
@@ -324,7 +324,7 @@ export default function HospitalityPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Built for Hospitality
+                Built for Hospitality
               </p>
               <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 The features your property actually needs.
@@ -338,10 +338,10 @@ export default function HospitalityPage() {
                   Most Requested by Hotel Clients
                 </p>
                 <h3 className="mt-2 mb-3 font-heading text-[1.5rem] font-bold text-[var(--text-primary)]">
-                  Separate flows for guests, contractors, and event attendees — managed from one dashboard.
+                  Separate flows for guests, contractors, and event attendees, all managed from one dashboard.
                 </h3>
                 <p className="mb-6 font-body text-[15px] leading-[1.7] text-[var(--text-secondary)]">
-                  A 5-star lobby cannot process a VIP guest and a maintenance contractor through the same entrance flow. Buzzin gives you fully separate check-in journeys — each configured to your standards — with every interaction logged to a single audit trail.
+                  A 5-star lobby cannot process a VIP guest and a maintenance contractor through the same entrance flow. Buzzin gives you separate check-in journeys, each configured to your standards, with every interaction logged to a single audit trail.
                 </p>
 
                 <StaggerGrid className="space-y-3.5" interval={0.1}>
@@ -354,7 +354,7 @@ export default function HospitalityPage() {
                           <p className="mt-0.5 font-body text-[13px] leading-[1.5] text-[var(--text-muted)]">
                             {f.body}
                             {i === 3 && (
-                              <> — <Link href="/en/security-compliance" className="text-[var(--text-brand)] hover:underline">view security certifications</Link></>
+                              <>{" "}<Link href="/en/security-compliance" className="text-[var(--text-brand)] hover:underline">View security certifications</Link></>
                             )}
                           </p>
                         </div>
@@ -403,7 +403,7 @@ export default function HospitalityPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Transformation
+                The Transformation
               </p>
               <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 What changes when your property runs on Buzzin.
@@ -439,7 +439,7 @@ export default function HospitalityPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Hospitality Clients
+                Hospitality Clients
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 The UAE&apos;s leading hotels trust Buzzin.
@@ -459,7 +459,7 @@ export default function HospitalityPage() {
             </StaggerGrid>
 
             <p className="mt-4 text-center font-body text-[12px] text-[var(--text-muted)]">
-              Logo files will be placed here — tiles sized and ready for SVG/PNG upload
+              Logo files will be placed here. Tiles sized and ready for SVG/PNG upload.
             </p>
 
             <p className="mt-3 text-center">
@@ -477,7 +477,7 @@ export default function HospitalityPage() {
         <CtaBanner
           content={{
             headline: "Ready to bring this standard to your property?",
-            subline: "We will walk you through exactly how Buzzin works for hospitality — your property type, your guest flow, your contractor challenges.",
+            subline: "We will walk you through exactly how Buzzin works for hospitality: your property type, your guest flow, and your contractor challenges.",
             primaryLabel: "Book a Free Demo",
             primaryHref: "/book-demo",
             whatsappLabel: "Chat on WhatsApp",

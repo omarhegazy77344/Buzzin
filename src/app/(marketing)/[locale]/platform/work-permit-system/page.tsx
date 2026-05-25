@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import {
   QrCode, UserCheck, Settings, Building2, BarChart2, Zap,
@@ -34,11 +35,11 @@ export const metadata: Metadata = {
 /* ─── Data ─── */
 
 const steps = [
-  { title: "Contractor self-registers", body: "Contractor receives a registration link. They submit their details, upload required documents, and select permit type \u2014 no admin involvement needed." },
+  { title: "Contractor self-registers", body: "Contractor receives a registration link. They submit their details, upload required documents, and select permit type. No admin involvement needed." },
   { title: "Admin reviews and approves", body: "Admin reviews submission, checks documents, approves or requests changes. Filter by date, location, company, and permit type." },
   { title: "QR permit issued instantly", body: "Approved contractor receives a QR-coded digital permit by email. Permit displays job details, employee photo, and validity period." },
   { title: "Gate scan in 2 seconds", body: "Security guard scans QR at gate entrance. Valid or denied response in under 2 seconds. Expired permits automatically denied." },
-  { title: "Automatic expiry management", body: "System alerts contractor and admin 48 hours before expiry. Gate automatically denies entry when permit expires \u2014 zero manual oversight required." },
+  { title: "Automatic expiry management", body: "System alerts contractor and admin 48 hours before expiry. Gate automatically denies entry when permit expires with no manual oversight required." },
 ]
 
 const features = [
@@ -49,14 +50,14 @@ const features = [
       "Displays job details and employee photo",
       "Secure gate entry via QR scan",
       "Cannot be shared or duplicated",
-      "Works offline \u2014 no connectivity needed at gate for scan",
+      "Works offline. No connectivity needed at gate for scan.",
     ],
   },
   {
     icon: UserCheck, title: "Contractor Self-Service",
     items: [
-      "Remote registration via link \u2014 no site visit required",
-      "Document upload \u2014 trade license, insurance, ID, certifications",
+      "Remote registration via link, no site visit required",
+      "Document upload: trade license, insurance, ID, certifications",
       "Real-time permit status monitoring",
       "Contractor notified via email at every stage",
     ],
@@ -67,7 +68,7 @@ const features = [
       "Approve, reject, or request changes",
       "Revoke permits instantly",
       "Filter by date, location, company, permit type",
-      "Calendar view \u2014 colour-coded contractor traffic planning",
+      "Calendar view with colour-coded contractor traffic planning",
       "Configurable permit types and mandatory document requirements",
     ],
   },
@@ -79,7 +80,7 @@ const features = [
       "Maximum employees per permit",
       "Maximum days permitted",
       "Pricing configuration if required",
-      "Multi-site \u2014 one permit valid at multiple gates",
+      "Multi-site: one permit valid at multiple gates",
     ],
   },
   {
@@ -90,71 +91,71 @@ const features = [
       "Export for RERA auditing",
       "Peak contractor traffic insights",
       "Company-level permit history",
-      "Full audit trail \u2014 tamper-proof",
+      "Full audit trail, cannot be altered after the fact",
     ],
   },
   {
     icon: Zap, title: "Expiry & Alert Management",
     items: [
       "Automatic 48-hour expiry alerts",
-      "Gate auto-denial on expiry \u2014 zero manual oversight",
+      "Gate auto-denial on expiry, zero manual oversight",
       "Exceeding time alerts",
-      "Admin dashboard \u2014 expiring permits highlighted",
+      "Admin dashboard with expiring permits highlighted",
       "Bulk renewal workflow for large contractor lists",
     ],
   },
 ]
 
 const consequences = [
-  "Contractors on site after permit expires \u2014 no automated gate denial, no alert to anyone",
-  "No record of which contractor did which work \u2014 insurance claim or incident investigation impossible",
-  "Admin team manually chasing contractors for document uploads \u2014 hours lost every week",
+  "Contractors on site after permit expires because there is no automated gate denial and no alert to anyone",
+  "No record of which contractor did which work. Insurance claim or incident investigation becomes impossible.",
+  "Admin team manually chasing contractors for document uploads, losing hours every week",
   "RERA audit requires searching months of WhatsApp threads and email attachments",
-  "No visibility across multiple sites \u2014 each community manages permits in isolation",
+  "No visibility across multiple sites. Each community manages permits in isolation.",
 ]
 
 const complianceRows = [
-  "Complete contractor history \u2014 every permit ever issued, with documents, timestamps, and approvals",
-  "Gate scan log \u2014 every entry and exit, by contractor, by site, by date range",
-  "Tamper-proof export \u2014 PDF or CSV, court-admissible audit record",
-  "On-demand \u2014 export in under 30 seconds, any time, any device",
+  "Complete contractor history: every permit ever issued, with documents, timestamps, and approvals",
+  "Gate scan log covering every entry and exit, by contractor, by site, by date range",
+  "Immutable export (PDF or CSV), court-admissible audit record",
+  "On-demand export in under 30 seconds, any time, any device",
 ]
 
 const proofCards = [
   {
     name: "Aldar Properties",
-    body: "Exclusive 5-year partner \u2014 work permit system deployed across all Aldar residential communities and commercial assets in the UAE.",
+    body: "Exclusive 5-year partner. Work permit system deployed across all Aldar residential communities and commercial assets in the UAE.",
     tag: "Real Estate",
     href: "/en/industries/residential-real-estate",
   },
   {
     name: "Asteco",
-    body: "Complete contractor permit management across the Asteco UAE portfolio \u2014 RERA-ready audit trail maintained for every community.",
+    body: "Complete contractor permit management across the Asteco UAE portfolio. RERA-ready audit trail maintained for every community.",
     tag: "Property Management",
   },
   {
     name: "DAMAC Properties",
-    body: "Flexible permit configuration across multiple DAMAC developments \u2014 adapted to the specific operational requirements of each site.",
+    body: "Flexible permit configuration across multiple DAMAC developments, adapted to the specific operational requirements of each site.",
     tag: "Real Estate",
   },
 ]
 
 const beforeAfter = [
   {
-    before: "Contractor permit on WhatsApp PDF \u2014 no expiry tracking, forwarded to anyone, no gate check possible",
-    after: "QR-coded permit \u2014 unique per contractor, scanned at gate, expired permits automatically denied",
+    before: "Contractor permit on WhatsApp PDF. No expiry tracking, forwarded to anyone, no gate check possible.",
+    after: "QR-coded permit, unique per contractor, scanned at gate. Expired permits automatically denied.",
   },
   {
-    before: "Permit expires \u2014 contractor continues working, nobody knows, discovered in RERA audit three months later",
-    after: "48-hour expiry alert to contractor and admin \u2014 gate auto-denies entry the moment permit expires",
+    before: "Permit expires. Contractor continues working, nobody knows. Discovered in RERA audit three months later.",
+    after: "48-hour expiry alert to contractor and admin. Gate auto-denies entry the moment permit expires.",
   },
   {
-    before: "Admin manually chasing contractors for documents \u2014 hours lost every week across every community",
-    after: "Contractor self-registers remotely \u2014 uploads own documents, admin reviews and approves in one click",
+    before: "Admin manually chasing contractors for documents. Hours lost every week across every community.",
+    after: "Contractor self-registers remotely, uploads own documents. Admin reviews and approves in one click.",
   },
   {
-    before: "RERA audit \u2014 search months of WhatsApp threads and email attachments across 12 communities",
-    after: "Complete RERA-ready audit export in under 30 seconds \u2014 every permit, every scan, every document",
+    before: "RERA audit: search months of WhatsApp threads and email attachments across 12 communities.",
+    after: "Complete RERA-ready audit export in under 30 seconds. Every permit, every scan, every document.",
   },
 ]
 
@@ -228,21 +229,21 @@ export default function WorkPermitSystemPage() {
                     </span>
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 font-heading text-[11px] font-semibold text-emerald-600">
                       <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
-                      Core Module — Live
+                      Core Module · Live
                     </span>
                   </HeroBlock>
 
                   {/* H1 */}
                   <HeroBlock>
                     <h1 className="font-display text-[3rem] leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)] md:text-display-xl lg:text-[4.5rem]">
-                      Every contractor at your gate &mdash; verified in under 2&nbsp;seconds.
+                      Every contractor at your gate, verified in under 2&nbsp;seconds.
                     </h1>
                   </HeroBlock>
 
                   {/* Sub */}
                   <HeroBlock className="mt-4 max-w-[480px]">
                     <p className="font-body text-[18px] leading-[1.7] text-[var(--text-secondary)]">
-                      QR-coded digital work permits. Contractor self-registration. Permit lifecycle management. RERA-ready audit trail. 81,085 permits processed in Q1 2026 alone &mdash; across Aldar, Asteco, DAMAC, and more.
+                      QR-coded digital work permits. Contractor self-registration. Permit lifecycle management. RERA-ready audit trail. 81,085 permits processed in Q1 2026 alone, across Aldar, Asteco, DAMAC, and more.
                     </p>
                   </HeroBlock>
 
@@ -280,11 +281,20 @@ export default function WorkPermitSystemPage() {
         </section>
 
         {/* ━━━ SECTION 2 — THE PROBLEM ━━━ */}
-        <section className="bg-[var(--bg-canvas)] py-16 md:py-20">
-          <Container>
+        <section className="relative overflow-hidden bg-[var(--bg-canvas)] py-16 md:py-20">
+          <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+            <Image
+              src="/images/platform/work-permit-gate.jpg"
+              alt=""
+              fill
+              className="object-cover object-center opacity-[0.06]"
+            />
+            <div className="absolute inset-0 bg-[var(--bg-canvas)]/92" />
+          </div>
+          <Container className="relative z-10">
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Problem
+                The Problem
               </p>
               <h2 className="mt-4 max-w-[560px] font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Contractor permits on WhatsApp PDFs are not a system. They are a liability.
@@ -300,7 +310,7 @@ export default function WorkPermitSystemPage() {
                   &ldquo;We had a contractor on site for three weeks after his permit expired. Nobody knew. We only found out during a RERA audit. That was the last paper permit we ever issued.&rdquo;
                 </blockquote>
                 <p className="mt-3 font-body text-[12px] text-[var(--text-muted)]">
-                  &mdash; Facilities Manager, Residential Community, Abu Dhabi
+                  Facilities Manager, Residential Community, Abu Dhabi
                 </p>
                 <p className="mt-5 font-body text-[15px] leading-[1.7] text-[var(--text-secondary)]">
                   With hundreds of contractors across multiple sites, manually tracking permit expiries is impossible. One missed expiry is a security incident. One RERA audit without a clean audit trail is a liability.
@@ -329,13 +339,13 @@ export default function WorkPermitSystemPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; How It Works
+                How It Works
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                From application to gate scan &mdash; fully digital.
+                From application to gate scan. Fully digital.
               </h2>
               <p className="mt-3 mb-10 max-w-[500px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                The entire permit lifecycle managed in one system &mdash; contractor applies, admin approves, QR issued, gate scans, permit expires automatically.
+                The entire permit lifecycle managed in one system. Contractor applies, admin approves, QR issued, gate scans, permit expires automatically.
               </p>
             </VmsSectionReveal>
 
@@ -360,13 +370,13 @@ export default function WorkPermitSystemPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Features
+                Features
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Complete permit lifecycle management.
               </h2>
               <p className="mt-3 mb-9 max-w-[500px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                From contractor registration to RERA audit export &mdash; every step of the work permit process managed in one platform.
+                From contractor registration to RERA audit export, every step of the work permit process managed in one platform.
               </p>
             </VmsSectionReveal>
 
@@ -400,14 +410,14 @@ export default function WorkPermitSystemPage() {
           <Container>
             <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
               <VmsSectionReveal>
-                <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  &mdash; RERA Compliance
-                </p>
+              <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
+                RERA Compliance
+              </p>
                 <h2 className="mt-4 max-w-[400px] font-heading text-[2rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                   RERA audit ready. In under 30&nbsp;seconds.
                 </h2>
                 <p className="mt-3 mb-6 font-body text-[15px] leading-[1.7] text-[var(--text-secondary)]">
-                  The Real Estate Regulatory Authority requires developers and property managers to maintain contractor access records. Buzzin generates a complete, tamper-proof audit export covering every permit, every gate scan, and every contractor who has been on your property.
+                  The Real Estate Regulatory Authority requires developers and property managers to maintain contractor access records. Buzzin generates a complete, immutable audit export covering every permit, every gate scan, and every contractor who has been on your property.
                 </p>
                 <div className="space-y-3.5">
                   {complianceRows.map((row) => (
@@ -430,7 +440,7 @@ export default function WorkPermitSystemPage() {
               <VmsSectionReveal>
                 <div className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.05] p-7">
                   <p className="mb-2 font-heading text-[10px] font-bold uppercase tracking-wide text-[var(--text-brand)]">
-                    Q1 2026 — Live Data
+                    Q1 2026 · Live Data
                   </p>
                   <p className="font-heading text-[3rem] font-extrabold leading-none tracking-[-2px] text-[var(--text-primary)]">
                     81,085
@@ -457,7 +467,7 @@ export default function WorkPermitSystemPage() {
           <Container className="relative">
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Trusted By
+                Trusted By
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-white">
                 Processing hundreds of thousands of permits across the UAE.
@@ -493,7 +503,7 @@ export default function WorkPermitSystemPage() {
           <Container>
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; The Transformation
+                The Transformation
               </p>
               <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 What changes when permits go fully digital.
@@ -532,7 +542,7 @@ export default function WorkPermitSystemPage() {
           content={{
             headline: "Ready to replace WhatsApp PDFs with a system that actually works?",
             subline:
-              "We will show you exactly how Buzzin manages contractor permits across your specific sites \u2014 in a 30-minute tailored demo.",
+              "We will show you exactly how Buzzin manages contractor permits across your specific sites. Book a 30-minute tailored demo.",
             primaryLabel: "Book a Free Demo",
             primaryHref: "/en/book-demo",
             whatsappLabel: "Chat on WhatsApp",

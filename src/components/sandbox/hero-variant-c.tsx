@@ -33,7 +33,7 @@ const modules = [
 const liveNumbers = [
   { value: "20M+", unit: "secure interactions", suffix: "processed" },
   { value: "9", unit: "integrated modules", suffix: "one platform" },
-  { value: "300+", unit: "organisations", suffix: "5 countries" },
+  { value: "300+", unit: "organisations", suffix: "4 countries" },
 ]
 
 type Props = { images: CarouselImage[] }
@@ -56,14 +56,14 @@ export function HeroVariantC({ images }: Props) {
             variants={stagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="py-8 lg:py-16"
           >
             {/* Module orbit label */}
             <motion.div variants={fadeUp} className="mb-5 flex items-center gap-2">
               <Hexagon className="h-3.5 w-3.5 text-amber-500" />
               <span className="font-heading text-overline font-semibold uppercase tracking-[0.14em] text-[var(--text-brand)]">
-                9 Modules. One Intelligent Core.
+                10+ Modules. One Intelligent Core.
               </span>
             </motion.div>
 
@@ -136,7 +136,7 @@ export function HeroVariantC({ images }: Props) {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] as const }}
             className="flex items-center justify-center"
           >

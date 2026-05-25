@@ -43,8 +43,8 @@ function AnimatedStat({ target, suffix, isInView }: { target: number; suffix: st
 const barHeights = [8, 12, 16, 22, 48]
 const proofDots = [
   "20M+ interactions processed",
-  "5 countries",
-  "81,085 permits \u2014 Q1 2026 alone",
+  "4 countries",
+  "81,085 permits in Q1 2026",
 ]
 
 export function WhyBuzzinExclusivityBlock() {
@@ -65,15 +65,15 @@ export function WhyBuzzinExclusivityBlock() {
           className="mx-auto max-w-[780px] text-center"
         >
           <p className="mb-4 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-amber-400">
-            &mdash; The Proof
+            The Proof
           </p>
 
           <h2 className="mb-5 font-display text-[2rem] leading-[1.2] tracking-[-0.02em] text-white md:text-[2.75rem]">
-            When the UAE&apos;s largest property developer selects one platform for their entire national portfolio &mdash; that is not a feature decision. That is a trust decision.
+            The UAE&apos;s largest property developer chose one platform for their entire national portfolio. That kind of commitment goes beyond features. It comes down to trust.
           </h2>
 
           <p className="mx-auto mb-7 max-w-[620px] font-body text-[16px] font-light leading-[1.75] text-white/60">
-            Aldar Properties selected Buzzin as their exclusive multi-year premises management partner across their entire UAE portfolio. In 2025, Buzzin processed more secure access events than in all previous years combined &mdash; by more than 71 times.
+            Aldar Properties selected Buzzin as their exclusive multi-year premises management partner across their entire UAE portfolio. In 2025, Buzzin processed more secure access events than in all previous years combined, exceeding them by more than 71 times.
           </p>
 
           <div className="mb-7 flex flex-wrap items-center justify-center gap-4">

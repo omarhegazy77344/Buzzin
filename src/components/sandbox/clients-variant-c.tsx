@@ -62,7 +62,7 @@ export function ClientsVariantC({ className }: { className?: string }) {
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: false, amount: 0.15 }}
           className="mx-auto max-w-4xl space-y-10"
         >
           {sectors.map((sector) => (

@@ -5,9 +5,6 @@ const industryOptions = [
   { title: "Residential", value: "residential" },
   { title: "Education", value: "education" },
   { title: "Hospitality", value: "hospitality" },
-  { title: "Corporate", value: "corporate" },
-  { title: "Financial", value: "financial" },
-  { title: "Government", value: "government" },
 ]
 
 export const industryPageType = defineType({

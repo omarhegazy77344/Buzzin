@@ -133,7 +133,7 @@ export function DashboardMock() {
           <div>
             <p className="font-heading text-[10px] font-bold text-[var(--text-primary)]">Visitor Approved</p>
             <p className="font-body text-[9px] text-[var(--text-muted)]">
-              Charles Anderson · <span className="text-emerald-600">Accepted</span>
+              Mohammed Al Mansoori · <span className="text-emerald-600">Accepted</span>
             </p>
           </div>
         </div>
@@ -163,7 +163,7 @@ export function VmsSectionReveal({ children, className }: { children: ReactNode;
       className={className}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.6, ease: BRAND_EASE }}
     >
       {children}
@@ -185,7 +185,7 @@ export function VmsStaggerGrid({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: false, amount: 0.15 }}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: interval } },

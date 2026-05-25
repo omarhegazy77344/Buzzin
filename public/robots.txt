@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /en/studio
+Disallow: /ar/studio
+Disallow: /studio
+
+Sitemap: https://buzzin.ae/sitemap.xml

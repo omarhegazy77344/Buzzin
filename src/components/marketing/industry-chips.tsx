@@ -6,9 +6,6 @@ const chips = [
   { label: "Residential & Real Estate", id: "residential" },
   { label: "Hospitality",               id: "hospitality" },
   { label: "Education",                 id: "education"   },
-  { label: "Corporate",                 id: "corporate"   },
-  { label: "Financial Districts",       id: "financial"   },
-  { label: "Government",                id: "government"  },
 ]
 
 const container = {

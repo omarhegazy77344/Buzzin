@@ -19,14 +19,12 @@ const navLinks = [
 ]
 
 const liveModules = defaultModules.filter((m) => m.status === "live" || m.status === "new")
+const soonModules = defaultModules.filter((m) => m.status === "comingSoon" && m.slug === "key-management")
 
 const industryItems = [
   { name: "Hospitality", desc: "Hotels & resorts", href: "/industries/hospitality" },
   { name: "Residential Real Estate", desc: "Communities & towers", href: "/industries/residential-real-estate" },
   { name: "Education", desc: "Schools & campuses", href: "/industries/education" },
-  { name: "Corporate", desc: "Offices & HQs", href: "/industries/corporate" },
-  { name: "Financial Districts", desc: "Banks & exchanges", href: "/industries/financial-districts" },
-  { name: "Government", desc: "Public sector", href: "/industries/government" },
 ]
 
 export function Navbar() {
@@ -63,10 +61,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "h-14 bg-[var(--bg-surface)]/95 shadow-sm backdrop-blur-xl border-b border-[var(--border-subtle)]"
-          : "h-16 bg-transparent",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-[var(--bg-surface)]/95 backdrop-blur-xl border-b border-[var(--border-subtle)]",
+        scrolled ? "h-14 shadow-sm" : "h-16",
       )}
     >
       <Container className="flex h-full items-center justify-between">
@@ -115,6 +111,28 @@ export function Navbar() {
                       </span>
                     </Link>
                   ))}
+                  {soonModules.length > 0 && (
+                    <div className="mt-1 border-t border-[var(--border-subtle)] pt-1">
+                      {soonModules.map((mod) => (
+                        <Link
+                          key={mod.slug}
+                          href={`/platform/${mod.slug}`}
+                          onClick={() => setPlatformOpen(false)}
+                          className="flex flex-col rounded-lg px-3 py-2.5 transition-colors hover:bg-[var(--bg-surface-raised)]"
+                        >
+                          <span className="flex items-center gap-2 font-heading text-[13px] font-semibold text-[var(--text-secondary)]">
+                            {mod.name}
+                            <span className="inline-flex items-center rounded-full bg-slate-500/10 px-1.5 py-0.5 font-body text-[9px] font-semibold uppercase tracking-wide text-slate-500 dark:bg-slate-400/10 dark:text-slate-400">
+                              Soon
+                            </span>
+                          </span>
+                          <span className="font-body text-[11px] text-[var(--text-muted)]">
+                            {mod.shortDesc}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                   <div className="mt-1 border-t border-[var(--border-subtle)] pt-1">
                     <Link
                       href="/platform"
@@ -243,6 +261,24 @@ export function Navbar() {
                   >
                     <span className="font-heading text-[14px] font-medium text-[var(--text-primary)]">
                       {mod.name}
+                    </span>
+                    <span className="block font-body text-[11px] text-[var(--text-muted)]">
+                      {mod.shortDesc}
+                    </span>
+                  </Link>
+                ))}
+                {soonModules.map((mod) => (
+                  <Link
+                    key={mod.slug}
+                    href={`/platform/${mod.slug}`}
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-lg px-4 py-2.5 transition-colors hover:bg-[var(--bg-surface-raised)]"
+                  >
+                    <span className="flex items-center gap-2 font-heading text-[14px] font-medium text-[var(--text-secondary)]">
+                      {mod.name}
+                      <span className="inline-flex items-center rounded-full bg-slate-500/10 px-1.5 py-0.5 font-body text-[9px] font-semibold uppercase tracking-wide text-slate-500 dark:bg-slate-400/10 dark:text-slate-400">
+                        Soon
+                      </span>
                     </span>
                     <span className="block font-body text-[11px] text-[var(--text-muted)]">
                       {mod.shortDesc}

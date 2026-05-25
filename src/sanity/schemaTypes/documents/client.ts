@@ -1,7 +1,7 @@
 import { UserIcon } from "@sanity/icons"
 import { defineField, defineType } from "sanity"
 
-const sectorOptions = ["Hospitality", "Real Estate", "Education", "Financial", "Government"]
+const sectorOptions = ["Hospitality", "Real Estate", "Education"]
 const countryOptions = ["UAE", "KSA", "Lebanon"]
 
 export const clientType = defineType({

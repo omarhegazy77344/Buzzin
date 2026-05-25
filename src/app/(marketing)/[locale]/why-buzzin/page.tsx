@@ -32,36 +32,36 @@ export const metadata: Metadata = {
 /* ─── Data ─── */
 
 const reasonChips = [
-  "01 \u2014 Simplicity",
-  "02 \u2014 Flexibility",
-  "03 \u2014 Enterprise Features",
+  "01. Simplicity",
+  "02. Flexibility",
+  "03. Depth of Features",
 ]
 
 const simplicityRows = [
-  "One Android tablet to get started \u2014 no servers, no complex infrastructure, no IT department required",
-  "Live within days \u2014 not the months that enterprise software deployments typically take",
-  "Security guard at the gate uses a QR scanner \u2014 the same technology they already understand",
-  "School receptionist uses a touchscreen kiosk \u2014 simpler than the paper logbook it replaces",
+  "One Android tablet to get started. No servers, no complex infrastructure, and no IT department required.",
+  "Most deployments go live within days, not the months typical of large-scale software rollouts.",
+  "The security guard at the gate uses a QR scanner, the same technology they already understand.",
+  "A school receptionist checks visitors in on a touchscreen kiosk that is simpler than the paper logbook it replaces.",
 ]
 
 const flexibilityRows = [
-  "Custom module development \u2014 when a client needs something that does not exist, we build it with them",
-  "Configurable workflows \u2014 permit types, approval chains, document requirements, and access rules all adapted to your operation",
-  "Multi-site \u2014 one platform configured differently per community, campus, or property",
-  "Integration on request \u2014 Active Directory, Salesforce, ANPR, and third-party systems connected when required",
+  "When a client needs something that does not exist, we build the module together from scratch.",
+  "Permit types, approval chains, document requirements, and access rules are all configured around your operation.",
+  "Multi-site deployments run on a single platform configured differently per community, campus, or property.",
+  "Active Directory, Salesforce, ANPR, and third-party systems can be connected on request.",
 ]
 
 const enterpriseRows = [
-  "20M+ secure interactions processed \u2014 at Atlantis scale, at Aldar scale, reliably",
-  "ISO 27001, SOC 1/2/3, GDPR \u2014 the certifications enterprise procurement requires",
-  "UAE Pass and ICP App integration \u2014 government-verified identity at every check-in point",
-  "On-premises deployment available \u2014 for financial institutions and government entities with strict data residency requirements",
+  "20M+ secure interactions processed reliably at Atlantis and Aldar scale.",
+  "GDPR and UAE PDPL aligned, meeting the data-protection bar that procurement teams expect.",
+  "UAE Pass and ICP App integration provides government-verified identity at every check-in point.",
+  "On-premises deployment is available for financial institutions and government entities with strict data residency requirements.",
 ]
 
 const diffCards = [
   {
-    icon: Layers, title: "Nine integrated modules",
-    body: "Not nine separate products. One platform where every module shares the same data and dashboard. No integrations to manage. No silos.",
+    icon: Layers, title: "10+ integrated modules",
+    body: "Every module shares the same data and dashboard. You manage one vendor, one login, and one source of truth instead of stitching nine tools together.",
     link: { label: "See all modules \u2192", href: "/en/platform" },
   },
   {
@@ -70,11 +70,11 @@ const diffCards = [
   },
   {
     icon: Zap, title: "Live within days",
-    body: "One Android tablet, cloud-hosted, no servers. Most deployments are live within days of the site assessment \u2014 not months.",
+    body: "One Android tablet, cloud-hosted, no servers. Most deployments are live within days of the site assessment rather than months.",
   },
   {
     icon: MapPin, title: "GCC-native by design",
-    body: "UAE Pass, ICP App, Emirates ID, Arabic language support, RERA compliance, KHDA compliance \u2014 built for the UAE from the ground up.",
+    body: "UAE Pass, ICP App, Emirates ID, Arabic language support, RERA compliance, and KHDA compliance. Built for the UAE from the ground up.",
   },
   {
     icon: Headphones, title: "We stay after go-live",
@@ -105,19 +105,13 @@ const clientRows = [
     linkLabel: "See sector \u2192",
     href: "/en/industries/education",
   },
-  {
-    sector: "Financial & Other",
-    pills: ["Central Park Towers DIFC", "Masdar City"],
-    linkLabel: "Learn more \u2192",
-    href: "/en/industries",
-  },
 ]
 
 const whySteps = [
   {
     number: "01",
     title: "We assess your premises",
-    desc: "Our team visits your site, reviews your workflows, and maps your exact operational requirements. No generic setup \u2014 everything configured around how you work.",
+    desc: "Our team visits your site, reviews your workflows, and maps your exact operational requirements. Everything is configured around how you actually work.",
   },
   {
     number: "02",
@@ -222,7 +216,7 @@ export default function WhyBuzzinPage() {
 
               <SectionReveal>
                 <p className="mb-5 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  &mdash; Why Buzzin
+                  Why Buzzin
                 </p>
               </SectionReveal>
 
@@ -269,7 +263,7 @@ export default function WhyBuzzinPage() {
                     Complex operations should not require complex software.
                   </h2>
                   <p className="mb-6 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
-                    Buzzin is used daily by school receptionists, hotel security guards, and community gate officers &mdash; none of whom are software specialists. The system has to work for them on day one, without training, without IT support, and without a manual.
+                    Buzzin is used daily by school receptionists, hotel security guards, and community gate officers, none of whom are software specialists. The system has to work for them on day one without training, IT support, or a manual.
                   </p>
                 </SectionReveal>
                 <EvidenceRows rows={simplicityRows} />
@@ -305,7 +299,7 @@ export default function WhyBuzzinPage() {
                   No two premises are identical. Buzzin adapts to yours.
                 </h2>
                 <p className="mb-6 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
-                  DAMAC has different operational requirements at each development. Aldar needed a queue management module that did not exist &mdash; so we built it. Flexibility is not a feature we offer. It is how we work.
+                  DAMAC has different operational requirements at each development. Aldar needed a queue management module that did not exist, so we built it. Flexibility is not a feature we advertise. It is how we operate day-to-day.
                 </p>
                 <EvidenceRows rows={flexibilityRows} />
               </SectionReveal>
@@ -338,10 +332,10 @@ export default function WhyBuzzinPage() {
                     <span className="font-heading text-[10px] font-semibold uppercase tracking-wide text-[var(--text-brand)]">Enterprise Features</span>
                   </div>
                   <h2 className="mb-3.5 font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                    Nine integrated modules. One platform. Zero silos.
+                    10+ modules sharing a single source of truth.
                   </h2>
                   <p className="mb-6 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
-                    Most premises management tools do one thing. Buzzin does nine &mdash; and every module shares the same data, the same dashboard, and the same audit trail. When a visitor arrives, the queue system knows. When a permit expires, the gate knows. When a child is collected, the safeguarding log knows.
+                    Most premises management tools do one thing. Buzzin handles ten, and every module shares the same data, dashboard, and audit trail. When a visitor arrives, the queue system knows. When a permit expires, the gate knows. When a child is collected, the safeguarding log knows.
                   </p>
                 </SectionReveal>
                 <EvidenceRows rows={enterpriseRows} />
@@ -368,7 +362,7 @@ export default function WhyBuzzinPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; How We Are Different
+                How We Are Different
               </p>
               <h2 className="mt-4 max-w-[540px] font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 What Buzzin offers that others do not.
@@ -413,10 +407,10 @@ export default function WhyBuzzinPage() {
           <Container>
             <SectionReveal className="text-center">
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Trusted By
+                Trusted By
               </p>
               <h2 className="mt-4 font-heading text-[2rem] font-bold text-[var(--text-primary)]">
-                300+ organisations across five countries.
+                300+ organisations across four countries.
               </h2>
             </SectionReveal>
 

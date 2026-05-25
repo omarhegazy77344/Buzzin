@@ -47,7 +47,7 @@ export function IndustriesHero() {
             viewport={VIEWPORT}
             className="mb-5 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]"
           >
-            &mdash; Industries
+            Industries
           </motion.p>
 
           <motion.h1
@@ -57,7 +57,7 @@ export function IndustriesHero() {
             viewport={VIEWPORT}
             className="mb-5 font-display text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-white md:text-[4rem]"
           >
-            Built around how your industry actually operates.
+            Configured for the way your industry really works.
           </motion.h1>
 
           <motion.p
@@ -67,10 +67,10 @@ export function IndustriesHero() {
             viewport={VIEWPORT}
             className="mx-auto mb-8 max-w-[620px] font-body text-[18px] font-light leading-[1.75] text-white/70"
           >
-            Buzzin is not a generic premises management system deployed the same
-            way for every client. Each industry has different compliance
-            requirements, different buyer pain points, and different operational
-            workflows. The platform is configured to match all of them.
+            Most premises software ships the same setup to every client.
+            Buzzin doesn&apos;t. Compliance rules differ between hospitality and
+            education, and so do day-to-day operations. We configure the
+            platform around those realities, not the other way around.
           </motion.p>
         </div>
       </Container>

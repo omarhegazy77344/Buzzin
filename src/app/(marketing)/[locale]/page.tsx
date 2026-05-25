@@ -1,9 +1,11 @@
-import { defaultHeroCarouselImages } from "@/lib/content-defaults"
+import { defaultHeroCarouselImages, defaultModules } from "@/lib/content-defaults"
 import { Navbar } from "@/components/marketing/navbar"
 import { HeroVariantD } from "@/components/sandbox/hero-variant-d"
 import { ClientsVariantD } from "@/components/sandbox/clients-variant-d"
 import { StatsBar } from "@/components/marketing/stats-bar"
 import { PlatformOverview } from "@/components/marketing/platform-overview"
+
+const homepageModules = defaultModules.filter((m) => m.slug !== "safeguarding")
 import { IndustryTransformationSection } from "@/components/marketing/industry-transformation-section"
 import { Exclusivity } from "@/components/marketing/exclusivity"
 import { SecurityBar } from "@/components/marketing/security-bar"
@@ -19,7 +21,7 @@ export default function HomePage() {
       <main>
         <HeroVariantD images={defaultHeroCarouselImages} />
         <StatsBar />
-        <PlatformOverview />
+        <PlatformOverview modules={homepageModules} />
         <IndustryTransformationSection />
         <ClientsVariantD />
         <Exclusivity />

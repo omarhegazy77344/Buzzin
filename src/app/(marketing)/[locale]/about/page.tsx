@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Buzzin FZCO | Dubai Premises Intelligence Platform",
     description:
-      "Enterprise premises management platform headquartered in Dubai. Exclusive partner to Aldar and Asteco. 300+ organisations across 5 countries.",
+      "Enterprise premises management platform headquartered in Dubai. Exclusive partner to Aldar and Asteco. 300+ organisations across 4 countries.",
   },
 }
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 const proofChips = [
   "300+ Organisations",
-  "5 Countries",
+  "4 Countries",
   "20M+ Interactions",
   "Dtec, Dubai Silicon Oasis",
 ]
@@ -40,23 +40,23 @@ const principles = [
   {
     number: "01",
     title: "Simplicity",
-    body: "Complex operations should not require complex software. Every feature we build is tested against one question: can a non-technical person use this on day one?",
+    body: "Complex operations should not require complex software. Every feature we ship gets tested against one question: can a non-technical person use this on day one?",
   },
   {
     number: "02",
     title: "Flexibility",
-    body: "No two premises are identical. Buzzin adapts to your workflows — not the other way around. Custom development is available on request.",
+    body: "No two premises are identical, so Buzzin adapts to your workflows rather than forcing you into ours. Custom development is available on request.",
   },
   {
     number: "03",
     title: "Conviction",
-    body: "We do not just implement a system. We solve problems with you and stand behind the solution. We do not disappear after go-live.",
+    body: "We do more than implement a system. We solve problems alongside you and stand behind the solution long after go-live.",
   },
 ]
 
 const countries = [
-  { flag: "\uD83C\uDDE6\uD83C\uDDEA", name: "UAE", status: "Headquarters \u2014 Dubai Silicon Oasis" },
-  { flag: "\uD83C\uDDF8\uD83C\uDDE6", name: "Saudi Arabia", status: "Active \u2014 Riyadh & Jeddah" },
+  { flag: "\uD83C\uDDE6\uD83C\uDDEA", name: "UAE", status: "Headquarters, Dubai Silicon Oasis" },
+  { flag: "\uD83C\uDDF8\uD83C\uDDE6", name: "Saudi Arabia", status: "Active in Riyadh & Jeddah" },
   { flag: "\uD83C\uDDF0\uD83C\uDDFC", name: "Kuwait", status: "Active" },
   { flag: "\uD83C\uDDF1\uD83C\uDDE7", name: "Lebanon", status: "Active" },
 ]
@@ -83,27 +83,13 @@ const sectors = [
     linkLabel: "See education \u2192",
     href: "/en/industries/education",
   },
-  {
-    name: "Financial & Commercial",
-    count: "2 clients",
-    pills: ["Central Park Towers DIFC", "Masdar City"],
-    linkLabel: "Learn more \u2192",
-    href: "/en/industries",
-  },
-  {
-    name: "Government",
-    count: "3 clients",
-    pills: ["Rashid & Latifa Schools", "Massar Sharjah"],
-    linkLabel: "Learn more \u2192",
-    href: "/en/industries",
-  },
 ]
 
 const aboutSteps = [
   {
     number: "01",
     title: "We assess your premises",
-    desc: "Our team visits your site, reviews your workflows, and maps your exact operational requirements. No generic setup \u2014 every deployment is configured to how your operation actually works.",
+    desc: "Our team visits your site, reviews your workflows, and maps your exact operational requirements. Every deployment is configured to how your operation actually works.",
   },
   {
     number: "02",
@@ -118,10 +104,10 @@ const aboutSteps = [
 ]
 
 const certs = [
-  "ISO 27001 Certified",
-  "SOC 1 / 2 / 3",
   "GDPR Aligned",
+  "UAE PDPL",
   "UAE Pass Integrated",
+  "ICP App Integrated",
   "On-Premises Available",
   "5-Year Data Retention",
 ]
@@ -186,7 +172,7 @@ export default function AboutPage() {
             <div className="mx-auto max-w-[720px] text-center">
               <SectionReveal>
                 <p className="mb-4 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  &mdash; Our Story
+                  Our Story
                 </p>
               </SectionReveal>
 
@@ -200,13 +186,13 @@ export default function AboutPage() {
 
               <SectionReveal>
                 <h1 className="font-display text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)] md:text-[4rem]">
-                  Built in Dubai.{"\n"}Built for the GCC.{"\n"}Built to last.
+                  The platform behind 300+{"\n"}organisations across the GCC.
                 </h1>
               </SectionReveal>
 
               <SectionReveal>
                 <p className="mx-auto mt-5 max-w-[580px] font-body text-[18px] font-light leading-[1.75] text-[var(--text-secondary)]">
-                  Buzzin FZCO is a premises intelligence platform headquartered at Dtec, Dubai Silicon Oasis. We give the people who run complex physical spaces &mdash; property developers, luxury hotels, international schools, and financial districts &mdash; total control and intelligence over every person, permit, and patrol across their entire operation.
+                  Buzzin FZCO is headquartered at Dtec, Dubai Silicon Oasis. We help the people who manage complex physical spaces (property developers, luxury hotels, international schools, financial districts) gain full visibility and control over every person, permit, and patrol in their operation.
                 </p>
               </SectionReveal>
 
@@ -231,7 +217,7 @@ export default function AboutPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; What We Believe
+                What We Believe
               </p>
               <h2 className="mt-4 max-w-[560px] font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Simplicity and power are not opposites.
@@ -275,13 +261,13 @@ export default function AboutPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Where We Operate
+                Where We Operate
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
                 Dubai-headquartered. GCC-wide.
               </h2>
               <p className="mt-3 mb-10 max-w-[480px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                Buzzin is registered and headquartered in Dubai, UAE. We deploy and support clients across five countries with the same standard of service.
+                Buzzin is registered and headquartered in Dubai, UAE. We deploy and support clients across four countries with the same standard of service.
               </p>
             </SectionReveal>
 
@@ -330,13 +316,13 @@ export default function AboutPage() {
           <Container>
             <SectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Who We Serve
+                Who We Serve
               </p>
               <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                Trusted across every enterprise sector.
+                Trusted across the UAE&apos;s most demanding sectors.
               </h2>
               <p className="mt-3 mb-10 max-w-[480px] font-body text-[15px] font-light text-[var(--text-tertiary)]">
-                From luxury hotels to government schools, from financial districts to residential communities &mdash; Buzzin operates across the full spectrum of the UAE enterprise market.
+                Luxury hotels, government schools, financial districts, and residential communities all rely on Buzzin to manage their day-to-day operations.
               </p>
             </SectionReveal>
 
@@ -384,10 +370,10 @@ export default function AboutPage() {
           <Container>
             <SectionReveal className="text-center">
               <p className="mb-2 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                &mdash; Security &amp; Compliance
+                Security &amp; Compliance
               </p>
               <h2 className="font-heading text-[2rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                Enterprise-grade security. GCC&#8209;native&nbsp;compliance.
+                Serious security. GCC&#8209;native&nbsp;compliance.
               </h2>
             </SectionReveal>
 

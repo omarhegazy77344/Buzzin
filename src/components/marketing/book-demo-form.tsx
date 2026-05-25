@@ -23,9 +23,6 @@ const industries = [
   "Real Estate & Communities",
   "Hospitality",
   "Education",
-  "Corporate",
-  "Financial & DIFC",
-  "Government",
   "Other",
 ]
 

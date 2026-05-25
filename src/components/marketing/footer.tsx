@@ -10,7 +10,6 @@ const platformLinks = [
   { label: "Event Management", href: "/platform/event-management" },
   { label: "Attendance", href: "/platform/attendance-management" },
   { label: "Booking", href: "/platform/booking-management" },
-  { label: "Safeguarding", href: "/platform/safeguarding" },
   { label: "Patrolling", href: "/platform/patrolling" },
 ]
 
@@ -18,9 +17,6 @@ const industryLinks = [
   { label: "Residential", href: "/industries/residential-real-estate" },
   { label: "Education", href: "/industries/education" },
   { label: "Hospitality", href: "/industries/hospitality" },
-  { label: "Corporate", href: "/industries/corporate" },
-  { label: "Financial", href: "/industries/financial-districts" },
-  { label: "Government", href: "/industries/government" },
 ]
 
 const companyLinks = [
@@ -84,8 +80,8 @@ export function Footer({ content }: FooterProps) {
             &copy; {new Date().getFullYear()} Buzzin FZCO. All rights reserved.
           </p>
           <div className="flex gap-6 text-body-xs text-gray-500">
-            <Link href="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-gray-300">Terms</Link>
+            <Link href="/en/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link>
+            <Link href="/en/terms-of-service" className="hover:text-gray-300">Terms of Service</Link>
           </div>
         </div>
       </Container>

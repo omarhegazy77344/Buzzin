@@ -60,7 +60,7 @@ export function AboutExclusivityBlock() {
           className="mx-auto max-w-[740px] text-center"
         >
           <p className="mb-4 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-amber-400">
-            &mdash; Exclusivity
+            Exclusivity
           </p>
 
           <h2 className="mb-5 font-display text-[2rem] leading-[1.2] tracking-[-0.02em] text-white md:text-[2.5rem]">
@@ -68,7 +68,7 @@ export function AboutExclusivityBlock() {
           </h2>
 
           <p className="mx-auto mb-6 max-w-[580px] font-body text-[15px] font-light leading-[1.75] text-white/60">
-            In 2025, Buzzin processed more secure access events than in all previous years combined &mdash; by more than 71 times. This is what enterprise adoption at scale looks like.
+            In 2025, Buzzin processed 71 times more access events than in all previous years combined. That kind of growth only happens when the platform is doing its job.
           </p>
 
           <div className="mb-7 flex flex-wrap items-center justify-center gap-4">
