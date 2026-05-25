@@ -64,21 +64,18 @@ const countries = [
 const sectors = [
   {
     name: "Hospitality",
-    count: "7 clients",
     pills: ["Atlantis", "Fairmont", "Kempinski", "Hyatt"],
     linkLabel: "See hospitality \u2192",
     href: "/en/industries/hospitality",
   },
   {
     name: "Real Estate & Communities",
-    count: "7 clients",
     pills: ["Aldar", "Asteco", "DAMAC", "Azizi"],
     linkLabel: "See real estate \u2192",
     href: "/en/industries/residential-real-estate",
   },
   {
     name: "Education",
-    count: "7 clients",
     pills: ["Taaleem", "Brighton College", "GEMS", "Rashid & Latifa"],
     linkLabel: "See education \u2192",
     href: "/en/industries/education",
@@ -332,9 +329,6 @@ export default function AboutPage() {
                   <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-[var(--border-default)] bg-[var(--bg-surface)] px-5 py-4 transition-all duration-[220ms] hover:border-[rgba(245,166,35,0.3)]">
                     <div className="flex flex-wrap items-center gap-4">
                       <span className="font-heading text-[15px] font-bold text-[var(--text-primary)]">{s.name}</span>
-                      <span className="rounded-full border border-amber-500/20 bg-amber-500/[0.08] px-3 py-1 font-heading text-[11px] font-semibold text-[var(--text-brand)]">
-                        {s.count}
-                      </span>
                       <div className="hidden flex-wrap gap-2 sm:flex">
                         {s.pills.map((pill) => (
                           <span
