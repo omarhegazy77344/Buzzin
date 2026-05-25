@@ -10,7 +10,6 @@ const platformLinks = [
   { label: "Event Management", href: "/platform/event-management" },
   { label: "Attendance", href: "/platform/attendance-management" },
   { label: "Booking", href: "/platform/booking-management" },
-  { label: "Patrolling", href: "/platform/patrolling" },
 ]
 
 const industryLinks = [
