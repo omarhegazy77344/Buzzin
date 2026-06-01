@@ -23,8 +23,14 @@ const companyLinks = [
   { label: "Why Buzzin", href: "/why-buzzin" },
   { label: "Security", href: "/security-compliance" },
   { label: "Careers", href: "/careers" },
-  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
+]
+
+const resourceLinks = [
+  { label: "Blog & Insights", href: "/blog" },
+  { label: "News & Updates", href: "/news" },
+  { label: "Press & Media", href: "/press" },
+  { label: "FAQ", href: "/faq" },
 ]
 
 function FooterLinkGroup({ title, links }: { title: string; links: { label: string; href: string }[] }) {
@@ -54,7 +60,7 @@ export function Footer({ content }: FooterProps) {
   return (
     <footer className="bg-[var(--bg-footer)] pt-16 pb-8">
       <Container>
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
               <Image src="/images/logo-dark.png" alt="Buzzin" width={120} height={40} priority />
@@ -70,6 +76,7 @@ export function Footer({ content }: FooterProps) {
           <FooterLinkGroup title="Platform" links={platformLinks} />
           <FooterLinkGroup title="Industries" links={industryLinks} />
           <FooterLinkGroup title="Company" links={companyLinks} />
+          <FooterLinkGroup title="Resources" links={resourceLinks} />
         </div>
 
         <hr className="my-8 border-white/10" />

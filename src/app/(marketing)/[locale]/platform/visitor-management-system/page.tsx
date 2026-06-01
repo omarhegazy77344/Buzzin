@@ -194,14 +194,14 @@ export default function VmsPage() {
                   </HeroBlock>
 
                   {/* Micro-stats */}
-                  <HeroBlock className="mt-7 flex items-center gap-8">
+                  <HeroBlock className="mt-7 flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-8">
                     {[
                       { val: "20M+", label: "interactions processed" },
                       { val: "3\u20135 sec", label: "average check-in time" },
                       { val: "300+", label: "active organisations" },
                     ].map((s, i) => (
-                      <div key={s.label} className="flex items-center gap-8">
-                        {i > 0 && <div className="h-10 w-px bg-[var(--border-default)]" />}
+                      <div key={s.label} className="flex items-center gap-4 sm:gap-8">
+                        {i > 0 && <div className="hidden h-10 w-px bg-[var(--border-default)] sm:block" />}
                         <div>
                           <p className="font-heading text-[28px] font-bold text-[var(--text-brand)]">{s.val}</p>
                           <p className="font-body text-[12px] text-[var(--text-muted)]">{s.label}</p>

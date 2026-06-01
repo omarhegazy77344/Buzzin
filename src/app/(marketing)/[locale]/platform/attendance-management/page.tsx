@@ -240,14 +240,14 @@ export default function AttendanceManagementPage() {
                     </p>
                   </HeroBlock>
 
-                  <HeroBlock className="mt-7 flex items-center gap-8">
+                  <HeroBlock className="mt-7 flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-8">
                     {[
                       { val: "< 1 sec", label: "tap to logged" },
                       { val: "Real-time", label: "late arrival alerts" },
                       { val: "Audit", label: "ready monthly reports" },
                     ].map((s, i) => (
-                      <div key={s.label} className="flex items-center gap-8">
-                        {i > 0 && <div className="h-10 w-px bg-[var(--border-default)]" />}
+                      <div key={s.label} className="flex items-center gap-4 sm:gap-8">
+                        {i > 0 && <div className="hidden h-10 w-px bg-[var(--border-default)] sm:block" />}
                         <div>
                           <p className="font-heading text-[28px] font-bold text-[var(--text-brand)]">{s.val}</p>
                           <p className="font-body text-[12px] text-[var(--text-muted)]">{s.label}</p>

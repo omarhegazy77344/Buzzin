@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/container"
 import {
   VmsSectionReveal, VmsStaggerGrid, VmsStaggerItem,
 } from "@/components/marketing/vms-page-layout"
+import { newsPosts, blogPosts } from "@/lib/content-defaults"
 
 export const dynamic = "force-static"
 
@@ -67,7 +68,7 @@ export default function SitemapPage() {
 
             {/* Four-column grid */}
             <VmsStaggerGrid
-              className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+              className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5"
               interval={0.08}
             >
               {/* COLUMN 1 — MAIN */}
@@ -141,7 +142,35 @@ export default function SitemapPage() {
                 </div>
               </VmsStaggerItem>
 
-              {/* COLUMN 4 — LEGAL & OTHER */}
+              {/* COLUMN 4 — RESOURCES */}
+              <VmsStaggerItem>
+                <p className={sectionHeading}>Resources</p>
+                <div className="flex flex-col gap-2">
+                  <Link href="/en/blog" className={linkRow}>Blog &amp; Insights</Link>
+                  <Link href="/en/news" className={linkRow}>News &amp; Updates</Link>
+                  <Link href="/en/press" className={linkRow}>Press &amp; Media</Link>
+                </div>
+
+                <p className={`${subHeading} mt-3.5`}>Latest Articles</p>
+                <div className="flex flex-col gap-2">
+                  {blogPosts.slice(0, 3).map((p) => (
+                    <Link key={p.slug} href={`/en/blog/${p.slug}`} className={linkRow}>
+                      {p.title}
+                    </Link>
+                  ))}
+                </div>
+
+                <p className={`${subHeading} mt-3.5`}>Latest News</p>
+                <div className="flex flex-col gap-2">
+                  {newsPosts.slice(0, 3).map((p) => (
+                    <Link key={p.slug} href={`/en/news/${p.slug}`} className={linkRow}>
+                      {p.title}
+                    </Link>
+                  ))}
+                </div>
+              </VmsStaggerItem>
+
+              {/* COLUMN 5 — LEGAL & OTHER */}
               <VmsStaggerItem>
                 <p className={sectionHeading}>Legal &amp; Other</p>
                 <div className="flex flex-col gap-2">

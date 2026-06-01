@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { newsPosts, blogPosts } from "@/lib/content-defaults"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://buzzin.ae"
@@ -27,13 +28,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/book-demo", priority: 0.9, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
     { path: "/faq", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/press", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/news", priority: 0.8, changeFrequency: "weekly" },
+    { path: "/blog", priority: 0.8, changeFrequency: "weekly" },
     { path: "/sitemap", priority: 0.3, changeFrequency: "monthly" },
   ] as const
+
+  const detailRoutes = [
+    ...newsPosts.map((p) => ({
+      path: `/news/${p.slug}`,
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    })),
+    ...blogPosts.map((p) => ({
+      path: `/blog/${p.slug}`,
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    })),
+  ]
 
   const urls: MetadataRoute.Sitemap = []
 
   for (const lang of langs) {
-    for (const route of routes) {
+    for (const route of [...routes, ...detailRoutes]) {
       urls.push({
         url: `${baseUrl}/${lang}${route.path}`,
         lastModified: new Date(),

@@ -247,14 +247,14 @@ export default function SafeguardingPage() {
                     </p>
                   </HeroBlock>
 
-                  <HeroBlock className="mt-7 flex items-center gap-8">
+                  <HeroBlock className="mt-7 flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-8">
                     {[
                       { val: "Jan", label: "2027 compliance deadline" },
                       { val: "KHDA", label: "audit export ready" },
                       { val: "Zero", label: "paper logbooks needed" },
                     ].map((s, i) => (
-                      <div key={s.label} className="flex items-center gap-8">
-                        {i > 0 && <div className="h-10 w-px bg-white/10" />}
+                      <div key={s.label} className="flex items-center gap-4 sm:gap-8">
+                        {i > 0 && <div className="hidden h-10 w-px bg-white/10 sm:block" />}
                         <div>
                           <p className="font-heading text-[28px] font-bold text-[var(--text-brand)]">{s.val}</p>
                           <p className="font-body text-[12px] text-white/55">{s.label}</p>

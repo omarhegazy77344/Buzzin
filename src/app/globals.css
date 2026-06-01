@@ -162,7 +162,10 @@ body {
 
 /* Platform hive — larger tiles for text content (main module cells) */
 .hex-grid-platform {
-  --hex-s: 72px;
+  --hex-s: 56px;
+}
+@media (min-width: 380px) {
+  .hex-grid-platform { --hex-s: 64px; }
 }
 @media (min-width: 480px) {
   .hex-grid-platform { --hex-s: 86px; }

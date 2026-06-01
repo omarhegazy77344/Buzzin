@@ -37,7 +37,7 @@ export default function BookDemoPage() {
                     Book a Free Demo
                   </p>
 
-                  <h1 className="mt-4 font-display text-[44px] font-extrabold leading-[1.08] text-[#1E2547]">
+                  <h1 className="mt-4 font-display text-[2rem] font-extrabold leading-[1.08] text-[#1E2547] sm:text-[2.5rem] md:text-[44px]">
                     See Buzzin running across a real&nbsp;premises.
                   </h1>
 

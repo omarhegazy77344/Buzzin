@@ -12,10 +12,28 @@ import { BrandLogo } from "@/components/ui/brand-logo"
 import { LocaleSwitcher } from "@/components/ui/locale-switcher"
 import { defaultModules } from "@/lib/content-defaults"
 
+const navLinksLeft = [
+  { label: "Why Buzzin", href: "/why-buzzin" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+]
+
+const navLinksRight = [
+  { label: "Contact", href: "/contact" },
+]
+
+// kept for mobile accordion list
 const navLinks = [
   { label: "Why Buzzin", href: "/why-buzzin" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+]
+
+const resourceItems = [
+  { name: "News & Updates", desc: "Launches & partnerships", href: "/news" },
+  { name: "Press & Media", desc: "Coverage & awards", href: "/press" },
+  { name: "FAQ", desc: "Common questions", href: "/faq" },
 ]
 
 const liveModules = defaultModules.filter((m) => m.status === "live" || m.status === "new")
@@ -32,10 +50,13 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [platformOpen, setPlatformOpen] = useState(false)
   const [industryOpen, setIndustryOpen] = useState(false)
+  const [resourceOpen, setResourceOpen] = useState(false)
   const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false)
   const [mobileIndustryOpen, setMobileIndustryOpen] = useState(false)
+  const [mobileResourceOpen, setMobileResourceOpen] = useState(false)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const closeIndustryTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const closeResourceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -57,8 +78,16 @@ export function Navbar() {
   const closeIndustryDropdown = () => {
     closeIndustryTimer.current = setTimeout(() => setIndustryOpen(false), 150)
   }
+  const openResourceDropdown = () => {
+    if (closeResourceTimer.current) clearTimeout(closeResourceTimer.current)
+    setResourceOpen(true)
+  }
+  const closeResourceDropdown = () => {
+    closeResourceTimer.current = setTimeout(() => setResourceOpen(false), 150)
+  }
 
   return (
+    <>
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-[var(--bg-surface)]/95 backdrop-blur-xl border-b border-[var(--border-subtle)]",
@@ -84,7 +113,6 @@ export function Navbar() {
               className="flex items-center gap-1 rounded-md px-3 py-2 font-heading text-body-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
             >
               Platform
-              <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", platformOpen && "rotate-180")} />
             </button>
 
             <AnimatePresence>
@@ -158,7 +186,6 @@ export function Navbar() {
               className="flex items-center gap-1 rounded-md px-3 py-2 font-heading text-body-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
             >
               Industries
-              <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", industryOpen && "rotate-180")} />
             </button>
 
             <AnimatePresence>
@@ -199,7 +226,61 @@ export function Navbar() {
             </AnimatePresence>
           </div>
 
-          {navLinks.map((link) => (
+          {/* Left nav links: Why Buzzin, About, Blog */}
+          {navLinksLeft.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-md px-3 py-2 font-heading text-body-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+            >
+              {link.label}
+            </Link>
+          ))}
+
+          {/* Resources dropdown — after Blog, before Contact */}
+          <div
+            className="relative"
+            onMouseEnter={openResourceDropdown}
+            onMouseLeave={closeResourceDropdown}
+          >
+            <button
+              type="button"
+              className="flex items-center gap-1 rounded-md px-3 py-2 font-heading text-body-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+            >
+              Resources
+            </button>
+
+            <AnimatePresence>
+              {resourceOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute left-0 top-full mt-1 w-64 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-2 shadow-xl"
+                >
+                  {resourceItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setResourceOpen(false)}
+                      className="flex flex-col rounded-lg px-3 py-2.5 transition-colors hover:bg-[var(--bg-surface-raised)]"
+                    >
+                      <span className="font-heading text-[13px] font-semibold text-[var(--text-primary)]">
+                        {item.name}
+                      </span>
+                      <span className="font-body text-[11px] text-[var(--text-muted)]">
+                        {item.desc}
+                      </span>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Right nav links: Contact */}
+          {navLinksRight.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -236,10 +317,11 @@ export function Navbar() {
           </button>
         </div>
       </Container>
+    </header>
 
-      {/* Mobile overlay */}
-      {mobileOpen && (
-        <div className="fixed inset-0 top-14 z-40 overflow-y-auto bg-[var(--bg-page)] lg:hidden">
+    {/* Mobile overlay — outside header to avoid backdrop-filter containing block */}
+    {mobileOpen && (
+      <div className="fixed inset-0 top-14 z-[45] overflow-y-auto bg-[var(--bg-page)] lg:hidden">
           <Container className="flex flex-col gap-2 pt-6 pb-8">
             {/* Platform accordion */}
             <button
@@ -331,6 +413,35 @@ export function Navbar() {
               </div>
             )}
 
+            {/* Resources accordion */}
+            <button
+              type="button"
+              onClick={() => setMobileResourceOpen(!mobileResourceOpen)}
+              className="flex items-center justify-between rounded-lg px-4 py-3 font-heading text-heading-sm font-semibold text-[var(--text-primary)] hover:bg-[var(--bg-surface-raised)]"
+            >
+              Resources
+              <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", mobileResourceOpen && "rotate-180")} />
+            </button>
+            {mobileResourceOpen && (
+              <div className="ml-4 flex flex-col gap-0.5">
+                {resourceItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-lg px-4 py-2.5 transition-colors hover:bg-[var(--bg-surface-raised)]"
+                  >
+                    <span className="font-heading text-[14px] font-medium text-[var(--text-primary)]">
+                      {item.name}
+                    </span>
+                    <span className="block font-body text-[11px] text-[var(--text-muted)]">
+                      {item.desc}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            )}
+
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -352,6 +463,6 @@ export function Navbar() {
           </Container>
         </div>
       )}
-    </header>
+    </>
   )
 }

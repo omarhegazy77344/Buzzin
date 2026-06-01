@@ -36,7 +36,7 @@ export default function ContactPage() {
                   Contact Us
                 </p>
 
-                <h1 className="mt-4 font-display text-[44px] font-extrabold leading-[1.08] tracking-[-1.5px] text-[#1E2547]">
+                <h1 className="mt-4 font-display text-[2rem] font-extrabold leading-[1.08] tracking-[-1.5px] text-[#1E2547] sm:text-[2.5rem] md:text-[44px]">
                   We are here whenever you need&nbsp;us.
                 </h1>
 

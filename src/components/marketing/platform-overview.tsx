@@ -555,7 +555,7 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
       <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-10">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-0">
           {/* ── Left: grid stage (dimensions stay fixed) ── */}
-          <div className="flex w-full flex-1 items-center justify-center lg:justify-start">
+          <div className="flex w-full max-w-full flex-1 items-center justify-center overflow-hidden lg:justify-start">
             <div
               ref={stageRef}
               className="hex-grid hex-grid-platform relative"

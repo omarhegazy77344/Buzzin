@@ -269,14 +269,14 @@ export default function EventManagementPage() {
                   </HeroBlock>
 
                   {/* Micro-stats */}
-                  <HeroBlock className="mt-7 flex items-center gap-8">
+                  <HeroBlock className="mt-7 flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-8">
                     {[
                       { val: "3 sec", label: "average check-in time" },
                       { val: "Unique", label: "QR per attendee, not shared" },
                       { val: "GPS", label: "location controlled access" },
                     ].map((s, i) => (
-                      <div key={s.label} className="flex items-center gap-8">
-                        {i > 0 && <div className="h-10 w-px bg-[var(--border-default)]" />}
+                      <div key={s.label} className="flex items-center gap-4 sm:gap-8">
+                        {i > 0 && <div className="hidden h-10 w-px bg-[var(--border-default)] sm:block" />}
                         <div>
                           <p className="font-heading text-[28px] font-bold text-[var(--text-brand)]">{s.val}</p>
                           <p className="font-body text-[12px] text-[var(--text-muted)]">{s.label}</p>
