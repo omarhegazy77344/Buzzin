@@ -10,9 +10,10 @@ import { Navbar } from "@/components/marketing/navbar"
 import { Footer } from "@/components/marketing/footer"
 import { WhatsAppFab } from "@/components/marketing/whatsapp-fab"
 import { Container } from "@/components/ui/container"
-import { HexagonPattern } from "@/components/ui/hexagon-pattern"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { Button } from "@/components/ui/button"
 import { CtaBanner } from "@/components/marketing/cta-banner"
+import { TransformationShowcase } from "@/components/marketing/transformation-showcase"
 import {
   VmsHero, HeroBlock, DashboardMock,
   VmsSectionReveal, VmsStaggerGrid, VmsStaggerItem,
@@ -23,11 +24,11 @@ export const dynamic = "force-static"
 export const metadata: Metadata = {
   title: "Visitor Management System UAE | Buzzin — Emirates ID & UAE Pass Check-In",
   description:
-    "Enterprise visitor management system for UAE. Emirates ID scanning, UAE Pass integration, 3-5 second check-in, WhatsApp host alerts. Trusted by Atlantis, Aldar, Fairmont, and 300+ organisations. Book a free demo.",
+    "Enterprise visitor management system for UAE. Emirates ID scanning, UAE Pass integration, 3-5 second check-in, WhatsApp host alerts. Trusted by Atlantis, Aldar, Fairmont, and 550+ organisations. Book a free demo.",
   openGraph: {
     title: "Visitor Management System UAE | Buzzin",
     description:
-      "Emirates ID scanning. UAE Pass integration. 3-5 second check-in. Trusted by Atlantis, Aldar, and 300+ organisations across the GCC.",
+      "Emirates ID scanning. UAE Pass integration. 3-5 second check-in. Trusted by Atlantis, Aldar, and 550+ organisations across the GCC.",
   },
 }
 
@@ -79,7 +80,7 @@ const integrations = [
 
 const proofCards = [
   { name: "Atlantis The Palm", body: "Managing visitor flows, contractor access, and event check-in across one of the UAE\u2019s most visited luxury destinations.", tag: "Hospitality" },
-  { name: "Aldar Properties", body: "Exclusive 5-year partner across the entire Aldar UAE portfolio, covering residential communities, commercial assets, and retail.", tag: "Real Estate", href: "/en/industries/residential-real-estate" },
+  { name: "Aldar Properties", body: "Multi-year partner across the entire Aldar UAE portfolio, covering residential communities, commercial assets, and retail.", tag: "Real Estate", href: "/en/industries/residential-real-estate" },
   { name: "Taaleem Group", body: "Visitor management and safeguarding across multiple international school campuses. One dashboard, complete control.", tag: "Education", href: "/en/industries/education" },
 ]
 
@@ -189,16 +190,16 @@ export default function VmsPage() {
                   {/* Sub */}
                   <HeroBlock className="mt-4 max-w-[480px]">
                     <p className="font-body text-body-lg leading-[1.7] text-[var(--text-secondary)]">
-                      The UAE&apos;s most trusted visitor management system for large organisations. National ID, Emirates ID, and UAE Pass scanning. WhatsApp host alerts. Immutable audit log. Already running across Atlantis, Aldar, Fairmont, and 300+ organisations across the GCC.
+                      The UAE&apos;s most trusted visitor management system for large organisations. National ID, Emirates ID, and UAE Pass scanning. WhatsApp host alerts. Immutable audit log. Already running across Atlantis, Aldar, Fairmont, and 550+ organisations across the GCC.
                     </p>
                   </HeroBlock>
 
                   {/* Micro-stats */}
                   <HeroBlock className="mt-7 flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-8">
                     {[
-                      { val: "20M+", label: "interactions processed" },
+                      { val: "30M+", label: "interactions processed" },
                       { val: "3\u20135 sec", label: "average check-in time" },
-                      { val: "300+", label: "active organisations" },
+                      { val: "550+", label: "active organisations" },
                     ].map((s, i) => (
                       <div key={s.label} className="flex items-center gap-4 sm:gap-8">
                         {i > 0 && <div className="hidden h-10 w-px bg-[var(--border-default)] sm:block" />}
@@ -375,7 +376,15 @@ export default function VmsPage() {
 
         {/* ━━━ SECTION 6 — CLIENT PROOF ━━━ */}
         <section className="relative overflow-hidden bg-[var(--bg-proof)] py-16 md:py-20">
-          <HexagonPattern className="text-white/[0.04]" />
+          <SectionBackground
+            variant="dark"
+            hexGrid
+            floatingElements={[
+              { type: "hexagon", size: 90, x: "94%", y: "30%", delay: 0, duration: 9, color: "white" },
+              { type: "hexagon", size: 70, x: "4%", y: "70%", delay: 2, duration: 8, color: "amber" },
+            ]}
+            gradientOrb={{ x: "50%", y: "40%", size: 300, color: "amber", opacity: 0.05 }}
+          />
           <Container className="relative">
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
@@ -389,7 +398,7 @@ export default function VmsPage() {
             <VmsStaggerGrid className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-3" interval={0.12}>
               {proofCards.map((c) => (
                 <VmsStaggerItem key={c.name}>
-                  <div className="rounded-[14px] border border-white/[0.08] bg-white/[0.05] p-6 transition-colors duration-300 hover:bg-white/[0.08]">
+                  <div className="card-hover rounded-[14px] border border-white/[0.08] bg-white/[0.05] p-6 hover:bg-white/[0.08]">
                     {c.href ? (
                       <Link href={c.href} className="font-heading text-[16px] font-bold text-[var(--text-brand)] hover:underline">{c.name}</Link>
                     ) : (
@@ -405,49 +414,17 @@ export default function VmsPage() {
             </VmsStaggerGrid>
 
             <p className="mt-6 text-center font-body text-[13px] text-white/40">
-              And 300+ organisations across UAE, KSA, Kuwait, and Lebanon.
+              And 550+ organisations across UAE, KSA, Kuwait, and Lebanon.
             </p>
           </Container>
         </section>
 
-        {/* ━━━ SECTION 7 — BEFORE / AFTER ━━━ */}
-        <section className="bg-[var(--bg-canvas)] py-16 md:py-20">
-          <Container>
-            <VmsSectionReveal>
-              <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                The Transformation
-              </p>
-              <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                What changes when you replace the paper logbook.
-              </h2>
-            </VmsSectionReveal>
-
-            <VmsStaggerGrid className="space-y-2.5" interval={0.1}>
-              {beforeAfter.map((row, i) => (
-                <VmsStaggerItem key={i}>
-                  <div className="grid grid-cols-1 overflow-hidden rounded-xl border border-[var(--border-default)] md:grid-cols-[1fr_40px_1fr]">
-                    {/* Before */}
-                    <div className="bg-[#FFF5F5] px-5 py-4">
-                      <p className="mb-1.5 font-heading text-[9px] font-bold uppercase tracking-wide text-red-500">Before</p>
-                      <p className="font-body text-[13px] leading-[1.55] text-red-800">{row.before}</p>
-                    </div>
-                    {/* Arrow */}
-                    <div className="hidden items-center justify-center border-x border-[var(--border-default)] bg-white md:flex">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500">
-                        <ArrowRight className="h-3.5 w-3.5 text-white" strokeWidth={2} />
-                      </div>
-                    </div>
-                    {/* After */}
-                    <div className="bg-[#F0FDF4] px-5 py-4">
-                      <p className="mb-1.5 font-heading text-[9px] font-bold uppercase tracking-wide text-emerald-600">With Buzzin</p>
-                      <p className="font-body text-[13px] font-semibold leading-[1.55] text-emerald-800">{row.after}</p>
-                    </div>
-                  </div>
-                </VmsStaggerItem>
-              ))}
-            </VmsStaggerGrid>
-          </Container>
-        </section>
+        {/* ━━━ SECTION 7 — THE TRANSFORMATION ━━━ */}
+        <TransformationShowcase
+          rows={beforeAfter}
+          title="What changes when you replace the paper logbook."
+          subtitle={null}
+        />
 
         {/* ━━━ SECTION 8 — SECURITY ━━━ */}
         <section className="bg-[var(--bg-page)] py-14 md:py-16 text-center">

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import { cn } from "@/lib/cn"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
 /* ═══════════════════════════════════════
@@ -191,7 +192,7 @@ function HexTile({ cell }: { cell: HexCell }) {
             width={200}
             height={120}
             loading="eager"
-            className="h-full w-full object-contain"
+            className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:scale-105 group-hover:grayscale-0"
           />
         </div>
       )}
@@ -245,7 +246,17 @@ export function ClientsVariantD({ className }: { className?: string }) {
         className,
       )}
     >
-      <div className="relative mx-auto max-w-site px-5 sm:px-8 lg:px-10">
+      <SectionBackground
+        variant="light"
+        hexGrid
+        floatingElements={[
+          { type: "hexagon", size: 90, x: "4%", y: "30%", delay: 0, duration: 9, color: "amber" },
+          { type: "hexagon", size: 70, x: "94%", y: "75%", delay: 2.5, duration: 8, color: "navy" },
+          { type: "icon", icon: "Users", size: 18, x: "96%", y: "20%", delay: 1, duration: 10, color: "amber" },
+        ]}
+        gradientOrb={{ x: "20%", y: "30%", size: 350, color: "amber", opacity: 0.04 }}
+      />
+      <div className="relative z-10 mx-auto max-w-site px-5 sm:px-8 lg:px-10">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-0">
           {/* ── Left: heading + sector navigation ── */}
           <div className="w-full text-center lg:w-[30%] lg:shrink-0 lg:pr-10 lg:text-left">
@@ -256,7 +267,7 @@ export function ClientsVariantD({ className }: { className?: string }) {
               transition={{ duration: 0.6, ease: BRAND_EASE }}
               className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)] md:text-base"
             >
-              Some members of our Buzzin Hive
+              The Buzzin Hive
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

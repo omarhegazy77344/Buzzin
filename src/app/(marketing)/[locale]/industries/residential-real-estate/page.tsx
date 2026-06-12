@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import {
   Users, ClipboardCheck, ListOrdered, BookOpen, Shield, Car,
-  XCircle, ArrowRight, CheckCircle,
+  XCircle, CheckCircle,
 } from "lucide-react"
 import { Navbar } from "@/components/marketing/navbar"
 import { Footer } from "@/components/marketing/footer"
@@ -12,7 +12,7 @@ import { HexagonPattern } from "@/components/ui/hexagon-pattern"
 import { Button } from "@/components/ui/button"
 import { SecurityBar } from "@/components/marketing/security-bar"
 import { CtaBanner } from "@/components/marketing/cta-banner"
-import { ResidentialExclusivitySection } from "@/components/marketing/residential-exclusivity-section"
+import { TransformationShowcase } from "@/components/marketing/transformation-showcase"
 import {
   HospitalityHero, HeroBlock,
   SectionReveal, StaggerGrid, StaggerItem,
@@ -23,11 +23,11 @@ export const dynamic = "force-static"
 export const metadata: Metadata = {
   title: "Residential Community Management Software UAE | Buzzin — Aldar & Asteco Partner",
   description:
-    "Community management platform for UAE residential properties. Visitor management, contractor permits, queue management, and patrolling in one dashboard across your entire portfolio. Exclusive partner to Aldar Properties and Asteco.",
+    "Community management platform for UAE residential properties. Visitor management, contractor permits, queue management, and patrolling in one dashboard across your entire portfolio. Multi-year partner to Aldar Properties and Asteco.",
   openGraph: {
     title: "Residential Community Management UAE | Buzzin",
     description:
-      "One platform across your entire UAE residential portfolio. Exclusive 5-year partner to Aldar Properties and Asteco. 300+ organisations. Book a free demo.",
+      "One platform across your entire UAE residential portfolio. Multi-year partner to Aldar Properties and Asteco. 550+ organisations. Book a free demo.",
   },
 }
 
@@ -43,7 +43,7 @@ const heroChips = [
 ]
 
 const heroStats = [
-  { label: "Exclusive partnership term", value: "5 Years" },
+  { label: "Partnership term", value: "5 Years" },
   { label: "Portfolio coverage", value: "Entire UAE" },
   { label: "Access events 2024 \u2192 2025", value: "71\u00D7 growth" },
   { label: "Q1 2026 work permits", value: "81,085" },
@@ -184,7 +184,7 @@ export default function ResidentialRealEstatePage() {
                       Residential &amp; Real Estate
                     </span>
                     <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/15 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wide text-amber-400">
-                      Exclusive Aldar &amp; Asteco Partner
+                      Aldar &amp; Asteco Partner
                     </span>
                   </HeroBlock>
 
@@ -220,12 +220,6 @@ export default function ResidentialRealEstatePage() {
                     <Button size="lg" asChild>
                       <Link href="/en/book-demo">Book a Demo &rarr;</Link>
                     </Button>
-                    <a
-                      href="#exclusivity"
-                      className="inline-flex h-12 items-center rounded-lg border border-white/25 bg-transparent px-7 font-heading text-body-lg font-medium text-white/80 transition-colors hover:border-white/50"
-                    >
-                      See the Exclusivity Story
-                    </a>
                   </HeroBlock>
                 </>
               }
@@ -245,12 +239,6 @@ export default function ResidentialRealEstatePage() {
                         </StaggerItem>
                       ))}
                     </StaggerGrid>
-                    <a
-                      href="#exclusivity"
-                      className="mt-4 block font-body text-[13px] font-semibold text-[var(--text-brand)] hover:underline"
-                    >
-                      Read the full story &rarr;
-                    </a>
                   </div>
                 </HeroBlock>
               }
@@ -330,10 +318,7 @@ export default function ResidentialRealEstatePage() {
           </Container>
         </section>
 
-        {/* ━━━ SECTION 4 — EXCLUSIVITY ━━━ */}
-        <ResidentialExclusivitySection />
-
-        {/* ━━━ SECTION 5 — QMS STORY ━━━ */}
+        {/* ━━━ SECTION 4 — QMS STORY ━━━ */}
         <section className="bg-[var(--bg-canvas)] py-16 md:py-20">
           <Container>
             <SectionReveal>
@@ -408,41 +393,12 @@ export default function ResidentialRealEstatePage() {
           </Container>
         </section>
 
-        {/* ━━━ SECTION 6 — BEFORE / AFTER ━━━ */}
-        <section className="bg-[var(--bg-page)] py-16 md:py-20">
-          <Container>
-            <SectionReveal>
-              <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                The Transformation
-              </p>
-              <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                What changes when your portfolio runs on Buzzin.
-              </h2>
-            </SectionReveal>
-
-            <StaggerGrid className="space-y-2.5" interval={0.1}>
-              {beforeAfter.map((row, i) => (
-                <StaggerItem key={i}>
-                  <div className="grid grid-cols-1 overflow-hidden rounded-xl border border-[var(--border-default)] md:grid-cols-[1fr_40px_1fr]">
-                    <div className="bg-[#FFF5F5] px-5 py-4">
-                      <p className="mb-1.5 font-heading text-[9px] font-bold uppercase tracking-wide text-red-500">Before</p>
-                      <p className="font-body text-[13px] leading-[1.55] text-red-800">{row.before}</p>
-                    </div>
-                    <div className="hidden items-center justify-center border-x border-[var(--border-default)] bg-white md:flex">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500">
-                        <ArrowRight className="h-3.5 w-3.5 text-white" strokeWidth={2} />
-                      </div>
-                    </div>
-                    <div className="bg-[#F0FDF4] px-5 py-4">
-                      <p className="mb-1.5 font-heading text-[9px] font-bold uppercase tracking-wide text-emerald-600">With Buzzin</p>
-                      <p className="font-body text-[13px] font-semibold leading-[1.55] text-emerald-800">{row.after}</p>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerGrid>
-          </Container>
-        </section>
+        {/* ━━━ SECTION 6 — THE TRANSFORMATION ━━━ */}
+        <TransformationShowcase
+          rows={beforeAfter}
+          title="What changes when your portfolio runs on Buzzin."
+          subtitle={null}
+        />
 
         {/* ━━━ SECTION 7 — ALL RESIDENTIAL CLIENTS ━━━ */}
         <section className="bg-[var(--bg-canvas)] py-14 md:py-16">

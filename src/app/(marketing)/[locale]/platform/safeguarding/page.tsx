@@ -8,10 +8,11 @@ import { Navbar } from "@/components/marketing/navbar"
 import { Footer } from "@/components/marketing/footer"
 import { WhatsAppFab } from "@/components/marketing/whatsapp-fab"
 import { Container } from "@/components/ui/container"
-import { HexagonPattern } from "@/components/ui/hexagon-pattern"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { Button } from "@/components/ui/button"
 import { SecurityBar } from "@/components/marketing/security-bar"
 import { CtaBanner } from "@/components/marketing/cta-banner"
+import { TransformationShowcase } from "@/components/marketing/transformation-showcase"
 import {
   VmsHero, HeroBlock,
   VmsSectionReveal, VmsStaggerGrid, VmsStaggerItem,
@@ -208,7 +209,15 @@ export default function SafeguardingPage() {
       <main>
         {/* ━━━ SECTION 1 — HERO (navy) ━━━ */}
         <section className="relative overflow-hidden bg-[var(--bg-proof)] pt-28 pb-20 md:pt-36 md:pb-24">
-          <HexagonPattern className="text-white/[0.04]" />
+          <SectionBackground
+            variant="dark"
+            hexGrid
+            floatingElements={[
+              { type: "hexagon", size: 100, x: "92%", y: "26%", delay: 0, duration: 9, color: "white" },
+              { type: "hexagon", size: 70, x: "5%", y: "72%", delay: 2.5, duration: 8, color: "amber" },
+            ]}
+            gradientOrb={{ x: "55%", y: "30%", size: 340, color: "amber", opacity: 0.05 }}
+          />
 
           <Container className="relative z-[1]">
             <nav className="mb-8 font-body text-[12px] text-white/50">
@@ -489,7 +498,15 @@ export default function SafeguardingPage() {
 
         {/* ━━━ SECTION 6 — CLIENT PROOF (navy) ━━━ */}
         <section className="relative overflow-hidden bg-[var(--bg-proof)] py-16 md:py-20">
-          <HexagonPattern className="text-white/[0.04]" />
+          <SectionBackground
+            variant="dark"
+            hexGrid
+            floatingElements={[
+              { type: "hexagon", size: 90, x: "94%", y: "30%", delay: 0, duration: 9, color: "white" },
+              { type: "hexagon", size: 70, x: "4%", y: "70%", delay: 2, duration: 8, color: "amber" },
+            ]}
+            gradientOrb={{ x: "50%", y: "40%", size: 300, color: "amber", opacity: 0.05 }}
+          />
 
           <Container className="relative z-[1]">
             <VmsSectionReveal>
@@ -504,7 +521,7 @@ export default function SafeguardingPage() {
             <VmsStaggerGrid className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2" interval={0.12}>
               {proofCards.map((p) => (
                 <VmsStaggerItem key={p.name}>
-                  <div className="h-full rounded-[14px] border border-white/[0.10] bg-white/[0.05] p-6">
+                  <div className="card-hover h-full rounded-[14px] border border-white/[0.10] bg-white/[0.05] p-6">
                     <div className="mb-3 flex items-center justify-between">
                       <h3 className="font-heading text-[18px] font-bold text-white">{p.name}</h3>
                       <span className="rounded-full border border-amber-500/30 bg-amber-500/15 px-2.5 py-0.5 font-heading text-[10px] font-semibold text-[var(--text-brand)]">
@@ -518,47 +535,17 @@ export default function SafeguardingPage() {
             </VmsStaggerGrid>
 
             <p className="mt-6 text-center font-body text-[13px] text-white/40">
-              And 300+ organisations across UAE, KSA, Kuwait, and Lebanon.
+              And 550+ organisations across UAE, KSA, Kuwait, and Lebanon.
             </p>
           </Container>
         </section>
 
-        {/* ━━━ SECTION 7 — BEFORE / AFTER ━━━ */}
-        <section className="bg-[var(--bg-canvas)] py-16 md:py-20">
-          <Container>
-            <VmsSectionReveal>
-              <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                The Transformation
-              </p>
-              <h2 className="mt-4 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                What changes when safeguarding goes fully digital.
-              </h2>
-            </VmsSectionReveal>
-
-            <VmsStaggerGrid className="mt-10 space-y-4" interval={0.1}>
-              {beforeAfter.map((row, i) => (
-                <VmsStaggerItem key={i}>
-                  <div className="grid grid-cols-1 gap-4 rounded-[14px] border border-[var(--border-default)] bg-[var(--bg-surface)] p-5 md:grid-cols-2">
-                    <div className="flex gap-3">
-                      <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" strokeWidth={1.5} />
-                      <div>
-                        <p className="mb-1 font-heading text-[10px] font-bold uppercase tracking-wide text-red-500">Before</p>
-                        <p className="font-body text-[14px] leading-[1.55] text-[var(--text-secondary)]">{row.before}</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-3 border-t border-[var(--border-subtle)] pt-4 md:border-l md:border-t-0 md:pl-5 md:pt-0">
-                      <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" strokeWidth={2} />
-                      <div>
-                        <p className="mb-1 font-heading text-[10px] font-bold uppercase tracking-wide text-emerald-600">After</p>
-                        <p className="font-body text-[14px] leading-[1.55] text-[var(--text-primary)]">{row.after}</p>
-                      </div>
-                    </div>
-                  </div>
-                </VmsStaggerItem>
-              ))}
-            </VmsStaggerGrid>
-          </Container>
-        </section>
+        {/* ━━━ SECTION 7 — THE TRANSFORMATION ━━━ */}
+        <TransformationShowcase
+          rows={beforeAfter}
+          title="What changes when safeguarding goes fully digital."
+          subtitle={null}
+        />
 
         {/* ━━━ SECTION 8 — SECURITY ━━━ */}
         <SecurityBar />

@@ -6,9 +6,9 @@ import { Container } from "@/components/ui/container"
 import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
 const STATS = [
-  { num: "10", label: "Modules" },
-  { num: "20M+", label: "Interactions" },
-  { num: "300+", label: "Organisations" },
+  { num: "7", label: "Modules" },
+  { num: "30M+", label: "Interactions" },
+  { num: "550+", label: "Organisations" },
 ]
 
 const fadeUp = (delay = 0) => ({
@@ -69,7 +69,7 @@ export function PlatformHero() {
             viewport={VIEWPORT}
             className="mb-5 font-display text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)] md:text-[4rem]"
           >
-            10+ modules, one shared core. Everything&nbsp;connected.
+            7+ modules, one shared core. Everything&nbsp;connected.
           </motion.h1>
 
           <motion.p

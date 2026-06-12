@@ -12,12 +12,12 @@ export const dynamic = "force-static"
 export const metadata: Metadata = {
   title: "Book a Free Demo | Buzzin",
   description:
-    "Book a free Buzzin demo tailored to your industry. Trusted by Atlantis, Aldar, Taaleem, and 300+ organisations across UAE & GCC. We respond within 4 business hours.",
+    "Book a free Buzzin demo tailored to your industry. Trusted by Atlantis, Aldar, Taaleem, and 550+ organisations across UAE & GCC. We respond within 4 business hours.",
   robots: "noindex",
 }
 
 const trustRows = [
-  { name: "Aldar Properties", outcome: "Exclusive 5-year partner across their entire UAE portfolio", initial: "A" },
+  { name: "Aldar Properties", outcome: "Multi-year partner across their entire UAE portfolio", initial: "A" },
   { name: "Atlantis The Palm", outcome: "Enterprise visitor and contractor management", initial: "A" },
   { name: "Taaleem Group", outcome: "40+ schools managed from one platform", initial: "T" },
 ]
@@ -62,7 +62,7 @@ export default function BookDemoPage() {
               leftBottom={
                 <>
                   <p className="mt-6 font-body text-[13px] text-[var(--text-muted)]">
-                    And 300+ organisations across UAE, KSA, Kuwait, and Lebanon.
+                    And 550+ organisations across UAE, KSA, Kuwait, and Lebanon.
                   </p>
 
                   <div className="mt-8 flex flex-wrap items-center gap-5">

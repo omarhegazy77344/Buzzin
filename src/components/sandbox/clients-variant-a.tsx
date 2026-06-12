@@ -251,7 +251,7 @@ export function ClientsVariantA({ className }: { className?: string }) {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-10 text-center text-body-xs text-[var(--text-muted)]"
         >
-          &hellip; and 300+ more across the region
+          &hellip; and 550+ more across the region
         </motion.p>
       </div>
     </section>

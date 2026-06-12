@@ -9,7 +9,7 @@ import { Navbar } from "@/components/marketing/navbar"
 import { Footer } from "@/components/marketing/footer"
 import { WhatsAppFab } from "@/components/marketing/whatsapp-fab"
 import { Container } from "@/components/ui/container"
-import { HexagonPattern } from "@/components/ui/hexagon-pattern"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { Button } from "@/components/ui/button"
 import {
   VmsSectionReveal, VmsStaggerGrid, VmsStaggerItem,
@@ -135,7 +135,15 @@ export default function PatrollingPage() {
       <main>
         {/* ━━━ SECTION 1 — HERO (navy) ━━━ */}
         <section className="relative overflow-hidden bg-[var(--bg-proof)] pt-28 pb-20 md:pt-36 md:pb-24">
-          <HexagonPattern className="text-white/[0.04]" />
+          <SectionBackground
+            variant="dark"
+            hexGrid
+            floatingElements={[
+              { type: "hexagon", size: 100, x: "92%", y: "26%", delay: 0, duration: 9, color: "white" },
+              { type: "hexagon", size: 70, x: "5%", y: "72%", delay: 2.5, duration: 8, color: "amber" },
+            ]}
+            gradientOrb={{ x: "55%", y: "30%", size: 340, color: "amber", opacity: 0.05 }}
+          />
 
           <Container className="relative z-[1]">
             <nav className="mb-8 font-body text-[12px] text-white/50 text-center">
@@ -317,7 +325,15 @@ export default function PatrollingPage() {
 
         {/* ━━━ SECTION 6 — NOTIFY CTA (navy) ━━━ */}
         <section className="relative overflow-hidden bg-[var(--bg-proof)] py-16 md:py-20">
-          <HexagonPattern className="text-white/[0.04]" />
+          <SectionBackground
+            variant="dark"
+            hexGrid
+            floatingElements={[
+              { type: "hexagon", size: 90, x: "94%", y: "30%", delay: 0, duration: 9, color: "white" },
+              { type: "hexagon", size: 70, x: "4%", y: "70%", delay: 2, duration: 8, color: "amber" },
+            ]}
+            gradientOrb={{ x: "50%", y: "40%", size: 300, color: "amber", opacity: 0.05 }}
+          />
 
           <Container className="relative z-[1]">
             <VmsSectionReveal className="mx-auto max-w-[620px] text-center">

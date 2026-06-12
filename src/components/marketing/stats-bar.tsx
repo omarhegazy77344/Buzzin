@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { motion, useInView, useReducedMotion } from "framer-motion"
 import { Container } from "@/components/ui/container"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { defaultStats } from "@/lib/content-defaults"
 import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
@@ -21,20 +22,23 @@ function AnimatedCounter({ target, suffix, isInView }: { target: number; suffix:
       return
     }
 
-    const duration = 1400
-    const steps = 50
-    const increment = target / steps
-    let current = 0
-    const interval = setInterval(() => {
-      current += increment
-      if (current >= target) {
-        setCount(target)
-        clearInterval(interval)
+    const duration = 1800
+    let rafId: number
+    const startTime = performance.now()
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCount(Math.floor(eased * target))
+      if (progress < 1) {
+        rafId = requestAnimationFrame(tick)
       } else {
-        setCount(Math.floor(current))
+        setCount(target)
       }
-    }, duration / steps)
-    return () => clearInterval(interval)
+    }
+
+    rafId = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafId)
   }, [target, isInView, reduced])
 
   return (
@@ -55,8 +59,17 @@ export function StatsBar({ stats }: StatsBarProps) {
   const isInView = useInView(ref, { once: false, amount: 0.3 })
 
   return (
-    <section className="bg-[var(--bg-proof)] py-16 md:py-20">
-      <Container>
+    <section className="relative overflow-hidden bg-[var(--bg-proof)] py-16 md:py-20">
+      <SectionBackground
+        variant="dark"
+        hexGrid
+        floatingElements={[
+          { type: "hexagon", size: 100, x: "94%", y: "30%", delay: 0, duration: 9, color: "white" },
+          { type: "hexagon", size: 70, x: "3%", y: "70%", delay: 2, duration: 8, color: "amber" },
+        ]}
+        gradientOrb={{ x: "50%", y: "50%", size: 400, color: "amber", opacity: 0.03 }}
+      />
+      <Container className="relative z-10">
         <div ref={ref} className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">
           {data.map((stat, i) => (
             <motion.div
@@ -65,7 +78,7 @@ export function StatsBar({ stats }: StatsBarProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={VIEWPORT}
               transition={{ duration: 0.5, delay: i * 0.1, ease: BRAND_EASE }}
-              className="text-center"
+              className="rounded-2xl px-4 py-3 text-center transition-colors duration-200 hover:bg-white/[0.04]"
             >
               <div className="font-heading text-[2.5rem] font-bold leading-none text-white md:text-[3.5rem]">
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} isInView={isInView} />

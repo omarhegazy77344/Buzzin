@@ -7,7 +7,7 @@ import { PlatformOverview } from "@/components/marketing/platform-overview"
 
 const homepageModules = defaultModules.filter((m) => m.slug !== "safeguarding")
 import { IndustryTransformationSection } from "@/components/marketing/industry-transformation-section"
-import { Exclusivity } from "@/components/marketing/exclusivity"
+import { TransformationShowcase } from "@/components/marketing/transformation-showcase"
 import { SecurityBar } from "@/components/marketing/security-bar"
 import { HowItWorks } from "@/components/marketing/how-it-works"
 import { CtaBanner } from "@/components/marketing/cta-banner"
@@ -24,7 +24,7 @@ export default function HomePage() {
         <PlatformOverview modules={homepageModules} />
         <IndustryTransformationSection />
         <ClientsVariantD />
-        <Exclusivity />
+        <TransformationShowcase />
         <SecurityBar />
         <HowItWorks />
         <CtaBanner />

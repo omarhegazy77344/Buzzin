@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter, useParams } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { CheckCircle, Loader2 } from "lucide-react"
+import { Loader2 } from "lucide-react"
 import { cn } from "@/lib/cn"
-import Link from "next/link"
 
 const schema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -34,6 +34,8 @@ const inputBase =
 const errorText = "mt-1 font-body text-[12px] text-red-500"
 
 export function ContactForm() {
+  const router = useRouter()
+  const { locale } = useParams<{ locale: string }>()
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [serverError, setServerError] = useState("")
 
@@ -61,31 +63,11 @@ export function ContactForm() {
         throw new Error(body?.error || "Something went wrong.")
       }
 
-      setStatus("success")
+      router.push(`/${locale}/thank-you`)
     } catch (err) {
       setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
       setStatus("error")
     }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="flex flex-col items-center py-12 text-center">
-        <CheckCircle className="h-12 w-12 text-[#F5A623]" strokeWidth={1.5} />
-        <h3 className="mt-5 font-heading text-[22px] font-bold text-[var(--text-primary)]">
-          Message sent.
-        </h3>
-        <p className="mt-3 max-w-sm font-body text-[15px] leading-relaxed text-[var(--text-secondary)]">
-          We will be in touch within 4 business hours.
-        </p>
-        <Link
-          href="/en"
-          className="mt-6 font-heading text-[13px] font-bold text-[#F5A623] transition-colors hover:text-[#E09015]"
-        >
-          &larr; Back to homepage
-        </Link>
-      </div>
-    )
   }
 
   return (

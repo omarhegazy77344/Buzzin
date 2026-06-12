@@ -7,13 +7,23 @@ import { ArrowRight, Hexagon, Shield, Globe, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { HexagonPattern } from "@/components/ui/hexagon-pattern"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { OrbitalCarousel } from "@/components/marketing/orbital-carousel"
 import { type CarouselImage } from "@/lib/content-defaults"
 import { BRAND_EASE } from "@/lib/motion"
 
 const heroStagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.05 } },
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0 } },
+}
+
+const heroOverline = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: BRAND_EASE },
+  },
 }
 
 const heroHeadline = {
@@ -22,7 +32,7 @@ const heroHeadline = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.7, ease: BRAND_EASE },
+    transition: { duration: 0.7, delay: 0.1, ease: BRAND_EASE },
   },
 }
 
@@ -31,7 +41,7 @@ const heroSub = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 0.15, ease: BRAND_EASE },
+    transition: { duration: 0.6, delay: 0.4, ease: BRAND_EASE },
   },
 }
 
@@ -40,7 +50,7 @@ const heroCta = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: 0.25, ease: BRAND_EASE },
+    transition: { duration: 0.5, delay: 0.6, ease: BRAND_EASE },
   },
 }
 
@@ -81,7 +91,22 @@ export function HeroVariantD({ images }: Props) {
       ref={sectionRef}
       className="relative min-h-screen overflow-hidden [background:var(--bg-hero)]"
     >
+      <div className="hero-animated-bg pointer-events-none absolute inset-0" aria-hidden="true" />
+
       <HexagonPattern className="text-amber-500/[0.12] dark:text-navy-300/[0.06]" />
+
+      <SectionBackground
+        variant="light"
+        hexGrid={false}
+        floatingElements={[
+          { type: "icon", icon: "Shield", size: 18, x: "4%", y: "22%", delay: 0, duration: 8, color: "navy" },
+          { type: "icon", icon: "QrCode", size: 22, x: "94%", y: "58%", delay: 1.5, duration: 9, color: "amber" },
+          { type: "icon", icon: "Users", size: 20, x: "6%", y: "78%", delay: 3, duration: 7, color: "navy" },
+          { type: "icon", icon: "BarChart", size: 16, x: "92%", y: "18%", delay: 2, duration: 10, color: "amber" },
+          { type: "hexagon", size: 90, x: "3%", y: "48%", delay: 4, duration: 9, color: "amber" },
+          { type: "hexagon", size: 70, x: "95%", y: "80%", delay: 1, duration: 8, color: "navy" },
+        ]}
+      />
 
       {/* Ambient glow — once:true to avoid distracting reverse flicker on a decorative bg layer */}
       <motion.div
@@ -92,17 +117,17 @@ export function HeroVariantD({ images }: Props) {
         }}
       />
 
-      <Container className="relative pt-28 pb-12 lg:pt-36 lg:pb-20">
+      <Container className="relative z-10 pt-28 pb-12 lg:pt-36 lg:pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
             variants={heroStagger}
             initial="hidden"
             {...(reduced ? { animate: "visible" } : { whileInView: "visible", viewport: { once: false, amount: 0.2 } })}
           >
-            <motion.div variants={heroHeadline} className="mb-5 flex items-center justify-center gap-2">
+            <motion.div variants={heroOverline} className="mb-5 flex items-center justify-center gap-2">
               <Hexagon className="h-3.5 w-3.5 text-amber-500" />
               <span className="font-heading text-overline font-semibold uppercase tracking-[0.14em] text-[var(--text-brand)]">
-                10+ Modules. One Platform.
+                7+ Modules. One Platform.
               </span>
             </motion.div>
 
@@ -127,15 +152,24 @@ export function HeroVariantD({ images }: Props) {
               variants={heroSub}
               className="mx-auto mt-6 max-w-2xl text-body-md text-[var(--text-secondary)] md:text-body-lg"
             >
-              Visitors, contractors, patrol rounds, and queues, all captured and
+              Visitors, contractors, patrol rounds, and queues &mdash; all captured and
               verified in real time. Built for the organisations that
               run the UAE{"\u00a0"}&{"\u00a0"}GCC.
             </motion.p>
 
             <motion.div
               variants={heroCta}
-              className="mt-8 flex flex-wrap items-center justify-center gap-4"
+              className="relative mt-8 flex flex-wrap items-center justify-center gap-4"
             >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%)",
+                  filter: "blur(20px)",
+                }}
+              />
               <Button size="lg" asChild>
                 <Link href="/book-demo" className="gap-2">
                   Book a Strategic Demo
@@ -193,7 +227,7 @@ export function HeroVariantD({ images }: Props) {
             variants={heroFadeUpSoft}
             className="mt-5 text-center text-body-xs text-[var(--text-muted)]"
           >
-            Trusted by Atlantis, Aldar, Taaleem, Fairmont, DAMAC, Kempinski, and 300+ organisations
+            Trusted by Atlantis, Aldar, Taaleem, Fairmont, DAMAC, Kempinski, and 550+ organisations
           </motion.p>
         </motion.div>
       </Container>

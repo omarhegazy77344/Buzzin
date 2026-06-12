@@ -88,7 +88,7 @@ export function ClientsVariantC({ className }: { className?: string }) {
 
         {/* Footer */}
         <p className="mt-12 text-center text-body-xs text-[var(--text-muted)]">
-          &hellip; and 300+ more organisations
+          &hellip; and 550+ more organisations
         </p>
       </div>
     </section>

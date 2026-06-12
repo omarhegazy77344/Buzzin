@@ -1,10 +1,11 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { useMemo, useState, useCallback, useRef } from "react"
+import { useMemo, useState, useCallback, useRef, useEffect } from "react"
 import Link from "next/link"
 import { Star, X, ChevronRight, Clock } from "lucide-react"
 import { cn } from "@/lib/cn"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { defaultModules, type PlatformModule } from "@/lib/content-defaults"
 import { BRAND_EASE, VIEWPORT } from "@/lib/motion"
 
@@ -324,7 +325,7 @@ function ExpandedHex({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.25 }}
-        className="absolute inset-0 rounded-sm bg-black/[.06] backdrop-blur-[1px] dark:bg-black/[.14]"
+        className="absolute inset-0 cursor-default"
         onClick={onClose}
       />
 
@@ -547,12 +548,34 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
     setSelectedModule(null)
   }, [])
 
+  useEffect(() => {
+    if (!selectedModule) return
+    const handleOutside = (e: MouseEvent) => {
+      if (stageRef.current && !stageRef.current.contains(e.target as Node)) {
+        handleClose()
+      }
+    }
+    document.addEventListener("mousedown", handleOutside)
+    return () => document.removeEventListener("mousedown", handleOutside)
+  }, [selectedModule, handleClose])
+
   return (
     <section
       className="relative overflow-hidden bg-[#faf5ec] py-16 pb-24 dark:bg-[#0e1126] md:py-24 md:pb-36"
       id="overview"
     >
-      <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-10">
+      <SectionBackground
+        variant="light"
+        hexGrid
+        floatingElements={[
+          { type: "icon", icon: "Layers", size: 18, x: "4%", y: "20%", delay: 0, duration: 9, color: "navy" },
+          { type: "icon", icon: "Settings", size: 14, x: "95%", y: "30%", delay: 2, duration: 8, color: "amber" },
+          { type: "icon", icon: "Lock", size: 16, x: "94%", y: "82%", delay: 4, duration: 10, color: "navy" },
+          { type: "hexagon", size: 100, x: "3%", y: "70%", delay: 1, duration: 9, color: "amber" },
+        ]}
+        gradientOrb={{ x: "30%", y: "50%", size: 350, color: "amber", opacity: 0.05 }}
+      />
+      <div className="relative z-10 mx-auto w-full max-w-site px-5 sm:px-8 lg:px-10">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-0">
           {/* ── Left: grid stage (dimensions stay fixed) ── */}
           <div className="flex w-full max-w-full flex-1 items-center justify-center overflow-hidden lg:justify-start">

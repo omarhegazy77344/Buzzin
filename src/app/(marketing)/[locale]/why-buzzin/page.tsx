@@ -11,7 +11,6 @@ import { StatsBar } from "@/components/marketing/stats-bar"
 import { HowItWorks } from "@/components/marketing/how-it-works"
 import { SecurityBar } from "@/components/marketing/security-bar"
 import { CtaBanner } from "@/components/marketing/cta-banner"
-import { WhyBuzzinExclusivityBlock } from "@/components/marketing/why-buzzin-exclusivity"
 import {
   SectionReveal, StaggerGrid, StaggerItem,
 } from "@/components/marketing/hospitality-layout"
@@ -21,11 +20,11 @@ export const dynamic = "force-static"
 export const metadata: Metadata = {
   title: "Why Buzzin | The Premises Intelligence Platform for Enterprise UAE & GCC",
   description:
-    "Why enterprise organisations across the UAE choose Buzzin. Simplicity, flexibility, and enterprise-grade features in one platform. Exclusive partner to Aldar and Asteco. Trusted by Atlantis, Taaleem, Fairmont, and 300+ organisations.",
+    "Why enterprise organisations across the UAE choose Buzzin. Simplicity, flexibility, and enterprise-grade features in one platform. Trusted by Aldar, Asteco, Atlantis, Taaleem, Fairmont, and 550+ organisations.",
   openGraph: {
     title: "Why Buzzin | Premises Intelligence Platform UAE",
     description:
-      "Simplicity. Flexibility. Enterprise features. One integrated platform trusted by Aldar, Atlantis, Taaleem, and 300+ organisations across the GCC.",
+      "Simplicity. Flexibility. Enterprise features. One integrated platform trusted by Aldar, Atlantis, Taaleem, and 550+ organisations across the GCC.",
   },
 }
 
@@ -52,7 +51,7 @@ const flexibilityRows = [
 ]
 
 const enterpriseRows = [
-  "20M+ secure interactions processed reliably at Atlantis and Aldar scale.",
+  "30M+ secure interactions processed reliably at Atlantis and Aldar scale.",
   "GDPR and UAE PDPL aligned, meeting the data-protection bar that procurement teams expect.",
   "UAE Pass and ICP App integration provides government-verified identity at every check-in point.",
   "On-premises deployment is available for financial institutions and government entities with strict data residency requirements.",
@@ -60,7 +59,7 @@ const enterpriseRows = [
 
 const diffCards = [
   {
-    icon: Layers, title: "10+ integrated modules",
+    icon: Layers, title: "7+ integrated modules",
     body: "Every module shares the same data and dashboard. You manage one vendor, one login, and one source of truth instead of stitching nine tools together.",
     link: { label: "See all modules \u2192", href: "/en/platform" },
   },
@@ -332,7 +331,7 @@ export default function WhyBuzzinPage() {
                     <span className="font-heading text-[10px] font-semibold uppercase tracking-wide text-[var(--text-brand)]">Enterprise Features</span>
                   </div>
                   <h2 className="mb-3.5 font-heading text-[2.25rem] font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                    10+ modules sharing a single source of truth.
+                    7+ modules sharing a single source of truth.
                   </h2>
                   <p className="mb-6 font-body text-[15px] leading-[1.75] text-[var(--text-secondary)]">
                     Most premises management tools do one thing. Buzzin handles ten, and every module shares the same data, dashboard, and audit trail. When a visitor arrives, the queue system knows. When a permit expires, the gate knows. When a child is collected, the safeguarding log knows.
@@ -346,7 +345,7 @@ export default function WhyBuzzinPage() {
                   label="Why Aldar Chose Buzzin"
                   quote="They were amazed by the system and how it simplifies the process while maintaining full access and features. They asked Buzzin to build them a new module \u2014 the Queue Management System."
                   stats={[
-                    { value: "5 yr", sub: "exclusive partnership" },
+                    { value: "5 yr", sub: "partnership" },
                     { value: "71\u00D7", sub: "growth 2024\u21922025" },
                     { value: "Built", sub: "QMS for Aldar" },
                   ]}
@@ -399,10 +398,7 @@ export default function WhyBuzzinPage() {
           </Container>
         </section>
 
-        {/* ━━━ SECTION 7 — THE EXCLUSIVITY ━━━ */}
-        <WhyBuzzinExclusivityBlock />
-
-        {/* ━━━ SECTION 8 — ALL CLIENTS ━━━ */}
+        {/* ━━━ SECTION 7 — ALL CLIENTS ━━━ */}
         <section className="bg-[var(--bg-canvas)] py-14 md:py-16">
           <Container>
             <SectionReveal className="text-center">
@@ -410,7 +406,7 @@ export default function WhyBuzzinPage() {
                 Trusted By
               </p>
               <h2 className="mt-4 font-heading text-[2rem] font-bold text-[var(--text-primary)]">
-                300+ organisations across four countries.
+                550+ organisations across four countries.
               </h2>
             </SectionReveal>
 

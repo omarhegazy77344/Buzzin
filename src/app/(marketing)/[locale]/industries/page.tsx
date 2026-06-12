@@ -15,10 +15,10 @@ export const dynamic = "force-static"
 
 export const metadata: Metadata = {
   title: "Industries | Buzzin \u2014 Premises Intelligence for Hospitality, Real Estate & Education",
-  description: "Buzzin serves hospitality, residential real estate, and education across UAE and GCC. Trusted by Atlantis, Aldar, Taaleem, Fairmont, and 300+ organisations.",
+  description: "Buzzin serves hospitality, residential real estate, and education across UAE and GCC. Trusted by Atlantis, Aldar, Taaleem, Fairmont, and 550+ organisations.",
   openGraph: {
     title: "Industries | Buzzin Platform UAE",
-    description: "Three industries. One platform. Configured specifically for how each sector operates. Trusted by 300+ organisations across UAE and GCC.",
+    description: "Three industries. One platform. Configured specifically for how each sector operates. Trusted by 550+ organisations across UAE and GCC.",
   },
 }
 
@@ -134,8 +134,8 @@ export default function IndustriesPage() {
               <SectionReveal>
                 <ProofCard
                   label="Aldar Properties"
-                  quote="Selected as the exclusive multi-year partner across the entire Aldar UAE portfolio. 71\u00d7 growth in secure access events from 2024 to 2025."
-                  stats={["5 yr", "exclusive deal", "71\u00d7", "growth 2024\u20132025"]}
+                  quote="Selected as the multi-year premises management partner across the entire Aldar UAE portfolio. 71\u00d7 growth in secure access events from 2024 to 2025."
+                  stats={["5 yr", "multi-year", "71\u00d7", "growth 2024\u20132025"]}
                   pill="Real Estate & Communities"
                 />
               </SectionReveal>
@@ -241,7 +241,7 @@ export default function IndustriesPage() {
             <div className="mx-auto max-w-[800px] text-center">
               <SectionReveal>
                 <p className="mb-4 font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                  300+ Organisations
+                  550+ Organisations
                 </p>
                 <h2 className="font-heading text-[2rem] font-bold text-white">
                   One platform, configured for how each industry actually works.
@@ -262,7 +262,7 @@ export default function IndustriesPage() {
               </StaggerGrid>
               <SectionReveal>
                 <p className="mt-4 font-body text-[13px] text-white/40">
-                  And 300+ organisations across UAE, KSA, Kuwait, and Lebanon.
+                  And 550+ organisations across UAE, KSA, Kuwait, and Lebanon.
                 </p>
               </SectionReveal>
             </div>

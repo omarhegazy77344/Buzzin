@@ -21,13 +21,13 @@ import { PlatformHero } from "@/components/marketing/platform-hero"
 export const dynamic = "force-static"
 
 export const metadata: Metadata = {
-  title: "Platform Overview | Buzzin \u2014 10+ Integrated Premises Management Modules",
+  title: "Platform Overview | Buzzin \u2014 7+ Integrated Premises Management Modules",
   description:
-    "10+ integrated premises management modules on one platform. Visitor management, work permits, queue management, safeguarding, patrolling, booking, events, attendance, key management, and parking. Trusted by Aldar, Atlantis, Taaleem, and 300+ organisations.",
+    "7+ integrated premises management modules on one platform. Visitor management, work permits, queue management, safeguarding, patrolling, booking, events, attendance, key management, and parking. Trusted by Aldar, Atlantis, Taaleem, and 550+ organisations.",
   openGraph: {
-    title: "Buzzin Platform \u2014 10+ Integrated Modules",
+    title: "Buzzin Platform \u2014 7+ Integrated Modules",
     description:
-      "Visitor management, contractor permits, queue management, safeguarding, key management, and more. 10+ modules sharing the same data and dashboard.",
+      "Visitor management, contractor permits, queue management, safeguarding, key management, and more. 7+ modules sharing the same data and dashboard.",
   },
 }
 
@@ -75,7 +75,7 @@ const pageModules = [
   {
     name: "Visitor Management System",
     slug: "visitor-management-system",
-    desc: "Emirates ID and UAE Pass scanning. 3\u20135 second check-in. WhatsApp host alerts. 20M+ interactions processed.",
+    desc: "Emirates ID and UAE Pass scanning. 3\u20135 second check-in. WhatsApp host alerts. 30M+ interactions processed.",
     status: "core" as const,
     sectors: ["All Sectors"],
   },
@@ -431,7 +431,7 @@ export default function PlatformPage() {
         {/* ━━━ SECTION 8 — BOTTOM CTA ━━━ */}
         <CtaBanner
           content={{
-            headline: "Ready to see all 10+ modules working together?",
+            headline: "Ready to see all 7+ modules working together?",
             subline:
               "We will walk you through the platform in a 30-minute demo \u2014 showing exactly how the modules relevant to your premises connect in practice.",
             primaryLabel: "Book a Free Demo",

@@ -21,11 +21,11 @@ export const dynamic = "force-static"
 export const metadata: Metadata = {
   title: "Careers at Buzzin | Join the Team Behind Aldar, Atlantis & Taaleem",
   description:
-    "Help us build the platform trusted by 300+ UAE and GCC organisations. Engineering, design, sales, marketing, and customer success roles. Dubai-based and remote-friendly.",
+    "Help us build the platform trusted by 550+ UAE and GCC organisations. Engineering, design, sales, marketing, and customer success roles. Dubai-based and remote-friendly.",
   openGraph: {
     title: "Careers at Buzzin",
     description:
-      "Join the team building the platform trusted by Aldar, Atlantis, Taaleem, and 300+ organisations across the UAE and GCC.",
+      "Join the team building the platform trusted by Aldar, Atlantis, Taaleem, and 550+ organisations across the UAE and GCC.",
   },
 }
 
@@ -64,7 +64,7 @@ const roles = [
   {
     icon: Palette,
     title: "Design",
-    summary: "Product and visual designers shaping the customer-facing dashboard, the kiosk experience, and the brand that sits in front of 300+ properties.",
+    summary: "Product and visual designers shaping the customer-facing dashboard, the kiosk experience, and the brand that sits in front of 550+ properties.",
     stack: "Figma &middot; Design systems &middot; Motion &middot; Prototyping",
   },
   {
@@ -153,7 +153,7 @@ export default function CareersPage() {
               </p>
 
               <div className="mb-8 flex flex-wrap justify-center gap-2">
-                {["Dubai HQ", "Remote-friendly", "300+ clients", "10+ modules in production"].map((chip) => (
+                {["Dubai HQ", "Remote-friendly", "550+ clients", "7+ modules in production"].map((chip) => (
                   <span key={chip} className="inline-flex items-center rounded-full border border-white/[0.12] bg-white/[0.06] px-3 py-1 font-heading text-[11px] font-semibold text-white/70">
                     {chip}
                   </span>
@@ -254,7 +254,7 @@ export default function CareersPage() {
                 The Premises You Will Build For
               </p>
               <h2 className="mx-auto mt-4 mb-8 max-w-[680px] text-center font-heading text-[1.75rem] font-bold tracking-[-0.02em] text-white md:text-[2rem]">
-                300+ organisations across UAE and GCC, and counting.
+                550+ organisations across UAE and GCC, and counting.
               </h2>
             </VmsSectionReveal>
 

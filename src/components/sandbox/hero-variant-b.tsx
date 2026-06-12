@@ -20,9 +20,9 @@ const fadeUp = {
 }
 
 const stats = [
-  { value: "300+", label: "Organisations" },
+  { value: "550+", label: "Organisations" },
   { value: "5", label: "Countries" },
-  { value: "20M+", label: "Interactions" },
+  { value: "30M+", label: "Interactions" },
 ]
 
 type Props = { images: CarouselImage[] }

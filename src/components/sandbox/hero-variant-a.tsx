@@ -20,9 +20,9 @@ const fadeUp = {
 }
 
 const proofChips = [
-  { icon: Building2, label: "300+ Organisations" },
+  { icon: Building2, label: "550+ Organisations" },
   { icon: Globe, label: "UAE, KSA, Lebanon" },
-  { icon: Users, label: "20M+ Secure Interactions" },
+  { icon: Users, label: "30M+ Secure Interactions" },
   { icon: Shield, label: "GDPR & UAE PDPL Aligned" },
 ]
 

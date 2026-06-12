@@ -1,5 +1,6 @@
 import { locales, type Locale } from "@/i18n/config"
 import { notFound } from "next/navigation"
+import { ScrollProgress } from "@/components/ui/ScrollProgress"
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -21,6 +22,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <div dir={dir} lang={locale} className={locale === "ar" ? "font-body-ar" : ""}>
+      <ScrollProgress />
       {children}
     </div>
   )

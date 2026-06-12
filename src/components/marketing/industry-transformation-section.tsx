@@ -1,40 +1,32 @@
 "use client"
 
-import { Section } from "@/components/ui/section"
+import { Container } from "@/components/ui/container"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { IndustrySelectorBlock } from "@/components/marketing/industry-selector"
-import { BeforeAfterBlock } from "@/components/marketing/before-after"
-import { defaultIndustries, defaultBeforeAfterRows } from "@/lib/content-defaults"
+import { defaultIndustries } from "@/lib/content-defaults"
 
 type IndustryTransformationSectionProps = {
   industries?: typeof defaultIndustries
-  rows?: typeof defaultBeforeAfterRows
 }
 
 export function IndustryTransformationSection({
   industries,
-  rows,
 }: IndustryTransformationSectionProps) {
   return (
-    <Section bg="canvas" spacing="lg">
-      <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-10 xl:gap-14">
-        <div className="min-w-0">
-          <IndustrySelectorBlock
-            industries={industries}
-            centered={false}
-            headerClassName="mb-8"
-            cardClassName="max-w-none"
-          />
-        </div>
-
-        <div className="min-w-0">
-          <BeforeAfterBlock
-            rows={rows}
-            centered={false}
-            headerClassName="mb-8"
-            rowsClassName="max-w-none"
-          />
-        </div>
-      </div>
-    </Section>
+    <section className="relative overflow-hidden bg-[var(--bg-canvas)] py-20 md:py-24">
+      <SectionBackground
+        variant="sky"
+        hexGrid
+        floatingElements={[
+          { type: "icon", icon: "Building2", size: 16, x: "3%", y: "18%", delay: 0, duration: 9, color: "navy" },
+          { type: "hexagon", size: 90, x: "96%", y: "30%", delay: 2, duration: 8, color: "amber" },
+          { type: "hexagon", size: 70, x: "4%", y: "82%", delay: 4, duration: 10, color: "amber" },
+        ]}
+        gradientOrb={{ x: "70%", y: "60%", size: 300, color: "navy", opacity: 0.04 }}
+      />
+      <Container className="relative z-10">
+        <IndustrySelectorBlock industries={industries} />
+      </Container>
+    </section>
   )
 }

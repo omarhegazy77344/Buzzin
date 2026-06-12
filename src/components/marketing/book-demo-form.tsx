@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter, useParams } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { CheckCircle, Loader2, MessageCircle } from "lucide-react"
+import { Loader2 } from "lucide-react"
 import { cn } from "@/lib/cn"
 
 const schema = z.object({
@@ -32,6 +33,8 @@ const inputBase =
 const errorText = "mt-1 font-body text-[12px] text-red-500"
 
 export function BookDemoForm() {
+  const router = useRouter()
+  const { locale } = useParams<{ locale: string }>()
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [serverError, setServerError] = useState("")
 
@@ -59,35 +62,11 @@ export function BookDemoForm() {
         throw new Error(body?.error || "Something went wrong.")
       }
 
-      setStatus("success")
+      router.push(`/${locale}/thank-you`)
     } catch (err) {
       setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
       setStatus("error")
     }
-  }
-
-  /* ── Success state ── */
-  if (status === "success") {
-    return (
-      <div className="flex flex-col items-center py-12 text-center">
-        <CheckCircle className="h-12 w-12 text-[#F5A623]" strokeWidth={1.5} />
-        <h3 className="mt-5 font-heading text-[22px] font-bold text-[var(--text-primary)]">
-          We&apos;ve received your request.
-        </h3>
-        <p className="mt-3 max-w-sm font-body text-[15px] leading-relaxed text-[var(--text-secondary)]">
-          Someone from our team will be in touch within 4 business hours. If you need to reach us sooner, WhatsApp us directly.
-        </p>
-        <a
-          href="https://wa.me/97143201265?text=Hi%2C%20I%20just%20submitted%20a%20demo%20request%20on%20buzzin.ae."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex h-11 items-center gap-2 rounded-lg bg-[#25D366] px-6 font-heading text-[14px] font-semibold text-white transition-colors hover:bg-[#1EBE58]"
-        >
-          <MessageCircle className="h-4 w-4" />
-          WhatsApp us now
-        </a>
-      </div>
-    )
   }
 
   /* ── Form ── */

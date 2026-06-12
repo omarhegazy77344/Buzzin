@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import { StatsBar } from "@/components/marketing/stats-bar"
 import { HowItWorks } from "@/components/marketing/how-it-works"
 import { CtaBanner } from "@/components/marketing/cta-banner"
-import { AboutExclusivityBlock } from "@/components/marketing/about-exclusivity-block"
 import {
   SectionReveal, StaggerGrid, StaggerItem,
 } from "@/components/marketing/hospitality-layout"
@@ -19,20 +18,20 @@ export const dynamic = "force-static"
 export const metadata: Metadata = {
   title: "About Buzzin FZCO | Premises Intelligence Platform — Dubai, UAE",
   description:
-    "Buzzin FZCO is a Dubai-based enterprise premises intelligence platform trusted by Aldar, Atlantis, Taaleem, Fairmont, and 300+ organisations across UAE, KSA, Kuwait, and Lebanon. Headquartered at Dtec, Dubai Silicon Oasis.",
+    "Buzzin FZCO is a Dubai-based enterprise premises intelligence platform trusted by Aldar, Atlantis, Taaleem, Fairmont, and 550+ organisations across UAE, KSA, Kuwait, and Lebanon. Headquartered at Dtec, Dubai Silicon Oasis.",
   openGraph: {
     title: "About Buzzin FZCO | Dubai Premises Intelligence Platform",
     description:
-      "Enterprise premises management platform headquartered in Dubai. Exclusive partner to Aldar and Asteco. 300+ organisations across 4 countries.",
+      "Enterprise premises management platform headquartered in Dubai. Trusted partner to Aldar and Asteco. 550+ organisations across 4 countries.",
   },
 }
 
 /* ─── Data ─── */
 
 const proofChips = [
-  "300+ Organisations",
+  "550+ Organisations",
   "4 Countries",
-  "20M+ Interactions",
+  "30M+ Interactions",
   "Dtec, Dubai Silicon Oasis",
 ]
 
@@ -183,7 +182,7 @@ export default function AboutPage() {
 
               <SectionReveal>
                 <h1 className="font-display text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)] md:text-[4rem]">
-                  The platform behind 300+{"\n"}organisations across the GCC.
+                  The platform behind 550+{"\n"}organisations across the GCC.
                 </h1>
               </SectionReveal>
 
@@ -353,10 +352,7 @@ export default function AboutPage() {
           </Container>
         </section>
 
-        {/* ━━━ SECTION 6 — EXCLUSIVITY ━━━ */}
-        <AboutExclusivityBlock />
-
-        {/* ━━━ SECTION 7 — HOW WE WORK ━━━ */}
+        {/* ━━━ SECTION 6 — HOW WE WORK ━━━ */}
         <HowItWorks steps={aboutSteps} />
 
         {/* ━━━ SECTION 8 — CERTIFICATIONS ━━━ */}

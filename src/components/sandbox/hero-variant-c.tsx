@@ -31,9 +31,9 @@ const modules = [
 ]
 
 const liveNumbers = [
-  { value: "20M+", unit: "secure interactions", suffix: "processed" },
-  { value: "9", unit: "integrated modules", suffix: "one platform" },
-  { value: "300+", unit: "organisations", suffix: "4 countries" },
+  { value: "30M+", unit: "secure interactions", suffix: "processed" },
+  { value: "7", unit: "integrated modules", suffix: "one platform" },
+  { value: "550+", unit: "organisations", suffix: "4 countries" },
 ]
 
 type Props = { images: CarouselImage[] }
@@ -63,7 +63,7 @@ export function HeroVariantC({ images }: Props) {
             <motion.div variants={fadeUp} className="mb-5 flex items-center gap-2">
               <Hexagon className="h-3.5 w-3.5 text-amber-500" />
               <span className="font-heading text-overline font-semibold uppercase tracking-[0.14em] text-[var(--text-brand)]">
-                10+ Modules. One Intelligent Core.
+                7+ Modules. One Intelligent Core.
               </span>
             </motion.div>
 

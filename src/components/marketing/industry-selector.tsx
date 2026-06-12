@@ -38,6 +38,9 @@ export function IndustrySelectorBlock({
         centered={centered}
         className={headerClassName}
       />
+      <p className="mb-3 text-center font-body text-body-xs uppercase tracking-[0.14em] text-[var(--text-muted)]">
+        Select your industry
+      </p>
       <div className="mb-10 flex flex-wrap justify-center gap-2">
         {data.map((ind, i) => (
           <motion.button
@@ -62,9 +65,9 @@ export function IndustrySelectorBlock({
       <AnimatePresence mode="wait">
         <motion.div
           key={current.key}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
+          exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] as const }}
           className={cn(
             "mx-auto max-w-4xl rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-8 md:p-12",
@@ -86,7 +89,7 @@ export function IndustrySelectorBlock({
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <span className="text-body-sm text-[var(--text-muted)]">Trusted by:</span>
             {current.clients.map((c) => (
-              <span key={c} className="font-heading text-body-sm font-semibold text-[var(--text-secondary)]">{c}</span>
+              <span key={c} className="font-heading text-body-sm font-semibold text-[var(--text-secondary)] grayscale transition-all duration-300 hover:grayscale-0">{c}</span>
             ))}
           </div>
 

@@ -14,10 +14,10 @@ export const defaultHeroCarouselImages: CarouselImage[] = [
 ]
 
 export const defaultHero = {
-  overline: "Trusted by 300+ organisations across 4 countries",
+  overline: "Trusted by 550+ organisations across 4 countries",
   headline: "Manage every visitor, contractor, and patrol from one place",
   subheadline:
-    "Buzzin handles check-ins, work permits, queues, bookings, and guard patrols for Atlantis, Aldar, Taaleem, Fairmont, and 300+ organisations across the UAE and GCC.",
+    "Buzzin handles check-ins, work permits, queues, bookings, and guard patrols for Atlantis, Aldar, Taaleem, Fairmont, and 550+ organisations across the UAE and GCC.",
   primaryCtaLabel: "Book a Free Demo",
   primaryCtaHref: "/book-demo",
   secondaryCtaLabel: "Watch 90-second overview",
@@ -38,10 +38,10 @@ export const defaultTickerClients = [
 ]
 
 export const defaultStats = [
-  { value: 20, suffix: "M+", label: "Check-ins, permits, and scans processed across the GCC" },
-  { value: 300, suffix: "+", label: "Organisations running Buzzin daily" },
+  { value: 30, suffix: "M+", label: "Check-ins, permits, and scans processed across the GCC" },
+  { value: 550, suffix: "+", label: "Organisations running Buzzin daily" },
   { value: 4, suffix: "", label: "Countries: UAE, Saudi Arabia, Kuwait, Lebanon" },
-  { value: 10, suffix: "+", label: "Modules that all share the same data and dashboard" },
+  { value: 7, suffix: "+", label: "Modules that all share the same data and dashboard" },
 ]
 
 export type ModuleStatus = "live" | "new" | "comingSoon"
@@ -261,17 +261,6 @@ export const defaultBeforeAfterRows = [
   },
 ]
 
-export const defaultExclusivity = {
-  overline: "Exclusive Partnership",
-  headline:
-    "Aldar Properties and Asteco chose Buzzin as their exclusive premises management partner across their entire UAE portfolio.",
-  body: "That\u2019s the UAE\u2019s largest developer and one of its largest property managers, running every community on the same system. Not a pilot. Not a trial. A multi-year commitment across hundreds of buildings.",
-  partners: ["Aldar", "Asteco"],
-  growthMultiplier: "71\u00d7",
-  growthLabel:
-    "In 2025, Buzzin processed 71 times more access events than in all previous years combined.",
-}
-
 export const defaultSecurityCerts = [
   "GDPR Aligned",
   "UAE Pass",
@@ -293,14 +282,14 @@ export const defaultHowItWorks = [
   },
   {
     number: "03",
-    title: "Grow Together",
+    title: "We Stay With You",
     desc: "You get SLA-backed support over phone, email, and WhatsApp. Updates are pushed over the air. And we keep showing up after go-live, not just before the contract is signed.",
   },
 ]
 
 export const defaultCtaBanner = {
   headline: "Want to see how this works on your premises?",
-  subline: "We respond to every demo request within four business hours.",
+  subline: "Guaranteed response to every demo request within 4 business hours.",
   primaryLabel: "Book a Free Demo",
   primaryHref: "/book-demo",
   whatsappLabel: "Chat on WhatsApp",
@@ -311,7 +300,7 @@ export const defaultCtaBanner = {
 
 export const defaultFooter = {
   tagline:
-    "Visitor management, work permits, queues, bookings, and more. Used by 300+ organisations across the UAE and GCC.",
+    "The premises intelligence platform trusted by 550+ organisations across the UAE and GCC.",
   phone: "+971 4 320 1265",
   email: "hello@buzzin.ae",
   address: "Dubai Silicon Oasis, Dubai, UAE",
@@ -345,14 +334,14 @@ export type PressMention = {
 
 export const pressMentions: PressMention[] = [
   {
-    title: "Buzzin FZCO Secures Exclusive 5-Year Partnership with Aldar Properties",
+    title: "Buzzin FZCO Enters Multi-Year Partnership with Aldar Properties",
     category: "partnership",
     date: "2025-01",
     dateLabel: "January 2025",
     source: "Company Announcement",
     sourceUrl: "#",
     excerpt:
-      "Buzzin has been selected as the exclusive premises management platform partner for Aldar Properties across their entire UAE portfolio.",
+      "Buzzin has been selected as the premises management platform partner for Aldar Properties across their entire UAE portfolio.",
   },
   {
     title: "How Dubai's Premises Intelligence Sector Is Evolving in 2026",
@@ -392,7 +381,7 @@ export const pressMentions: PressMention[] = [
     source: "Industry Publication",
     sourceUrl: "#",
     excerpt:
-      "From 300 organisations to processing over 20 million secure interactions, Buzzin's growth trajectory signals a shift in how GCC enterprises manage physical operations.",
+      "From 550 organisations to processing over 30 million secure interactions, Buzzin's growth trajectory signals a shift in how GCC enterprises manage physical operations.",
   },
   {
     title: "Buzzin FZCO Recognised at Dubai Silicon Oasis Innovation Awards",
@@ -496,11 +485,11 @@ export const newsPosts: NewsPost[] = [
     date: "2026-01-10",
     dateLabel: "January 2026",
     excerpt:
-      "A year of significant scale. From processing thousands of interactions to over 20 million, across 300+ organisations in four countries.",
+      "A year of significant scale. From processing thousands of interactions to over 30 million, across 550+ organisations in four countries.",
     body: [
       "2025 was the year Buzzin moved from a promising platform to critical infrastructure for hundreds of organisations across the GCC. The headline number tells the story: the platform processed 71 times more secure access events than in all previous years combined.",
-      "Behind that figure is a year of deliberate scale. Buzzin now serves more than 300 organisations across four countries, with over 20 million secure interactions processed — check-ins, permit approvals, queue tokens, badge taps, and access events. Each one is logged, timestamped, and auditable.",
-      "The growth was not only in volume but in depth. Existing clients expanded from single modules to running their whole operation on the platform, and the exclusive partnerships with Aldar and Asteco brought entire portfolios onto a single system. New modules launched throughout the year, from queue management to safeguarding.",
+      "Behind that figure is a year of deliberate scale. Buzzin now serves more than 550 organisations across four countries, with over 30 million secure interactions processed — check-ins, permit approvals, queue tokens, badge taps, and access events. Each one is logged, timestamped, and auditable.",
+      "The growth was not only in volume but in depth. Existing clients expanded from single modules to running their whole operation on the platform, and the multi-year partnerships with Aldar and Asteco brought entire portfolios onto a single system. New modules launched throughout the year, from queue management to safeguarding.",
       "We are grateful to every client, partner, and team member who made the year what it was. 2026 brings new modules, deeper integrations, and continued expansion across the region — and we are just getting started.",
     ],
   },

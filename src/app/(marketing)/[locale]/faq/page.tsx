@@ -15,7 +15,7 @@ export const dynamic = "force-static"
 export const metadata: Metadata = {
   title: "FAQ | Buzzin \u2014 Premises Intelligence Platform UAE",
   description:
-    "Frequently asked questions about Buzzin premises management platform. How it works, implementation time, security, integrations, pricing, and support. Trusted by Aldar, Atlantis, and 300+ organisations.",
+    "Frequently asked questions about Buzzin premises management platform. How it works, implementation time, security, integrations, pricing, and support. Trusted by Aldar, Atlantis, and 550+ organisations.",
   openGraph: {
     title: "FAQ | Buzzin Premises Management UAE",
     description:
@@ -34,7 +34,7 @@ const faqData = [
         q: "What exactly is Buzzin?",
         a: (
           <>
-            Buzzin is a single platform that manages every person, permit, and patrol across your physical operation. It goes well beyond visitor management: 10+ modules cover visitor check-in, contractor permits, queue management, event check-in, amenity booking, attendance tracking, safeguarding, security patrols, key management, and parking. All modules share the same data and dashboard.
+            Buzzin is a single platform that manages every person, permit, and patrol across your physical operation. It goes well beyond visitor management: 7+ modules cover visitor check-in, contractor permits, queue management, event check-in, amenity booking, attendance tracking, safeguarding, security patrols, key management, and parking. All modules share the same data and dashboard.
           </>
         ),
       },
@@ -42,7 +42,7 @@ const faqData = [
         q: "Who is Buzzin for?",
         a: (
           <>
-            Organisations that manage complex physical premises: residential property developers, luxury hotels, international schools, corporate headquarters, financial district buildings, and government institutions. Current clients include Aldar Properties, Atlantis The Palm, Taaleem, Fairmont, and 300+ organisations across UAE, KSA, Kuwait, and Lebanon.
+            Organisations that manage complex physical premises: residential property developers, luxury hotels, international schools, corporate headquarters, financial district buildings, and government institutions. Current clients include Aldar Properties, Atlantis The Palm, Taaleem, Fairmont, and 550+ organisations across UAE, KSA, Kuwait, and Lebanon.
           </>
         ),
       },
@@ -240,7 +240,7 @@ const faqData = [
         q: "Is there a minimum contract term?",
         a: (
           <>
-            Standard deployments run on annual subscription terms. Multi-year agreements are available and preferred for larger clients. Aldar Properties and Asteco are both on 5-year exclusive agreements. Speak to the team about the terms that work for your organisation.
+            Standard deployments run on annual subscription terms. Multi-year agreements are available and preferred for larger clients. Speak to the team about the terms that work for your organisation.
           </>
         ),
       },
@@ -274,7 +274,7 @@ export default function FaqPage() {
                 name: "What exactly is Buzzin?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Buzzin is a premises management platform with 10+ modules covering visitor check-in, contractor permits, queue management, event check-in, amenity booking, attendance tracking, safeguarding, security patrols, key management, and parking.",
+                  text: "Buzzin is a premises management platform with 7+ modules covering visitor check-in, contractor permits, queue management, event check-in, amenity booking, attendance tracking, safeguarding, security patrols, key management, and parking.",
                 },
               },
               {

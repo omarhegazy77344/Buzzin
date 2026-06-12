@@ -36,6 +36,13 @@ const resourceItems = [
   { name: "FAQ", desc: "Common questions", href: "/faq" },
 ]
 
+const loginItems = [
+  { name: "Visitor Management", href: "https://dashboard.buzz-in.co/#/login" },
+  { name: "Work Permit", href: "https://vpm.buzz-in.co/#/login" },
+  { name: "Event Management", href: "https://vpm.buzz-in.co/#/login" },
+  { name: "Booking Management", href: "https://bms-admin.buzz-in.co/auth/sign-in" },
+]
+
 const liveModules = defaultModules.filter((m) => m.status === "live" || m.status === "new")
 const soonModules = defaultModules.filter((m) => m.status === "comingSoon" && m.slug === "key-management")
 
@@ -51,12 +58,14 @@ export function Navbar() {
   const [platformOpen, setPlatformOpen] = useState(false)
   const [industryOpen, setIndustryOpen] = useState(false)
   const [resourceOpen, setResourceOpen] = useState(false)
+  const [loginOpen, setLoginOpen] = useState(false)
   const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false)
   const [mobileIndustryOpen, setMobileIndustryOpen] = useState(false)
   const [mobileResourceOpen, setMobileResourceOpen] = useState(false)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const closeIndustryTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const closeResourceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const closeLoginTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -84,6 +93,13 @@ export function Navbar() {
   }
   const closeResourceDropdown = () => {
     closeResourceTimer.current = setTimeout(() => setResourceOpen(false), 150)
+  }
+  const openLoginDropdown = () => {
+    if (closeLoginTimer.current) clearTimeout(closeLoginTimer.current)
+    setLoginOpen(true)
+  }
+  const closeLoginDropdown = () => {
+    closeLoginTimer.current = setTimeout(() => setLoginOpen(false), 150)
   }
 
   return (
@@ -299,6 +315,46 @@ export function Navbar() {
             <Phone className="h-3.5 w-3.5" />
             +971 4 320 1265
           </a>
+
+          {/* Login dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={openLoginDropdown}
+            onMouseLeave={closeLoginDropdown}
+          >
+            <button
+              type="button"
+              className="flex items-center gap-1 rounded-md px-3 py-2 font-heading text-body-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+            >
+              Login <ChevronDown className="h-3.5 w-3.5" />
+            </button>
+
+            <AnimatePresence>
+              {loginOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute right-0 top-full z-50 mt-1 w-52 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-2 shadow-xl"
+                >
+                  {loginItems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setLoginOpen(false)}
+                      className="block rounded-lg px-3 py-2.5 font-heading text-[13px] font-semibold text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-surface-raised)] hover:text-[var(--text-primary)]"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <Button size="sm" asChild>
             <Link href="/book-demo">Book a Demo</Link>
           </Button>
@@ -452,6 +508,26 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Login portals */}
+            <div className="mt-2 border-t border-[var(--border-subtle)] pt-4">
+              <p className="mb-2 px-4 font-heading text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--text-muted)]">
+                Login to your portal
+              </p>
+              {loginItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="block rounded-lg px-4 py-2.5 font-heading text-[14px] font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-surface-raised)] hover:text-[var(--text-primary)]"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+
             <hr className="my-4 border-[var(--border-subtle)]" />
             <a href="tel:+97143201265" className="flex items-center gap-2 px-4 py-3 font-heading text-heading-sm font-medium text-[var(--text-secondary)]">
               <Phone className="h-4 w-4" />

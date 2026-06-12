@@ -9,11 +9,12 @@ import { Navbar } from "@/components/marketing/navbar"
 import { Footer } from "@/components/marketing/footer"
 import { WhatsAppFab } from "@/components/marketing/whatsapp-fab"
 import { Container } from "@/components/ui/container"
-import { HexagonPattern } from "@/components/ui/hexagon-pattern"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { Button } from "@/components/ui/button"
 import { SecurityBar } from "@/components/marketing/security-bar"
 import { CtaBanner } from "@/components/marketing/cta-banner"
 import { BookingCalendarMock } from "@/components/marketing/booking-calendar-mock"
+import { TransformationShowcase } from "@/components/marketing/transformation-showcase"
 import {
   VmsHero, HeroBlock,
   VmsSectionReveal, VmsStaggerGrid, VmsStaggerItem,
@@ -24,7 +25,7 @@ export const dynamic = "force-static"
 export const metadata: Metadata = {
   title: "Booking Management System UAE | Buzzin \u2014 Facilities, Events, QR Access Control",
   description:
-    "Enterprise facility and amenity booking management for UAE. Live availability, per-member QR codes, real-time capacity control, approval workflows, and full audit trail. Trusted by Aldar and 300+ organisations.",
+    "Enterprise facility and amenity booking management for UAE. Live availability, per-member QR codes, real-time capacity control, approval workflows, and full audit trail. Trusted by Aldar and 550+ organisations.",
   openGraph: {
     title: "Booking Management System UAE | Buzzin",
     description:
@@ -592,7 +593,15 @@ export default function BookingManagementPage() {
 
         {/* ━━━ SECTION 8 — CLIENT PROOF ━━━ */}
         <section className="relative overflow-hidden bg-[var(--bg-proof)] py-16 md:py-20">
-          <HexagonPattern className="text-white/[0.04]" />
+          <SectionBackground
+            variant="dark"
+            hexGrid
+            floatingElements={[
+              { type: "hexagon", size: 90, x: "94%", y: "30%", delay: 0, duration: 9, color: "white" },
+              { type: "hexagon", size: 70, x: "4%", y: "70%", delay: 2, duration: 8, color: "amber" },
+            ]}
+            gradientOrb={{ x: "50%", y: "40%", size: 300, color: "amber", opacity: 0.05 }}
+          />
           <Container className="relative">
             <VmsSectionReveal>
               <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
@@ -606,7 +615,7 @@ export default function BookingManagementPage() {
             <VmsStaggerGrid className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2" interval={0.12}>
               {proofCards.map((c) => (
                 <VmsStaggerItem key={c.name}>
-                  <div className="rounded-[14px] border border-white/[0.08] bg-white/[0.05] p-6 transition-colors duration-300 hover:bg-white/[0.08]">
+                  <div className="card-hover rounded-[14px] border border-white/[0.08] bg-white/[0.05] p-6 hover:bg-white/[0.08]">
                     {c.href ? (
                       <Link href={c.href} className="font-heading text-[16px] font-bold text-[var(--text-brand)] hover:underline">
                         {c.name}
@@ -624,46 +633,17 @@ export default function BookingManagementPage() {
             </VmsStaggerGrid>
 
             <p className="mt-6 text-center font-body text-[13px] text-white/40">
-              And 300+ organisations across UAE, KSA, Kuwait, and Lebanon.
+              And 550+ organisations across UAE, KSA, Kuwait, and Lebanon.
             </p>
           </Container>
         </section>
 
-        {/* ━━━ SECTION 9 — BEFORE / AFTER ━━━ */}
-        <section className="bg-[var(--bg-canvas)] py-16 md:py-20">
-          <Container>
-            <VmsSectionReveal>
-              <p className="font-heading text-overline font-semibold uppercase tracking-[0.12em] text-[var(--text-brand)]">
-                The Transformation
-              </p>
-              <h2 className="mt-4 mb-10 font-heading text-display-md font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                What changes when bookings go fully digital.
-              </h2>
-            </VmsSectionReveal>
-
-            <VmsStaggerGrid className="space-y-2.5" interval={0.1}>
-              {beforeAfter.map((row, i) => (
-                <VmsStaggerItem key={i}>
-                  <div className="grid grid-cols-1 overflow-hidden rounded-xl border border-[var(--border-default)] md:grid-cols-[1fr_40px_1fr]">
-                    <div className="bg-[#FFF5F5] px-5 py-4">
-                      <p className="mb-1.5 font-heading text-[9px] font-bold uppercase tracking-wide text-red-500">Before</p>
-                      <p className="font-body text-[13px] leading-[1.55] text-red-800">{row.before}</p>
-                    </div>
-                    <div className="hidden items-center justify-center border-x border-[var(--border-default)] bg-white md:flex">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500">
-                        <ArrowRight className="h-3.5 w-3.5 text-white" strokeWidth={2} />
-                      </div>
-                    </div>
-                    <div className="bg-[#F0FDF4] px-5 py-4">
-                      <p className="mb-1.5 font-heading text-[9px] font-bold uppercase tracking-wide text-emerald-600">With Buzzin</p>
-                      <p className="font-body text-[13px] font-semibold leading-[1.55] text-emerald-800">{row.after}</p>
-                    </div>
-                  </div>
-                </VmsStaggerItem>
-              ))}
-            </VmsStaggerGrid>
-          </Container>
-        </section>
+        {/* ━━━ SECTION 9 — THE TRANSFORMATION ━━━ */}
+        <TransformationShowcase
+          rows={beforeAfter}
+          title="What changes when bookings go fully digital."
+          subtitle={null}
+        />
 
         {/* ━━━ SECTION 10 — SECURITY ━━━ */}
         <SecurityBar />

@@ -133,13 +133,6 @@ export default async function NewsDetailPage({
                 {post.title}
               </h1>
 
-              {/* Hero image placeholder */}
-              <div className="mb-8 flex h-[260px] items-center justify-center rounded-2xl border border-[var(--border-default)] bg-[var(--bg-canvas)] md:h-[340px]">
-                <span className="font-heading text-[12px] font-semibold uppercase tracking-wide text-[var(--text-muted)]">
-                  Featured Image
-                </span>
-              </div>
-
               <ArticleBody sections={[{ paragraphs: post.body }]} />
 
               {/* Author + share */}

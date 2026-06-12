@@ -73,7 +73,7 @@ export function ClientsVariantB({ className }: { className?: string }) {
       </div>
 
       <p className="mt-8 text-center text-body-xs text-[var(--text-muted)]">
-        &hellip; and 300+ more across hospitality, real estate, education, and other sectors
+        &hellip; and 550+ more across hospitality, real estate, education, and other sectors
       </p>
     </section>
   )

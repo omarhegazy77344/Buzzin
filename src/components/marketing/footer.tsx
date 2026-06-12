@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Container } from "@/components/ui/container"
+import { SectionBackground } from "@/components/ui/SectionBackground"
 import { defaultFooter } from "@/lib/content-defaults"
 
 const platformLinks = [
@@ -58,8 +59,27 @@ export function Footer({ content }: FooterProps) {
   const d = content || defaultFooter
 
   return (
-    <footer className="bg-[var(--bg-footer)] pt-16 pb-8">
-      <Container>
+    <footer className="relative overflow-hidden bg-[var(--bg-footer)] pt-16 pb-8">
+      {/* Amber gradient top border */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px opacity-30"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, #F5A623 30%, #F5A623 70%, transparent 100%)",
+        }}
+      />
+
+      <SectionBackground
+        variant="dark"
+        hexGrid
+        floatingElements={[
+          { type: "hexagon", size: 60, x: "94%", y: "12%", delay: 0, duration: 9, color: "white" },
+          { type: "hexagon", size: 80, x: "4%", y: "82%", delay: 3, duration: 10, color: "amber" },
+        ]}
+      />
+
+      <Container className="relative z-10">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
