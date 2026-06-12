@@ -159,7 +159,7 @@ export function HeroVariantD({ images }: Props) {
 
             <motion.div
               variants={heroCta}
-              className="relative mt-8 flex flex-wrap items-center justify-center gap-4"
+              className="relative mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
             >
               <div
                 aria-hidden="true"
@@ -170,13 +170,13 @@ export function HeroVariantD({ images }: Props) {
                   filter: "blur(20px)",
                 }}
               />
-              <Button size="lg" asChild>
+              <Button size="lg" asChild className="w-full sm:w-auto">
                 <Link href="/book-demo" className="gap-2">
                   Book a Strategic Demo
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="ghost" size="lg" asChild>
+              <Button variant="ghost" size="lg" asChild className="w-full sm:w-auto">
                 <Link href="#overview">See the Platform</Link>
               </Button>
             </motion.div>

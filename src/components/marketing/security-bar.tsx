@@ -66,7 +66,7 @@ export function SecurityBar({ certs }: SecurityBarProps) {
                 className="group flex items-center gap-3 rounded-full border border-white/[0.08] bg-white/[0.04] px-5 py-3 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-500/40 hover:bg-white/10 hover:shadow-lg hover:shadow-amber-500/10"
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-500/10 ring-1 ring-amber-500/20 transition-all duration-300 group-hover:bg-amber-500/20 group-hover:ring-amber-500/40">
-                  <Icon className="h-4.5 w-4.5 text-amber-400" strokeWidth={1.5} />
+                  <Icon className="h-4 w-4 text-amber-400" strokeWidth={1.5} />
                 </span>
                 <span className="font-heading text-body-sm font-semibold text-white/90">{cert}</span>
               </motion.div>

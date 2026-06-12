@@ -195,7 +195,7 @@ export function OrbitalCarousel({ images }: { images: CarouselImage[] }) {
       {/* ── Orbital stage ── */}
       <div
         ref={canvasRef}
-        className="relative h-[440px] w-full sm:h-[500px] lg:h-[560px]"
+        className="relative h-[360px] w-full sm:h-[500px] lg:h-[560px]"
         style={{ perspective: "1200px" }}
       >
         {/* Ambient depth glow */}
@@ -218,8 +218,8 @@ export function OrbitalCarousel({ images }: { images: CarouselImage[] }) {
             onClick={() => goTo(i)}
             className="absolute left-1/2 top-1/2 cursor-pointer"
             style={{
-              width: "clamp(220px, 30vw, 340px)",
-              height: "clamp(280px, 38vw, 430px)",
+              width: "clamp(180px, 46vw, 340px)",
+              height: "clamp(230px, 58vw, 430px)",
               willChange: "transform, opacity, filter",
               transformStyle: "preserve-3d",
             }}
@@ -233,7 +233,7 @@ export function OrbitalCarousel({ images }: { images: CarouselImage[] }) {
                 alt={img.alt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 640px) 220px, (max-width: 1024px) 280px, 340px"
+                sizes="(max-width: 640px) 180px, (max-width: 1024px) 280px, 340px"
                 priority={i === 0}
               />
               {/* Inner vignette for depth */}

@@ -294,6 +294,139 @@ function ModuleHexTile({
    EXPANDED HEX — grows from clicked tile
    ═══════════════════════════════════════ */
 
+function useIsMobile(query = "(max-width: 639px)") {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mql = window.matchMedia(query)
+    const update = () => setIsMobile(mql.matches)
+    update()
+    mql.addEventListener("change", update)
+    return () => mql.removeEventListener("change", update)
+  }, [query])
+
+  return isMobile
+}
+
+/* ═══════════════════════════════════════
+   MOBILE MODULE CARD — readable full-width
+   detail panel shown on phones instead of the
+   in-hex layout.
+   ═══════════════════════════════════════ */
+
+function MobileModuleCard({
+  mod,
+  onClose,
+}: {
+  mod: PlatformModule
+  onClose: () => void
+}) {
+  const isComingSoon = mod.status === "comingSoon"
+  const topBenefits = mod.benefits.slice(0, 3)
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-[60] flex items-center justify-center px-4 sm:hidden"
+    >
+      <div
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      <motion.div
+        initial={{ opacity: 0, y: 28, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 28, scale: 0.96 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 w-full max-w-sm rounded-2xl border border-[var(--border-default)] bg-[var(--bg-surface)] p-5 shadow-xl"
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full text-[var(--text-muted)] transition-colors hover:bg-black/5 hover:text-[var(--text-primary)] dark:hover:bg-white/10"
+        >
+          <X className="h-4 w-4" />
+        </button>
+
+        <h3 className="pr-8 font-heading text-lg font-bold text-[var(--text-primary)]">
+          {mod.name}
+        </h3>
+
+        <div className="mt-2">
+          <StatusPill status={mod.status} />
+        </div>
+
+        <p
+          className={cn(
+            "mt-3 text-sm leading-relaxed",
+            isComingSoon
+              ? "text-[var(--text-muted)]"
+              : "text-[var(--text-secondary)]",
+          )}
+        >
+          {mod.longDesc}
+        </p>
+
+        {!isComingSoon && (
+          <ul className="mt-3 space-y-1.5 text-left">
+            {topBenefits.map((b, i) => (
+              <li key={i} className="flex items-start gap-1.5">
+                <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-[var(--text-brand)]" />
+                <span className="text-sm leading-snug text-[var(--text-secondary)]">
+                  {b}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {!isComingSoon ? (
+          <div className="mt-5 flex flex-wrap items-center gap-2">
+            <Link
+              href="/book-demo"
+              className="inline-flex items-center gap-1.5 rounded-md bg-[var(--text-brand)] px-4 py-2 font-heading text-sm font-semibold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.02]"
+            >
+              Book a Demo
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href={`/platform/${mod.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-md border border-[var(--border-brand)] px-4 py-2 font-heading text-sm font-semibold text-[var(--text-brand)] transition-transform hover:scale-[1.02]"
+            >
+              More Details
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+        ) : (
+          <>
+            <div className="mt-5">
+              <Link
+                href={`/platform/${mod.slug}`}
+                className="inline-flex items-center gap-1.5 rounded-md bg-slate-500 px-4 py-2 font-heading text-sm font-semibold text-white shadow-sm transition-transform hover:scale-[1.02] hover:bg-slate-600 dark:bg-slate-600 dark:hover:bg-slate-500"
+              >
+                View Page
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="mt-3 rounded border border-dashed border-[var(--border-default)] px-3 py-2">
+              <p className="text-xs text-[var(--text-muted)]">
+                In development. Preview the page or join the waitlist for early
+                access.
+              </p>
+            </div>
+          </>
+        )}
+      </motion.div>
+    </motion.div>
+  )
+}
+
 function ExpandedHex({
   mod,
   onClose,
@@ -497,6 +630,7 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
   const [selectedModule, setSelectedModule] = useState<PlatformModule | null>(null)
   const [expandOrigin, setExpandOrigin] = useState({ x: 50, y: 50 })
   const stageRef = useRef<HTMLDivElement>(null)
+  const isMobile = useIsMobile()
 
   const { moduleCells, gridW, gridH, centerX, centerY, hexW, hexH } = useMemo(() => {
     const allCells = placeModules(data)
@@ -549,7 +683,7 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
   }, [])
 
   useEffect(() => {
-    if (!selectedModule) return
+    if (!selectedModule || isMobile) return
     const handleOutside = (e: MouseEvent) => {
       if (stageRef.current && !stageRef.current.contains(e.target as Node)) {
         handleClose()
@@ -557,7 +691,7 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
     }
     document.addEventListener("mousedown", handleOutside)
     return () => document.removeEventListener("mousedown", handleOutside)
-  }, [selectedModule, handleClose])
+  }, [selectedModule, handleClose, isMobile])
 
   return (
     <section
@@ -617,9 +751,9 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
                 )
               })}
 
-              {/* Expanded hex overlay — grows from the clicked tile's position */}
+              {/* Expanded hex overlay — grows from the clicked tile's position (sm+) */}
               <AnimatePresence>
-                {selectedModule && (
+                {selectedModule && !isMobile && (
                   <ExpandedHex
                     key={selectedModule.slug}
                     mod={selectedModule}
@@ -644,8 +778,8 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
               <p className="mb-3 font-heading text-overline font-semibold uppercase tracking-[0.08em] text-[var(--text-brand)]">
                 The Platform
               </p>
-              <h2 className="font-heading text-display-md font-bold text-[var(--text-primary)] md:text-display-lg">
-                Seven modules, one connected&nbsp;platform.
+              <h2 className="font-heading text-[1.75rem] font-bold leading-tight text-[var(--text-primary)] sm:text-display-md md:text-display-lg">
+                Seven modules, one connected platform.
               </h2>
               <p className="mt-4 text-body-lg text-[var(--text-secondary)]">
                 All modules draw from the same data and appear in a single
@@ -656,6 +790,17 @@ export function PlatformOverview({ modules }: PlatformOverviewProps) {
           </div>
         </div>
       </div>
+
+      {/* Mobile module detail — readable card instead of the in-hex layout */}
+      <AnimatePresence>
+        {selectedModule && isMobile && (
+          <MobileModuleCard
+            key={selectedModule.slug}
+            mod={selectedModule}
+            onClose={handleClose}
+          />
+        )}
+      </AnimatePresence>
     </section>
   )
 }
